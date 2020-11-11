@@ -11,8 +11,7 @@ sections:
   match: "**/*"
 - type: document
   path: content/homepage.md
-  label: Homepage
-  match: "**/*"
+  label: Home
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
