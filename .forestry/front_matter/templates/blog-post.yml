@@ -13,3 +13,5 @@ fields:
   default: []
   label: tag
   description: Tags for your blog posts to be grouped by
+pages:
+- content/blog/second-post.md
