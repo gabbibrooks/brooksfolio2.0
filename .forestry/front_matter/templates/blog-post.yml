@@ -8,3 +8,8 @@ fields:
 - type: textarea
   name: description
   label: description
+- name: tag
+  type: tag_list
+  default: []
+  label: tag
+  description: Tags for your blog posts to be grouped by
