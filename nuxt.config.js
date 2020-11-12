@@ -36,16 +36,43 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxtjs/tailwindcss",
-    "@nuxtjs/color-mode"
+    "@nuxtjs/color-mode",
+    "@nuxtjs/fontawesome"
   ],
 
-  // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ["@nuxt/content"],
-  content: {},
   tailwindcss: {
     exposeConfig: true
   },
-
+  // Modules (https://go.nuxtjs.dev/config-modules)
+  modules: ["@nuxt/content", "nuxt-webfontloader"],
+  content: {},
+  fontawesome: {
+    icons: {
+      solid: [
+        "faHome",
+        "faEnvelope",
+        "faNewspaper",
+        "faCode",
+        "faUser",
+        "faArrowRight",
+        "faArrowLeft",
+        "faShareAlt",
+        "faThumbsUp",
+        "faTimesCircle"
+      ],
+      brands: ["faGithub", "faDev", "faTwitter", "faLinkedin"]
+    }
+  },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {}
+  build: {},
+  webfontloader: {
+    google: {
+      families: [
+        "Cabin:300,400,600,700&display=swap",
+        "Open+Sans:300,400&display=swap"
+      ]
+    },
+    //Eventually want to add Uni Neue W05 Regular, Bold, Semibold, Italic from
+    monotype: {}
+  }
 };
