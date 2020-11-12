@@ -1,6 +1,11 @@
 contacts:
-  - email: mailto:brooksztb@gmail.com
-  - twitter: https://twitter.com/zacann0n
-  - github: https://github.com/brooksztb
-  - dev: https://dev.to/zacann0n
-  - linkedin: https://www.linkedin.com/in/zachary-brooks-3b8b5b84/
+  - name: Email
+    url: mailto:brooksztb@gmail.com
+  - name: Twitter
+    url: https://twitter.com/zacann0n
+  - name: Github
+    url: https://github.com/brooksztb
+  - name: dev.to
+    url: https://dev.to/zacann0n
+  - name: Linkedin
+    url: https://www.linkedin.com/in/zachary-brooks-3b8b5b84/
