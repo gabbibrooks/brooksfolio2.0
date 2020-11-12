@@ -8,9 +8,11 @@
 export default {
   async asyncData({ $content }) {
     const homepage = await $content("homepage").fetch();
+    const contacts = await $content("data/contact").fetch();
 
     return {
-      homepage
+      homepage,
+      contacts
     };
   }
 };
