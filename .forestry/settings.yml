@@ -10,7 +10,6 @@ sections:
 - type: document
   path: content/aboutpage.md
   label: About
-  match: "**/*"
 - type: directory
   path: content/blog
   label: Blog Posts
@@ -24,7 +23,6 @@ sections:
 - type: document
   path: content/contactpage.md
   label: Contact
-  match: "**/*"
 - type: document
   path: content/data/contact.yml
   label: Contact List
