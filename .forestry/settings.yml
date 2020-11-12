@@ -4,14 +4,18 @@ auto_deploy: false
 admin_path: 
 webhook_url: 
 sections:
+- type: document
+  path: content/homepage.md
+  label: Home
 - type: directory
   path: content/blog
   label: Blog Posts
   create: documents
   match: "**/*"
 - type: document
-  path: content/homepage.md
-  label: Home
+  path: content/data/contact.yml
+  label: Contact List
+  match: "**/*"
 upload_dir: static/images
 public_path: "/images"
 front_matter_path: ''
