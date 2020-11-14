@@ -83,3 +83,5 @@ fields:
     max: 
     labelField: subtitle
   label: Education
+pages:
+- content/aboutpage.md
