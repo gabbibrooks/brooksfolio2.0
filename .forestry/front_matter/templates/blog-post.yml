@@ -8,6 +8,13 @@ fields:
 - type: textarea
   name: description
   label: Description
+  config:
+    wysiwyg: true
+    schema:
+      format: markdown
+    required: true
+  description: This ends up on summary pages, on Google, when people share your post
+    in social media.
 - name: tag
   type: tag_list
   default: []
@@ -18,14 +25,3 @@ fields:
   config:
     maxSize: 64
   label: Main Image
-- name: excerpt
-  type: textarea
-  default: ''
-  config:
-    required: true
-    wysiwyg: true
-    schema:
-      format: markdown
-  label: Excerpt
-  description: This ends up on summary pages, on Google, when people share your post
-    in social media.
