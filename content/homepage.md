@@ -5,7 +5,7 @@ description: A step by step guide to build a static site with Nuxt, the Nuxt Con
 speaking: []
 selected_work:
   projects: []
-header: Zachary Brooks, Software Developer
+header: Zachary Brooks
 introduction: ''
 
 ---
