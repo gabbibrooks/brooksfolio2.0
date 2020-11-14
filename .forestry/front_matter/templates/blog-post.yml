@@ -4,12 +4,28 @@ hide_body: false
 fields:
 - type: text
   name: title
-  label: title
+  label: Title
 - type: textarea
   name: description
-  label: description
+  label: Description
 - name: tag
   type: tag_list
   default: []
-  label: tag
+  label: Tag
   description: Tags for your blog posts to be grouped by
+- name: main_image
+  type: file
+  config:
+    maxSize: 64
+  label: Main Image
+- name: excerpt
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Excerpt
+  description: This ends up on summary pages, on Google, when people share your post
+    in social media.
