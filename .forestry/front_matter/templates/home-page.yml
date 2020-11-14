@@ -1,4 +1,48 @@
 ---
 label: Home Page
 hide_body: false
-fields: []
+fields:
+- name: header
+  type: text
+  config:
+    required: false
+  label: Header
+  description: Introductory message
+- name: introduction
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Introduction
+- name: speaking
+  type: select
+  default: []
+  config:
+    required: false
+    options: []
+    source:
+      type: pages
+      section: speaking
+      file: 
+      path: 
+  label: Speaking
+- name: selected_work
+  type: field_group
+  config: {}
+  fields:
+  - name: projects
+    type: select
+    default: []
+    config:
+      required: false
+      options: []
+      source:
+        type: pages
+        section: projects
+        file: 
+        path: 
+    label: Projects
+  label: Selected Work
