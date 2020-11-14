@@ -12,9 +12,6 @@ sections:
 - type: document
   path: content/aboutpage.md
   label: About
-- type: document
-  path: content/contactpage.md
-  label: Contact
 - type: heading
   label: Work
 - type: directory
@@ -31,6 +28,11 @@ sections:
   match: "**/*"
   templates:
   - project
+- type: directory
+  path: content/speaking
+  label: Speaking
+  create: documents
+  match: "**/*"
 - type: heading
   label: Data
 - type: document
@@ -39,7 +41,6 @@ sections:
 - type: document
   path: content/data/metadata.yml
   label: Metadata
-  match: "**/*"
 upload_dir: static/images
 public_path: "/images"
 front_matter_path: ''
