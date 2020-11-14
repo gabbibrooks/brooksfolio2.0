@@ -1,4 +1,85 @@
 ---
 label: About Page
 hide_body: true
-fields: []
+fields:
+- name: biography
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Biography
+- name: main_image
+  type: file
+  config:
+    maxSize: 64
+  label: Main Image
+- name: work_history
+  type: field_group_list
+  fields:
+  - name: position_title
+    type: text
+    config:
+      required: true
+    label: Position Title
+  - name: company_name
+    type: text
+    config:
+      required: true
+    label: Company Name
+  - name: company_url
+    type: text
+    config:
+      required: false
+    label: Company URL
+  - name: start_date
+    type: text
+    config:
+      required: true
+    label: Start Date
+    description: Should match a MMMM YYYY format
+  - name: end_date
+    type: text
+    config:
+      required: true
+    label: End Date
+    description: Should match MMMM YYYY format or 'Present'
+  config:
+    min: 
+    max: 
+    labelField: company_name
+  label: Work History
+- name: education
+  type: field_group_list
+  fields:
+  - name: title
+    type: text
+    config:
+      required: true
+    label: Title
+    description: Degree or Certification received
+  - name: subtitle
+    type: text
+    config:
+      required: true
+    label: Subtitle
+    description: Institution or School name
+  - name: start_date
+    type: text
+    config:
+      required: true
+    label: Start Date
+    description: Should match MMMM YYYY format
+  - name: end_date
+    type: text
+    config:
+      required: false
+    description: Should match MMMM YYYY format or 'Present'
+    label: End Date
+  config:
+    min: 
+    max: 
+    labelField: subtitle
+  label: Education
