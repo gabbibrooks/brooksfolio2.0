@@ -1,10 +1,12 @@
 <template>
   <div class="flex justify-center">
+    <color-mode-picker />
     <nuxt-content :document="homepage" />
   </div>
 </template>
 
 <script>
+import ColorModePicker from "@/components/ColorModePicker.vue";
 export default {
   async asyncData({ $content }) {
     const homepage = await $content("homepage").fetch();
@@ -14,6 +16,9 @@ export default {
       homepage,
       contacts
     };
+  },
+  components: {
+    ColorModePicker
   }
 };
 </script>

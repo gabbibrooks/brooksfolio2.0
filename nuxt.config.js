@@ -16,7 +16,7 @@ export default {
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [],
   colorMode: {
-    preference: "system", // default value of $colorMode.preference
+    preference: "dark", // default value of $colorMode.preference
     fallback: "dark", // fallback value if not system preference found
     hid: "nuxt-color-mode-script",
     globalName: "__NUXT_COLOR_MODE__",
@@ -37,7 +37,8 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxtjs/tailwindcss",
     "@nuxtjs/color-mode",
-    "@nuxtjs/fontawesome"
+    "@nuxtjs/fontawesome",
+    "@nuxtjs/svg"
   ],
 
   tailwindcss: {
