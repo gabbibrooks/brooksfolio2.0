@@ -15,11 +15,11 @@ export default {
     surround: {
       type: Array,
       default() {
-        return [];
+        return []
       }
     }
   }
-};
+}
 </script>
 
 <style></style>

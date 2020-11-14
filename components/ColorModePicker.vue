@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import IconLight from "@/assets/icons/light.svg?inline";
-import IconDark from "@/assets/icons/dark.svg?inline";
+import IconLight from '@/assets/icons/light.svg?inline'
+import IconDark from '@/assets/icons/dark.svg?inline'
 
 export default {
   components: {
@@ -15,21 +15,21 @@ export default {
   },
   data() {
     return {
-      color: "dark"
-    };
+      color: 'dark'
+    }
   },
   methods: {
     toggleColorMode() {
       this.$colorMode.preference =
-        this.$colorMode.value == "dark" ? "light" : "dark";
+        this.$colorMode.value == 'dark' ? 'light' : 'dark'
     }
   },
   computed: {
     icon() {
-      return `icon-${this.$colorMode.value}`;
+      return `icon-${this.$colorMode.value}`
     }
   }
-};
+}
 </script>
 
 <style></style>
