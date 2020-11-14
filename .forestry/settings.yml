@@ -4,12 +4,19 @@ auto_deploy: false
 admin_path: ''
 webhook_url: 
 sections:
+- type: heading
+  label: Pages
 - type: document
   path: content/homepage.md
   label: Home
 - type: document
   path: content/aboutpage.md
   label: About
+- type: document
+  path: content/contactpage.md
+  label: Contact
+- type: heading
+  label: Work
 - type: directory
   path: content/blog
   label: Blog Posts
@@ -24,12 +31,15 @@ sections:
   match: "**/*"
   templates:
   - project
-- type: document
-  path: content/contactpage.md
-  label: Contact
+- type: heading
+  label: Data
 - type: document
   path: content/data/contact.yml
   label: Contact List
+- type: document
+  path: content/data/metadata.yml
+  label: Metadata
+  match: "**/*"
 upload_dir: static/images
 public_path: "/images"
 front_matter_path: ''
