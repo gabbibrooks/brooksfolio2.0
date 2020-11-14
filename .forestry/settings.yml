@@ -33,6 +33,8 @@ sections:
   label: Speaking
   create: documents
   match: "**/*"
+  templates:
+  - speaking-engagement
 - type: heading
   label: Data
 - type: document
