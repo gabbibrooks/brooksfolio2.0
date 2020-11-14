@@ -41,6 +41,10 @@ sections:
   path: content/data/contact.yml
   label: Contact List
 - type: document
+  path: content/data/site.yml
+  label: Site
+  match: "**/*"
+- type: document
   path: content/data/metadata.yml
   label: Metadata
 upload_dir: ''
