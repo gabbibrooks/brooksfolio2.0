@@ -15,11 +15,15 @@ sections:
   label: Blog Posts
   create: documents
   match: "**/*"
+  templates:
+  - blog-post
 - type: directory
   path: content/projects
   label: Projects
   create: documents
   match: "**/*"
+  templates:
+  - project
 - type: document
   path: content/contactpage.md
   label: Contact
