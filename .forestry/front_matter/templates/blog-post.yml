@@ -28,3 +28,4 @@ fields:
   label: Main Image
 pages:
 - content/blog/how-to-make-taxonomy-pages-with-gridsome-and-sanity.io.md
+- content/blog/jamstack-denver-meetup-livestreaming-and-recording-setup.md
