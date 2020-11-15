@@ -15,7 +15,21 @@ biography: "How's it going? My name is Zach, and I've been working as a software
   in the beautiful Colorado mountains. Recently I've started getting into photography
   as well, which has become a new hobby of mine that I've started to really love."
 main_image: "/v1605463566/zach_on_mountain.jpg"
-work_history: []
-education: []
+work_history:
+- position_title: Software Developer II
+  company_name: Frontier Airlines
+  company_url: https://flyfrontier.com
+  start_date: February 2016
+  end_date: Present
+- position_title: Business Systems Analyst
+  company_name: Lenderlive Network Inc.
+  company_url: https://www.computershareloanservices.com/us
+  start_date: July 2015
+  end_date: February 2016
+education:
+- title: B.S. Software Engineering
+  subtitle: University of Northern Colorado
+  end_date: May 2015
+  start_date: August 2011
 
 ---
