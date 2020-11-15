@@ -17,18 +17,6 @@ fields:
     schema:
       format: markdown
   label: Introduction
-- name: speaking
-  type: select
-  default: []
-  config:
-    required: false
-    options: []
-    source:
-      type: pages
-      section: speaking
-      file: 
-      path: 
-  label: Speaking
 - name: selected_work
   type: field_group
   config: {}
