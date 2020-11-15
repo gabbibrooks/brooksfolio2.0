@@ -89,7 +89,7 @@ module.exports = function(api) {
 ...
 
 api.loadSource(({ addSchemaTypes }) => {
-addSchemaTypes(\`
+addSchemaTypes(`
     type ReferencedPost implements Node @infer {
       	id: ID!
 	    title: String
@@ -99,7 +99,7 @@ addSchemaTypes(\`
 	    _rawExcerpt: JSON
 	    path: String
 	    slug: SanitySlug
-	    categories: \[JSON\]
+	    categories: [JSON]
     }
     type ReferencedProject implements Node @infer {
 		id: ID!
@@ -109,9 +109,9 @@ addSchemaTypes(\`
 		_rawExcerpt: JSON
 		path: String
 		slug: SanitySlug
-		categories: \[JSON\]
+		categories: [JSON]
 	}
-\`)
+`)
 })
 
 ...
@@ -122,73 +122,42 @@ addSchemaTypes(\`
 
 Now that we have the reference types defined, we'll need to query Sanity for all of the types we want with references and map the responses to our newly defined types. A cool feature that we can utilize with Sanity here is \[GROQ\]([https://www.sanity.io/docs/overview-groq](https://github.com/sanity-io/gridsome-source-sanity/issues/2 "https://github.com/sanity-io/gridsome-source-sanity/issues/2")), which is Sanity's query language. What we can do with GROQ, is query the category type for all of the available categories, and join the types and any properties in the response. So for my use case in which I wanted all of the referenced \`posts\` and \`projects\` from a \`category\`, I wrote a GROQ query that returns all posts based on a \`category\` and \`categoryID\`, and where the \`post\` references the \`categoryID\`. I also return the list of the other categories on the \`post\` to match the ui component that I built to display as a post card. I used a similar query for my \`projects\` type as well.
 
-\`\`\`javascript
-
-const categoriesQuery = \`*\[_type == "category" && _id == $categoryID\] {
-
-    "posts": *\[_type == "post" && references($categoryID)\] {
-    
-    	..., categories\[\]->{_id, title, slug}
-    
-    }
-
-}\`
-
-\`\`\`
+```javascript
+const categoriesQuery = `*[_type == "category" && _id == $categoryID] {
+	"posts": *[_type == "post" && references($categoryID)] {
+		..., categories[]->{_id, title, slug}
+	}
+}`
+```
 
 With this query I get the following output as a data structure in JSON that I can use to make a \`ReferencedPost\`:
 
-\`\`\`json
-
-\[
-
-    {
-    
-    	"posts": \[
-    
-    	 	{
-    
-    			"_createdAt":"2020-04-28T18:02:39Z"
-    
-    			"_id":"0f6bb0e4-7009-4b12-9c92-0c3b28f6f1dd"
-    
-    			"_rev":"0Ox5zGUPjTF8jIyPAfinDK"
-    
-    			"_type":"post"
-    
-    			"_updatedAt":"2020-07-11T05:46:12Z"
-    
-    			"authors":\[...\]
-    
-    			"body":
-    
-    				\[0 - 50\]
-    
-    				\[50 - 100\]
-    
-    				\[100 - 135\]
-    
-    			"categories":\[...\]
-    
-    			"excerpt":\[...\]
-    
-    			"mainImage":{...}
-    
-    			"publishedAt":"2020-04-28T06:00:00.000Z"
-    
-    			"slug":{...}
-    
-    			"title":"Jamstack Denver Meetup Livestreaming and Recording Setup"
-    
-    		}	
-    
-    	\]
-    
-    }
-
-\]
-
-\`\`\`
+```json
+[
+	{
+		"posts": [
+          {
+              "_createdAt":"2020-04-28T18:02:39Z"
+              "_id":"0f6bb0e4-7009-4b12-9c92-0c3b28f6f1dd"
+              "_rev":"0Ox5zGUPjTF8jIyPAfinDK"
+              "_type":"post"
+              "_updatedAt":"2020-07-11T05:46:12Z"
+              "authors": [...]
+              "body":
+                  [0 - 50]
+                  [50 - 100]
+                  [100 - 135]
+              "categories": [...]
+              "excerpt": [...]
+              "mainImage": {...}
+              "publishedAt": "2020-04-28T06:00:00.000Z"
+              "slug": {...}
+              "title": "Jamstack Denver Meetup Livestreaming and Recording Setup"
+          }	
+		]
+	}
+]
+```
 
 This is where we need to create a new \`schemaResolver\` to map the output of the query to our new reference types. We do so by adding a collection of these new schema types, which I have called \`posts\` and \`projects\` which are both arrays of type \`ReferencedPost\` and \`ReferencedProject\` respectively. These collections are then added to the existing \`SanityCategory\` type, or whatever your category type is named, that is already a mapped data structure in Gridsome. This allows us to have access to the collections of \`posts\` and \`projects\` when we query \`allSanityCategory\` in the \`Category.vue\` template.
 
