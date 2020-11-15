@@ -9,19 +9,11 @@ main_image: "/v1605461263/caspar-camille-rubin-DrL-cwqD6tM-unsplash_hdxsx8.jpg"
 ---
 I am a co-organizer of the Jamstack Denver meetup and also the A/V guru for streaming and recording all of the talks at our meetup. We livestream our meetups on \[Twitch\]([https://www.twitch.tv/jamstackdenver](https://www.twitch.tv/jamstackdenver "https://www.twitch.tv/jamstackdenver")) and have recordings of each talk on \[YouTube\]([https://www.youtube.com/channel/UCkvjCJHilRhXoalNm9pNPYg](https://www.youtube.com/channel/UCkvjCJHilRhXoalNm9pNPYg "https://www.youtube.com/channel/UCkvjCJHilRhXoalNm9pNPYg")). After our February 2020 meetup, we got a lot of other groups and people interested in how we have things set up for recording and live streaming everything. So I thought it would be best to explain everything in a post here for others interested in streaming/recording their own meetups.
 
-I will be breaking everything down into the following sections:
-
-\- **Hardware** 
-
-\- **Software** 
-
-\- **Stream/Recording Settings**
-
-\**Hardware**
+\*_Hardware_*
 
 I'll start with the hardware I use for my setup, the reasoning for why I use what I use, and then go into a recommended set of hardware you'll need to get started.
 
-\**My Setup**
+\*_My Setup_*
 
 \- \[2019 Macbook Pro 16 inch\]([https://www.apple.com/us-hed/shop/buy-mac/macbook-pro/16-inch-space-gray-2.3ghz-8-core-processor-1tb](https://www.apple.com/us-hed/shop/buy-mac/macbook-pro/16-inch-space-gray-2.3ghz-8-core-processor-1tb "https://www.apple.com/us-hed/shop/buy-mac/macbook-pro/16-inch-space-gray-2.3ghz-8-core-processor-1tb"))
 
@@ -69,7 +61,7 @@ Then we get into audio hardware, which I would argue is more important than vide
 
 Finally, I have an Elgato Stream Deck mini to control things in OBS,  which i'll get into later, but this is just an extra I like to have so I don't have to jump between OBS scenes with my mouse. With all of that said, this is what I would recommend for an ideal setup to get yourself started with a couple of high-end options thrown in as well.
 
-\**Recommended Setup**
+\*_Recommended Setup_*
 
 \- \[4-6 core CPU Computer Recommended Specs\]([https://pcpartpicker.com/user/Zacann0n/saved/#view=dWQ68d](https://pcpartpicker.com/user/Zacann0n/saved/#view=dWQ68d "https://pcpartpicker.com/user/Zacann0n/saved/#view=dWQ68d"))
 
@@ -94,13 +86,13 @@ or
 
 \- \[Non-Wireless Microphones: Audio Technica ATR2100\]([https://www.amazon.com/Audio-Technica-ATR2100-USB-Cardioid-Dynamic-Microphone/dp/B004QJOZS4/ref=sr_1_5?crid=24B6QEH8EBILE&keywords=audio+technica+dynamic+microphone&qid=1581630659&sprefix=audio+technica+dynamic%2Caps%2C186&sr=8-5](https://www.amazon.com/Audio-Technica-ATR2100-USB-Cardioid-Dynamic-Microphone/dp/B004QJOZS4/ref=sr_1_5?crid=24B6QEH8EBILE&keywords=audio+technica+dynamic+microphone&qid=1581630659&sprefix=audio+technica+dynamic%2Caps%2C186&sr=8-5 "https://www.amazon.com/Audio-Technica-ATR2100-USB-Cardioid-Dynamic-Microphone/dp/B004QJOZS4/ref=sr_1_5?crid=24B6QEH8EBILE&keywords=audio+technica+dynamic+microphone&qid=1581630659&sprefix=audio+technica+dynamic%2Caps%2C186&sr=8-5"))
 
-  or
+or
 
 \- \[Wireless Microphones: innopow Dual Wireless Microphone System\]([https://www.amazon.com/innopow-80-Channel-Microphone-Interference-Continuous/dp/B0749L15PF?tag=musiccritic-search-20](https://www.amazon.com/innopow-80-Channel-Microphone-Interference-Continuous/dp/B0749L15PF?tag=musiccritic-search-20 "https://www.amazon.com/innopow-80-Channel-Microphone-Interference-Continuous/dp/B0749L15PF?tag=musiccritic-search-20"))
 
 \- \[2 XLR Input Channel Mixer: Behringer Xenyx Q802USB\]([https://www.amazon.com/Behringer-Q802USB-Premium-8-Input-Interface/dp/B008O517IC/ref=sr_1_4?keywords=usb+audio+mixer&qid=1581634566&sr=8-4](https://www.amazon.com/Behringer-Q802USB-Premium-8-Input-Interface/dp/B008O517IC/ref=sr_1_4?keywords=usb+audio+mixer&qid=1581634566&sr=8-4 "https://www.amazon.com/Behringer-Q802USB-Premium-8-Input-Interface/dp/B008O517IC/ref=sr_1_4?keywords=usb+audio+mixer&qid=1581634566&sr=8-4"))
 
-  or
+or
 
 \- \[4 XLR Input Channel Mixer: Behringer Xenyx X1204USB\]([https://www.amazon.com/Behringer-X1204USB-Premium-12-Input-Interface/dp/B0039PPW60/ref=sr_1_7?keywords=usb+audio+mixer&qid=1581634566&sr=8-7](https://www.amazon.com/Behringer-X1204USB-Premium-12-Input-Interface/dp/B0039PPW60/ref=sr_1_7?keywords=usb+audio+mixer&qid=1581634566&sr=8-7 "https://www.amazon.com/Behringer-X1204USB-Premium-12-Input-Interface/dp/B0039PPW60/ref=sr_1_7?keywords=usb+audio+mixer&qid=1581634566&sr=8-7"))
 
@@ -114,7 +106,7 @@ or
 
 \- Micro HDMI to HDMI Cable if using a DSLR/Mirrorless Camera
 
-\**Software**
+\*_Software_*
 
 Now, this is where things can get a little tricky, and where a lot of trial and error usually occurs. If you're planning to stream and record, or even capture your own desktop image and audio, Windows based computers make this part a lot easier to setup. You can get the exact same results with Mac OS, but you may have a couple of extra steps and things to know about.
 
@@ -122,7 +114,7 @@ If you plan to just stream, you can get away with just letting the service handl
 
 Here is all of the software I use to stream and record.
 
-\**My Setup**
+\*_My Setup_*
 
 \- \[Streaming/Recording: Open Broadcaster Software (OBS)\]([https://obsproject.com/](https://obsproject.com/ "https://obsproject.com/"))
 
@@ -144,11 +136,11 @@ Handbrake is an open-source video transcoding software that allows you to conver
 
 Finally, I also like create consistent thumbnails for the videos so that viewers know exactly what the talks are about and I use Affinity Photo to do this. It's a cheaper alternative to Photoshop but has all of the same features. I'd recommend a consistent thumbnail format that matches your group's branding.
 
-\**Stream/Recording Settings**
+\*_Stream/Recording Settings_*
 
 The last part I want to go over is the stream and recording settings I use for OBS, and mention some additional resources if you want to learn more about streaming technology and software. There's a lot you can do with OBS, and I am by no means an expert with it and would highly recommend that you do additional research about optimizing your streaming settings. One channel I recommend is \[EposVox\]([https://www.youtube.com/eposvox](https://www.youtube.com/eposvox "https://www.youtube.com/eposvox")) who has a huge OBS master class that I watched to get further knowledge of all the OBS settings. Nonetheless, let's dive into my OBS settings that should get you started with a good quality stream. The following are the settings I currently have configured in the OBS settings menu.
 
-\**Video**
+\*_Video_*
 
 \- Base Canvas Resolution: 1920x1080
 
@@ -158,7 +150,7 @@ The last part I want to go over is the stream and recording settings I use for O
 
 \- Common FPS Value: 30
 
-\**Audio**
+\*_Audio_*
 
 \- Sample Rate: 48kHz
 
@@ -168,85 +160,50 @@ The last part I want to go over is the stream and recording settings I use for O
 
 \- Mic/Auxiliary Audio 2: USB Audio Codec (USB Mixer Audio)
 
-\**Output**
+\*_Output_*
 
 \- Output Mode: Advanced
 
-  - **Streaming Tab**
-
-      - Audio Track: 1
-
-      - Encoder: x264
-
-      - Enforce streaming service encoder settings: Checked
-
-      - Rescale Output: Unchecked
-
-      - Rate Control: CBR
-
-      - Bitrate: 3800 kbps
-
-      - Use Custom Buffer Size: Unchecked
-
-      - Keyframe Interval: 2
-
-      - CPU Usage Preset: Fast
-
-      - Profile: Main
-
-      - Tune: none
-
-      - x264 options: Left Blank
-
-  - **Recording Tab**
-
-      - Type: Standard
-
-      - Recording Path: Wherever you want your recordings to go
-
-      - Generate File Name without Space: Checked
-
-      - Recording Format: mkv
-
-      - Audio Track: Only 2 Checked
-
-      - Encoder: Apple VT H264 Hardware Encoder, you can use the same encoder as your stream settings if you like
-
-      - Rescale Output: Unchecked
-
-      - Customer Muxer Settings: Left Blank
-
-      - Bitrate: 15000 kbps, bitrate based on your encoder capability for recording
-
-      - Limit Bitrate: Unchecked
-
-      - Keyframe Interval: 2
-
-      - Profile: high
-
-      - User B-Frames: Checked
-
-  - **Audio Tab**
-
-      - Track 1
-
-        - Audio Bitrate: 160
-
-        - Name: Twitch Downstream
-
-      - Track 2 
-
-        - Audio Bitrate: 320 
-
-        - Name: Recording Downstream
-
-  - **Replay Buffer Tab**
-
-      - Enable Replay Buffer: Unchecked
+* **Streaming Tab**
+  * Audio Track: 1
+  * Encoder: x264
+  * Enforce streaming service encoder settings: Checked
+  * Rescale Output: Unchecked
+  * Rate Control: CBR
+  * Bitrate: 3800 kbps
+  * Use Custom Buffer Size: Unchecked
+  * Keyframe Interval: 2
+  * CPU Usage Preset: Fast
+  * Profile: Main
+  * Tune: none
+  * x264 options: Left Blank
+* **Recording Tab**
+  * Type: Standard
+  * Recording Path: Wherever you want your recordings to go
+  * Generate File Name without Space: Checked
+  * Recording Format: mkv
+  * Audio Track: Only 2 Checked
+  * Encoder: Apple VT H264 Hardware Encoder, you can use the same encoder as your stream settings if you like
+  * Rescale Output: Unchecked
+  * Customer Muxer Settings: Left Blank
+  * Bitrate: 15000 kbps, bitrate based on your encoder capability for recording
+  * Limit Bitrate: Unchecked
+  * Keyframe Interval: 2
+  * Profile: high
+  * User B-Frames: Checked
+* **Audio Tab**
+  * Track 1
+    * Audio Bitrate: 160
+    * Name: Twitch Downstream
+  * Track 2
+    * Audio Bitrate: 320
+    * Name: Recording Downstream
+* **Replay Buffer Tab**
+  * Enable Replay Buffer: Unchecked
 
 A couple of things I want to point out. If you are streaming for the first time, I would aim to have an output resolution of 720p 60fps to start with, since you only need about 5mbps upload for a super consistent stream at a fast CPU usage preset. Once you gauge your bandwidth limit at the place you're recording then you can look to increasing the quality or usage preset. You want your viewers to have a good viewing experience though so 720p60 is more than sufficient for getting started. I upped my resolution to 1080p30 recently to gain the benefits of my recording camera and found that I had the bandwidth available to record with those settings and still have a stable stream. Also, be sure to set your canvas to a scaled resolution that matches the layout you want to use. If you plan on having a 16:9 layout, then use a 1920x1080 canvas or similar and scale your output resolution appropriately.
 
-\**Conclusion**
+\*_Conclusion_*
 
 I hope this little guide helps and that you too can start recording/streaming great content from your events or meetups. If you have any other questions feel free to get in touch with me on Twitter. I wanted to make this guide to give some others direction since A/V setups can be tricky at live events. Don't stress if the first recording or live stream isn't 100% where you would like it, it took me a lot of trial and error to finally get to a spot where I am happy and really proud of the content we produce now at Jamstack Denver.
 
