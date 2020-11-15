@@ -25,4 +25,5 @@ fields:
   label: Link
   description: Link to the talk or speaking engagement
 pages:
+- content/speaking/front-range-front-end-june-2020.md
 - content/speaking/jamstack-denver-december-2019.md
