@@ -28,8 +28,9 @@ Since we cant utilize the \`belongsTo\` feature on in our Category template page
 ```javascript
 //gridsome.server.js
 module.exports = function(api) {
+
 api.createPages(async ({ createPage, graphql }) => {
-    const { data } = await graphql(\`
+    const { data } = await graphql(`
       {
         allSanityCategory {
           edges {
@@ -42,13 +43,13 @@ api.createPages(async ({ createPage, graphql }) => {
           }
         }
       }
-    \`)
+    `)
 
     // If there are any errors in the query, cancel the build and tell us
     if (data.errors) throw data.errors
 
     // Let‘s gracefully handle if allSanityCategory is null
-    const categoryEdges = (data.allSanityCategory || {}).edges || \[\]
+    const categoryEdges = (data.allSanityCategory || {}).edges || []
     categoryEdges
       // Loop through the category nodes, but don't return anything
       .forEach(({ node }) => {
@@ -64,7 +65,7 @@ api.createPages(async ({ createPage, graphql }) => {
         // Create the page using the URL path and the template file, and pass down the id
         // that we can use to query for the right category in the template file
         createPage({
-          path: \`/categories/${slug.current}\`,
+          path: `/categories/${slug.current}`,
           component: './src/templates/Category.vue',
           context: { id }
         })
@@ -85,35 +86,32 @@ Now you may also be asking, why can't I use the existing types I already have? T
 //gridsome.server.js
 
 module.exports = function(api) {
-
 ...
-
-api.loadSource(({ addSchemaTypes }) => {
-addSchemaTypes(`
-    type ReferencedPost implements Node @infer {
-      	id: ID!
-	    title: String
-	    publishedAt: Date
-	    mainImage: SanityMainImage
-	    _rawBody: JSON
-	    _rawExcerpt: JSON
-	    path: String
-	    slug: SanitySlug
-	    categories: [JSON]
-    }
-    type ReferencedProject implements Node @infer {
-		id: ID!
-		title: String
-		publishedAt: Date
-		mainImage: SanityMainImage
-		_rawExcerpt: JSON
-		path: String
-		slug: SanitySlug
-		categories: [JSON]
-	}
-`)
-})
-
+  api.loadSource(({ addSchemaTypes }) => {
+    addSchemaTypes(`
+        type ReferencedPost implements Node @infer {
+            id: ID!
+            title: String
+            publishedAt: Date
+            mainImage: SanityMainImage
+            _rawBody: JSON
+            _rawExcerpt: JSON
+            path: String
+            slug: SanitySlug
+            categories: [JSON]
+        }
+        type ReferencedProject implements Node @infer {
+            id: ID!
+            title: String
+            publishedAt: Date
+            mainImage: SanityMainImage
+            _rawExcerpt: JSON
+            path: String
+            slug: SanitySlug
+            categories: [JSON]
+        }
+    `)
+  })
 ...
 }
 ```
@@ -163,147 +161,81 @@ This is where we need to create a new \`schemaResolver\` to map the output of th
 
 What we'll also need to do is to import the \`@sanity/client\` module into \`gridsome.server.js\` so that we can interface with our Sanity project and make the necessary GROQ queries. We'll need to initialize it with a Sanity \`projectId\`, and the \`dataset\`, which is the name of the dataset you want to query. These values are unique to your Sanity project and can be viewed from the Sanity management dashboard if you don't have the project id already. I have mine set right now in a separate configuration file but this could also be done with an environment variable. From there, we can create the schema resolvers, make the GROQ queries, and map the data to the collection types as such:
 
-\`\`\`javascript
-
+```javascript
 //gridsome.server.js
 
 const clientConfig = require('./client-config')
-
 const sanityClient = require('@sanity/client')
-
 const client = sanityClient({
-
-projectId: clientConfig.sanity.projectId,
-
-dataset: clientConfig.sanity.dataset,
-
-useCdn: true // \`false\` if you want to ensure fresh data
-
+  projectId: clientConfig.sanity.projectId,
+  dataset: clientConfig.sanity.dataset,
+  useCdn: true // `false` if you want to ensure fresh data
 })
 
 module.exports = function(api) {
+  api.loadSource(({ addSchemaResolvers }) => {
+      addSchemaResolvers({
+          SanityCategory: {
+              posts: {
+                type: ['ReferencedPost'],
+                async resolve(obj) {
+                  const posts = []
+                  const categoriesQuery =
+                    '*[_type == "category" && _id == $categoryID] {"posts": *[_type == "post" && references($categoryID)]{..., categories[]->{_id, title, slug}}}'
+                  const categoriesParams = { categoryID: obj._id }
 
-    api.loadSource(({ addSchemaResolvers }) => {
-    
-        addSchemaResolvers({
-    
-          	SanityCategory: {
-    
-    	        posts: {
-    
-    	          type: \['ReferencedPost'\],
-    
-    	          async resolve(obj) {
-    
-    	            const posts = \[\]
-    
-    	            const categoriesQuery =
-    
-    	              '*\[_type == "category" && _id == $categoryID\] {"posts": *\[_type == "post" && references($categoryID)\]{..., categories\[\]->{_id, title, slug}}}'
-    
-    	            const categoriesParams = { categoryID: obj._id }
-    
-    	            await client.fetch(categoriesQuery, categoriesParams).then(category => {
-    
-    	              category.forEach(categoryPosts => {
-    
-    	                categoryPosts.posts.forEach(post => {
-    
-    	                  //Dynamically set the variables that are mapped by gridsome
-    
-    	                  post\['id'\] = post._id
-    
-    	                  post\['_rawBody'\] = post.body
-    
-    	                  post\['_rawExcerpt'\] = post.excerpt
-    
-    	                  post\['categories'\] = post.categories.map(category => ({
-    
-    	                    id: category._id,
-    
-    	                    title: category.title,
-    
-    	                    slug: category.slug
-    
-    	                  }))
-    
-    	                  post\['path'\] = \`/blog/${post.slug.current}\`
-    
-    	                  posts.push(post)
-    
-    	                })
-    
-    	              })
-    
-    	            })
-    
-                	return posts
-    
-            	  }
-    
-    	        },
-    
-    	        projects: {
-    
-    	          type: \['ReferencedProject'\],
-    
-    	          async resolve(obj) {
-    
-    	            const projects = \[\]
-    
-    	            const categoriesQuery =
-    
-    	              '*\[_type == "category" && _id == $categoryID\] {"projects": *\[_type == "project" && references($categoryID)\]{..., categories\[\]->{_id, title, slug}}}'
-    
-    	            const categoriesParams = { categoryID: obj._id }
-    
-    	            await client.fetch(categoriesQuery, categoriesParams).then(category => {
-    
-    	              category.forEach(categoryProjects => {
-    
-    	                categoryProjects.projects.forEach(project => {
-    
-    	                  //Dynamically set the variables that are mapped by gridsome
-    
-    	                  project\['id'\] = project._id
-    
-    	                  project\['_rawExcerpt'\] = project.excerpt
-    
-    	                  project\['categories'\] = project.categories.map(category => ({
-    
-    	                    id: category._id,
-    
-    	                    title: category.title,
-    
-    	                    slug: category.slug
-    
-    	                  }))
-    
-    	                  project\['path'\] = \`/projects/${project.slug.current}\`
-    
-    	                  projects.push(project)
-    
-    	                })
-    
-    	              })
-    
-    	            })
-    
-    	            return projects
-    
-    	          }
-    
-            	}
-    
-      		}
-    
-    	})
-    
-    })
+                  await client.fetch(categoriesQuery, categoriesParams).then(category => {
+                    category.forEach(categoryPosts => {
+                      categoryPosts.posts.forEach(post => {
+                        //Dynamically set the variables that are mapped by gridsome
+                        post['id'] = post._id
+                        post['_rawBody'] = post.body
+                        post['_rawExcerpt'] = post.excerpt
+                        post['categories'] = post.categories.map(category => ({
+                          id: category._id,
+                          title: category.title,
+                          slug: category.slug
+                        }))
+                        post['path'] = `/blog/${post.slug.current}`
+                        posts.push(post)
+                      })
+                    })
+                  })
+                  return posts
+                }
+              },
+              projects: {
+                type: ['ReferencedProject'],
+                async resolve(obj) {
+                  const projects = []
+                  const categoriesQuery =
+                    '*[_type == "category" && _id == $categoryID] {"projects": *[_type == "project" && references($categoryID)]{..., categories[]->{_id, title, slug}}}'
+                  const categoriesParams = { categoryID: obj._id }
 
+                  await client.fetch(categoriesQuery, categoriesParams).then(category => {
+                    category.forEach(categoryProjects => {
+                      categoryProjects.projects.forEach(project => {
+                        //Dynamically set the variables that are mapped by gridsome
+                        project['id'] = project._id
+                        project['_rawExcerpt'] = project.excerpt
+                        project['categories'] = project.categories.map(category => ({
+                          id: category._id,
+                          title: category.title,
+                          slug: category.slug
+                        }))
+                        project['path'] = `/projects/${project.slug.current}`
+                        projects.push(project)
+                      })
+                    })
+                  })
+                  return projects
+                }
+              }
+          }
+      })
+  })
 }
-
-\`\`\`
+```
 
 A couple of other things to note in the code above, you may have noticed on lines 16 and 43, that when we resolve the type, we pass in an \`obj\` argument. What that \`obj\` value is, is a \`SanityCategory\` object that the \`schemaResolvers\` are essentially looping through each existing \`SanityCategory\` during build time so that they are resolved with a \`posts\` and \`projects\` collection. The resolve function also needs to be async in this case because each \`SanityCategory\` is making a fetch request to our Sanity dataset with the passed GROQ queries. The \`categoriesParams\` are also an object with defined parameters that are passed into GROQ queries with the \`$\` attribute.
 
@@ -313,169 +245,92 @@ Once we have the schema built, we can now access a category's referenced content
 
 \`\`\`vue
 
-//templates/Category.vue
-
-<template>
-
-...
-
-</template>
-
-<script>
-
-...
-
-</script>
-
-<page-query>
-
-query Category ($id: ID!) {
-
-metadata {
-
-    sanityOptions {
+    //templates/Category.vue
     
-      projectId
+    <template>
+    ...
+    </template>
     
-      dataset
+    <script>
+    ...
+    </script>
     
-    }
-
-}
-
-category: sanityCategory(id: $id) {
-
-    id
+    <page-query>
     
-    title
-    
-    posts {
-    
-      id
-    
-      title
-    
-      path
-    
-      publishedAt(format: "MMMM D YYYY")
-    
-      _rawExcerpt
-    
-      _rawBody
-    
-      categories
-    
-      mainImage {
-    
-        asset {
-    
-          _id
-    
-          url
-    
+    query Category ($id: ID!) {
+      metadata {
+        sanityOptions {
+          projectId
+          dataset
         }
-    
-        caption
-    
-        alt
-    
-        hotspot {
-    
-          x
-    
-          y
-    
-          height
-    
-          width
-    
-        }
-    
-        crop {
-    
-          top
-    
-          bottom
-    
-          left
-    
-          right
-    
-        }
-    
       }
-    
-    }
-    
-    projects {
-    
-      id
-    
-      title
-    
-      path
-    
-      publishedAt(format: "MMMM D YYYY")
-    
-      _rawExcerpt
-    
-      categories
-    
-      mainImage {
-    
-        asset {
-    
-          _id
-    
-          url
-    
+      category: sanityCategory(id: $id) {
+        id
+        title
+        posts {
+          id
+          title
+          path
+          publishedAt(format: "MMMM D YYYY")
+          _rawExcerpt
+          _rawBody
+          categories
+          mainImage {
+            asset {
+              _id
+              url
+            }
+            caption
+            alt
+            hotspot {
+              x
+              y
+              height
+              width
+            }
+            crop {
+              top
+              bottom
+              left
+              right
+            }
+          }
         }
-    
-        caption
-    
-        alt
-    
-        hotspot {
-    
-          x
-    
-          y
-    
-          height
-    
-          width
-    
+        projects {
+          id
+          title
+          path
+          publishedAt(format: "MMMM D YYYY")
+          _rawExcerpt
+          categories
+          mainImage {
+            asset {
+              _id
+              url
+            }
+            caption
+            alt
+            hotspot {
+              x
+              y
+              height
+              width
+            }
+            crop {
+              top
+              bottom
+              left
+              right
+            }
+          }
         }
-    
-        crop {
-    
-          top
-    
-          bottom
-    
-          left
-    
-          right
-    
-        }
-    
       }
-    
     }
-
-}
-
-}
-
-</page-query>
-
-<style>
-
-...
-
-</style>
-
-\`\`\`
+    </page-query>
+    
+    <style>
+    ...
+    </style>
 
 and this is the result I get when I go to a \`/categories/twitch\` page. I should note that in this example that the twitch category only has a single referenced blog post and no projects.
 
