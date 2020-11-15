@@ -24,3 +24,5 @@ fields:
     required: true
   label: Link
   description: Link to the talk or speaking engagement
+pages:
+- content/speaking/jamstack-denver-december-2019.md
