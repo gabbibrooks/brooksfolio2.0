@@ -50,7 +50,9 @@ export default {
   content: {
     markdown: {
       prism: {
-        theme: 'prism-themes/themes/prism-material-oceanic.css'
+        //decide between the code highlighter themes
+        // theme: 'prism-themes/themes/prism-shades-of-purple.css'
+        theme: 'prism-themes/themes/prism-nord.css'
       }
     }
   },

@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import IconLight from '@/assets/icons/light.svg?inline'
-import IconDark from '@/assets/icons/dark.svg?inline'
+import IconLight from '@/assets/images/icons/light.svg?inline'
+import IconDark from '@/assets/images/icons/dark.svg?inline'
 
 export default {
   components: {

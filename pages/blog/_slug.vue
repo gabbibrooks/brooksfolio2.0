@@ -1,29 +1,31 @@
 <template>
   <div>
-    <nuxt-content :document="post" />
+    <article class="prose">
+      <nuxt-content :document="post" />
+    </article>
 
     <prev-next :surround="surround" />
   </div>
 </template>
 
 <script>
-import PrevNext from "~/components/PrevNext";
+import PrevNext from '~/components/PrevNext'
 
 export default {
   components: {
     PrevNext
   },
   async asyncData({ $content, params }) {
-    const post = await $content("blog", params.slug).fetch();
-    const surround = await $content("blog")
-      .sortBy("createdAt", "asc")
-      .only(["title", "path", "createdAt"])
+    const post = await $content('blog', params.slug).fetch()
+    const surround = await $content('blog')
+      .sortBy('createdAt', 'asc')
+      .only(['title', 'path', 'createdAt'])
       .surround(post.slug)
-      .fetch();
+      .fetch()
 
-    return { post, surround };
+    return { post, surround }
   }
-};
+}
 </script>
 
 <style></style>

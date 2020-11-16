@@ -19,7 +19,7 @@
   --color-text-primary: #c6d0eb;
   --color-text-primary--muted: rgba(255, 255, 255, 0.6);
   /* --color-text-secondary: #b3b3b3; */
-  --color-text-secondary: #718096;
+  --color-text-secondary: theme('colors.gray.600');
   --color-text-tertiary: #c59726;
   --color-text-inverse: black;
   --color-text-success: #8cda93;
@@ -53,7 +53,7 @@
 
   --color-text-primary: black;
   --color-text-primary--muted: rgba(0, 0, 0, 0.6);
-  --color-text-secondary: rgba(0, 0, 0, 0.87);
+  --color-text-secondary: #200c53;
   --color-text-tertiary: #002470;
   --color-text-inverse: #ffffff;
   --color-text-success: #36a93f;

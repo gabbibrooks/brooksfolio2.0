@@ -1,6 +1,8 @@
 <template>
   <div>
-    <nuxt-content :document="project" />
+    <article class="prose">
+      <nuxt-content :document="project" />
+    </article>
 
     <prev-next :surround="surround" />
   </div>
