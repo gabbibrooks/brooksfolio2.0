@@ -7,6 +7,8 @@ description: The tools and setup we use at Jamstack Denver to record and stream 
 main_image: "/v1605461263/caspar-camille-rubin-DrL-cwqD6tM-unsplash_hdxsx8.jpg"
 
 ---
+_Originally Published April 28, 2020_
+
 I am a co-organizer of the Jamstack Denver meetup and also the A/V guru for streaming and recording all of the talks at our meetup. We livestream our meetups on [Twitch](https://www.twitch.tv/jamstackdenver) and have recordings of each talk on [YouTube](https://www.youtube.com/channel/UCkvjCJHilRhXoalNm9pNPYg). After our February 2020 meetup, we got a lot of other groups and people interested in how we have things set up for recording and live streaming everything. So I thought it would be best to explain everything in a post here for others interested in streaming/recording their own meetups.
 
 ## **Hardware**
@@ -109,8 +111,6 @@ The last part I want to go over is the stream and recording settings I use for O
 ### Output
 
 * Output Mode: Advanced
-
-
 * **Streaming Tab**
   * Audio Track: 1
   * Encoder: x264
