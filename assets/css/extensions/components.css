@@ -22,8 +22,12 @@
   }
 }
 
+.prose {
+  color: var('--color-text-primary');
+}
+
 .prose code {
-  @apply bg-code text-primary rounded max-w-full text-sm p-1;
+  @apply max-w-full p-1 text-sm font-semibold rounded bg-code text-primary;
   color: #f7fafc;
 }
 

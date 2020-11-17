@@ -1,6 +1,5 @@
 <template>
   <div class="flex justify-center text-secondary">
-    <color-mode-picker />
     <nuxt-content :document="homepage" />
   </div>
 </template>

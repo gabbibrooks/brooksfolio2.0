@@ -78,7 +78,7 @@ export default {
   webfontloader: {
     google: {
       families: [
-        'Cabin:300,400,600,700&display=swap',
+        'Varela:300,400,600,700&display=swap',
         'Open+Sans:300,400&display=swap'
       ]
     },

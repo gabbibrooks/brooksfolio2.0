@@ -17,7 +17,8 @@ module.exports = {
       tertiary: 'var(--color-bg-tertiary)',
       inverse: 'var(--color-bg-inverse)',
       code: 'var(--color-bg-code)',
-      accent: 'var(--color-primary)'
+      accent: 'var(--color-primary)',
+      navigation: 'var(--color-bg-navigation)'
     }),
     textColor: theme => ({
       initial: 'var(--color-primary)',
@@ -27,6 +28,7 @@ module.exports = {
       'internal-link': 'var(--color-text-internal-link)',
       secondary: 'var(--color-text-secondary)',
       tertiary: 'var(--color-text-tertiary)',
+      nav: 'var(--color-text-nav)',
       inverse: 'var(--color-text-inverse)',
       success: 'var(--color-text-success)',
       error: 'var(--color-text-error)'
