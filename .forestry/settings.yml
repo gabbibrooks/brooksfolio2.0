@@ -22,7 +22,7 @@ sections:
   templates:
   - blog-post
 - type: directory
-  path: content/projects
+  path: content/work/projects
   label: Projects
   create: documents
   match: "**/*"
