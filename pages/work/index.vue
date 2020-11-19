@@ -14,7 +14,7 @@
 <script>
 export default {
   async asyncData({ $content }) {
-    const projects = await $content('projects')
+    const projects = await $content('work/projects')
       .only(['path', 'title', 'createdAt', 'updatedAt'])
       .fetch()
 

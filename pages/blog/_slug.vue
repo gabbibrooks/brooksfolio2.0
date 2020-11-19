@@ -15,6 +15,7 @@ export default {
   components: {
     PrevNext
   },
+  layout: 'content',
   async asyncData({ $content, params }) {
     const post = await $content('blog', params.slug).fetch()
     const surround = await $content('blog')

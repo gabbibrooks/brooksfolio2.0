@@ -1,16 +1,14 @@
 <template>
-  <div>
-    <nuxt-content :document="aboutpage" />
-  </div>
+  <div></div>
 </template>
 
 <script>
 export default {
   async asyncData({ $content }) {
-    const aboutpage = await $content('aboutpage').fetch()
+    const speakingEngagements = await $content('speaking').fetch()
 
     return {
-      aboutpage
+      speakingEngagements
     }
   }
 }

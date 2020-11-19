@@ -126,19 +126,12 @@ module.exports = {
     }
   },
   variants: {
-    backgroundColor: [
-      'responsive',
-      'hover',
-      'focus',
-      'active',
-      'before',
-      'after'
-    ],
+    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
     transitionProperty: ['responsive', 'hover', 'focus'],
     transitionDuration: ['responsive', 'hover', 'focus'],
     margin: ['responsive', 'hover', 'first']
   },
-  plugins: [require('tailwindcss-plugin-content')],
+  plugins: [],
   purge: {
     enabled: process.env.NODE_ENV === 'production',
     content: [

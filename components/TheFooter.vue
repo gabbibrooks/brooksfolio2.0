@@ -1,5 +1,5 @@
 <template>
-  <footer class="relative opacity-75">
+  <footer class="relative w-full opacity-75">
     <div class="bg-navigation">
       <div
         class="max-w-6xl px-4 py-6 mx-auto sm:px-6 md:flex md:items-center md:justify-between lg:px-8"

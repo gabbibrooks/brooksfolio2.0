@@ -18,8 +18,7 @@
     "@nuxtjs/fontawesome": "^1.1.2",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6",
-    "prism-themes": "^1.5.0",
-    "tailwindcss-plugin-content": "^1.0.4"
+    "prism-themes": "^1.5.0"
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^2.0.0",

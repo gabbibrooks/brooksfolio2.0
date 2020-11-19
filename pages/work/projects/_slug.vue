@@ -15,9 +15,10 @@ export default {
   components: {
     PrevNext
   },
+  layout: 'content',
   async asyncData({ $content, params }) {
-    const project = await $content('projects', params.slug).fetch()
-    const surround = await $content('projects')
+    const project = await $content('work/projects', params.slug).fetch()
+    const surround = await $content('work/projects')
       .sortBy('createdAt', 'asc')
       .only(['title', 'path', 'createdAt'])
       .surround(project.slug)
