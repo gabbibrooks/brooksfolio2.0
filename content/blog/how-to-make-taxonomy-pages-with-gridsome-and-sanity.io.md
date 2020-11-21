@@ -9,8 +9,6 @@ description: Taxonomy pages are a great way to group your site's content togethe
 main_image: "/v1605413423/gridsome_sanity_combo.png"
 
 ---
-_Originally Published August 28, 2020_
-
 Taxonomy pages are a great way to group your site's content through reference tags or categories. For my personal site, I have been using [Gridsome](https://gridsome.org), a static site generator, and [Sanity](https://sanity.io) for my structured content. It's been a great experience using both of these tools so far and I wanted to implement taxonomy pages for my site. Looking into it, Gridsome already supports this feature out of the box by referencing different content nodes and references these different content types with a \`belongsTo\` node. Ok great! Looks like this should be pretty straight forward then.
 
 ## The Problem
