@@ -94,21 +94,21 @@ Finally, I also like create consistent thumbnails for the videos so that viewers
 
 The last part I want to go over is the stream and recording settings I use for OBS, and mention some additional resources if you want to learn more about streaming technology and software. There's a lot you can do with OBS, and I am by no means an expert with it and would highly recommend that you do additional research about optimizing your streaming settings. One channel I recommend is [EposVox](https://www.youtube.com/eposvox) who has a huge OBS master class that I watched to get further knowledge of all the OBS settings. Nonetheless, let's dive into my OBS settings that should get you started with a good quality stream. The following are the settings I currently have configured in the OBS settings menu.
 
-### Video
+**Video**
 
 * Base Canvas Resolution: 1920x1080
 * Output Scaled Resolution: 1920x1080
 * Downscale Filter: Bicubic (Sharpened Scaling, 16 samples)
 * Common FPS Value: 30
 
-### Audio
+**Audio**
 
 * Sample Rate: 48kHz
 * Channel: Stereo
 * Mic/Auxiliary Audio: iShowU Audio Capture (For Desktop sound capturing)
 * Mic/Auxiliary Audio 2: USB Audio Codec (USB Mixer Audio)
 
-### Output
+**Output**
 
 * Output Mode: Advanced
 * **Streaming Tab**
