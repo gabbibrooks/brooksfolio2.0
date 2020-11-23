@@ -1,7 +1,6 @@
 ---
 tag:
 - Gridsome
-- Sanity.io
 title: How to Make Taxonomy Pages with Gridsome and Sanity.io
 description: Taxonomy pages are a great way to group your site's content together
   through reference tags or categories. This is a walkthrough of how to build them
