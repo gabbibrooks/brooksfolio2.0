@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="fixed top-0 left-0 right-0 w-full leading-8 shadow z-1000 bg-navigation text-nav"
+    class="fixed top-0 left-0 right-0 w-full leading-8 z-1000 bg-navigation text-nav"
   >
     <a href="#content" id="skip-navigation" class="sr-only">Skip to Content</a>
     <div

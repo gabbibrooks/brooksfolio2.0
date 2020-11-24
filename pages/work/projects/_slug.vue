@@ -1,6 +1,6 @@
 <template>
   <div>
-    <article class="prose">
+    <article class="prose lg:prose-xl">
       <nuxt-content :document="project" />
     </article>
 
