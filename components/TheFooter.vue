@@ -12,7 +12,7 @@
             title="Twitter Profile"
             class="mx-2 my-2 nav-link text-primary--muted hover:text-primary"
           >
-            <font-awesome-icon :icon="['fab', 'twitter']" size="lg" />
+            <fa :icon="['fab', 'twitter']" size="lg" />
           </a>
           <a
             href="https://github.com/brooksztb"
@@ -21,7 +21,7 @@
             title="Github Profile"
             class="mx-2 my-2 nav-link text-primary--muted hover:text-primary"
           >
-            <font-awesome-icon :icon="['fab', 'github']" size="lg" />
+            <fa :icon="['fab', 'github']" size="lg" />
           </a>
           <a
             href="https://www.linkedin.com/in/zachary-brooks-3b8b5b84/"
@@ -30,7 +30,7 @@
             title="Linkedin Profile"
             class="mx-2 my-2 nav-link text-primary--muted hover:text-primary lg:mr-0"
           >
-            <font-awesome-icon :icon="['fab', 'linkedin']" size="lg" />
+            <fa :icon="['fab', 'linkedin']" size="lg" />
           </a>
         </div>
         <div class="mt-8 md:mt-0 md:order-1">

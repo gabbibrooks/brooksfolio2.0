@@ -57,6 +57,7 @@ export default {
     }
   },
   fontawesome: {
+    component: 'fa',
     icons: {
       solid: [
         'faEnvelope',
@@ -67,7 +68,9 @@ export default {
         'faArrowLeft',
         'faShareAlt',
         'faThumbsUp',
-        'faTimesCircle'
+        'faTimesCircle',
+        'faLaptopCode',
+        'faGraduationCap'
       ],
       brands: ['faGithub', 'faTwitter', 'faLinkedin']
     }

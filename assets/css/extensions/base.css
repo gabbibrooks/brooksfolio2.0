@@ -103,9 +103,7 @@ h2,
 h3,
 h4,
 h5 {
-  transition: 'color .5s';
-  margin: 2.75rem 0 1rem;
-  line-height: 1.4;
+  transition: color 0.5s;
 }
 small {
   font-size: theme('fontSize.sm');

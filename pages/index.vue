@@ -5,7 +5,11 @@
         Recent Blog Posts
       </h2>
       <div class="block">
-        <article v-for="post in posts" :key="post.slug" class="block mt-12">
+        <article
+          v-for="post in recentPosts"
+          :key="post.slug"
+          class="block mt-12"
+        >
           <nuxt-link class="MainLink" :to="post.path">
             {{ post.title }} &mdash;
             <small>{{ post.createdAt.split('T')[0] }}</small>
