@@ -127,7 +127,7 @@ const categoriesQuery = `*[_type == "category" && _id == $categoryID] {
 }`
 ```
 
-With this query I get the following output as a data structure in JSON that I can use to make a `ReferencedPost`:
+With this query, I get the following output as a data structure in JSON that I can use to make a `ReferencedPost`:
 
 ```json
 [
