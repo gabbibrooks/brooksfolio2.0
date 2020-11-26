@@ -19,10 +19,10 @@ fields:
   label: Description
   description: This ends up on summary pages, on Google, when people share your post
     in social media.
-- name: tag
+- name: tags
   type: tag_list
   default: []
-  label: Tag
+  label: Tags
 - name: main_image
   type: file
   config:
