@@ -6,7 +6,6 @@ description: Taxonomy pages are a great way to group your site's content togethe
 main_image: "/v1605413423/gridsome_sanity_combo.png"
 tags:
 - sanity
-- vue
 - gridsome
 
 ---
