@@ -7,6 +7,7 @@ main_image: "/v1605413423/gridsome_sanity_combo.png"
 tags:
 - sanity
 - vue
+- gridsome
 
 ---
 ## Intro
