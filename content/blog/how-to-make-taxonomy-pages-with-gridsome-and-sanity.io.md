@@ -1,16 +1,14 @@
 ---
 title: How to Make Taxonomy Pages with Gridsome and Sanity.io
-description:
-  Taxonomy pages are a great way to group your site's content together
+description: Taxonomy pages are a great way to group your site's content together
   through reference tags or categories. This is a walkthrough of how to build them
   with Gridsome and Sanity.io
-main_image: '/v1605413423/gridsome_sanity_combo.png'
+main_image: "/v1605413423/gridsome_sanity_combo.png"
 tags:
-  - gridsome
-  - sanity
-  - vue
----
+- sanity
+- vue
 
+---
 ## Intro
 
 Taxonomy pages are a great way to group your site's content through reference tags or categories. For my personal site, I have been using [Gridsome](https://gridsome.org), a static site generator, and [Sanity](https://sanity.io) for my structured content. It's been a great experience using both of these tools so far and I wanted to implement taxonomy pages for my site. Looking into it, Gridsome already supports this feature out of the box by referencing different content nodes and references these different content types with a \`belongsTo\` node. Ok great! Looks like this should be pretty straight forward then.
