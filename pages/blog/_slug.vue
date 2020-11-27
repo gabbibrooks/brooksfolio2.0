@@ -104,7 +104,8 @@ export default {
       observer: null,
       observerOptions: {
         root: this.$refs.nuxtContent,
-        threshold: 0.5
+        rootMargin: '0px',
+        threshold: 1.0
       }
     }
   },
@@ -117,12 +118,11 @@ export default {
     this.observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         const id = entry.target.getAttribute('id')
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && entry.intersectionRatio === 1) {
           this.currentlyActiveToc = id
         }
       })
     }, this.observerOptions)
-
     // Track all sections that have an `id` applied
     document
       .querySelectorAll('.nuxt-content h2[id], .nuxt-content h3[id]')

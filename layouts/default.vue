@@ -4,7 +4,7 @@
     <the-header></the-header>
     <div>
       <div class="relative">
-        <main class="relative pt-8 pb-20 lg:pt-12 lg:pb-28">
+        <main id="content" class="relative pt-8 pb-20 lg:pt-12 lg:pb-28">
           <div class="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
             <nuxt />
           </div>

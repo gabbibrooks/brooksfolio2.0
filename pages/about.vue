@@ -9,11 +9,10 @@
               :public-id="src"
               width="400"
               height="400"
-              crop="fill"
+              crop="scale"
               fetchFormat="auto"
-              quality="70"
+              quality="80"
               loading="lazy"
-              gravity="auto:subject"
             />
           </div>
         </div>
@@ -101,6 +100,8 @@
 </template>
 
 <script>
+import { getCloudinaryId } from '~/utilities/image'
+
 export default {
   layout: 'content',
   async asyncData({ $content }) {
@@ -112,7 +113,7 @@ export default {
   },
   computed: {
     src() {
-      return this.aboutpage.main_image.replace(/\/(v1.+\/)/g, '')
+      return getCloudinaryId(this.aboutpage.main_image)
     }
   }
 }

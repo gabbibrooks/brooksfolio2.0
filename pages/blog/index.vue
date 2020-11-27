@@ -15,7 +15,7 @@
 export default {
   async asyncData({ $content }) {
     const posts = await $content('blog')
-      .only(['path', 'title', 'description', 'tag', 'createdAt', 'updatedAt'])
+      .only(['path', 'title', 'description', 'tags', 'createdAt', 'updatedAt'])
       .fetch()
 
     return { posts }

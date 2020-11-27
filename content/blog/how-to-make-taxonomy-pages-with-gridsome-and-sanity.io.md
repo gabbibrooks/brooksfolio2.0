@@ -1,17 +1,16 @@
 ---
-tag:
-- Gridsome
 title: How to Make Taxonomy Pages with Gridsome and Sanity.io
-description: Taxonomy pages are a great way to group your site's content together
+description:
+  Taxonomy pages are a great way to group your site's content together
   through reference tags or categories. This is a walkthrough of how to build them
   with Gridsome and Sanity.io
-main_image: "/v1605413423/gridsome_sanity_combo.png"
+main_image: '/v1605413423/gridsome_sanity_combo.png'
 tags:
-- Gridsome
-- Sanity
-- Vue
-
+  - gridsome
+  - sanity
+  - vue
 ---
+
 ## Intro
 
 Taxonomy pages are a great way to group your site's content through reference tags or categories. For my personal site, I have been using [Gridsome](https://gridsome.org), a static site generator, and [Sanity](https://sanity.io) for my structured content. It's been a great experience using both of these tools so far and I wanted to implement taxonomy pages for my site. Looking into it, Gridsome already supports this feature out of the box by referencing different content nodes and references these different content types with a \`belongsTo\` node. Ok great! Looks like this should be pretty straight forward then.
@@ -33,8 +32,7 @@ Since we cant utilize the `belongsTo` feature on in our Category template page q
 ```javascript
 //gridsome.server.js
 module.exports = function(api) {
-
-api.createPages(async ({ createPage, graphql }) => {
+  api.createPages(async ({ createPage, graphql }) => {
     const { data } = await graphql(`
       {
         allSanityCategory {
@@ -58,12 +56,11 @@ api.createPages(async ({ createPage, graphql }) => {
     categoryEdges
       // Loop through the category nodes, but don't return anything
       .forEach(({ node }) => {
-      
         // Destructure the id and slug fields for each category
         // const id = node.id
         // const slug = node.slug
         const { id, slug = {} } = node
-        
+
         // If there isn't a slug, we want to do nothing
         if (!slug) return
 
@@ -74,8 +71,8 @@ api.createPages(async ({ createPage, graphql }) => {
           component: './src/templates/Category.vue',
           context: { id }
         })
-    })
-})	
+      })
+  })
 }
 ```
 
@@ -83,7 +80,7 @@ api.createPages(async ({ createPage, graphql }) => {
 
 The next step is to utilize the Gridsome Schema API and create brand new schema types that get added to your Gridsome GraphQL schema during build time, which is exactly what we'll use to create a new `ReferencedPost` and `ReferencedProject` type, which for my portfolio are currently the two data types, Post and Project, include references to a collection of categories. This method could be used for any number of types you want to reference, and the types can be called whatever you want. I called them 'Referenced' types to make it clear how these types differ from the original types they are based on and provide context to how they could be used in my site. These types can have any number of properties or property types, so if you just needed, say 3-4 properties from a post in Sanity, you could map that out accordingly.
 
-One thing I have also found is that some of the Sanity types do not map one to one with the schema types that are mapped in Gridsome. What this means is that you may have to map some types manually from the Sanity schema to the Gridsome schema. This may not always be the case and some types do map one to map, like image types. This is especially true with Sanity's block content type, since it becomes mapped in Gridsome as '_raw' content, and as you'll see in the GROQ responses that Sanity returns the block content without the '_raw' prefix. It is also important to note that these new types must implement the Node interface, and Gridsome will not infer field types for custom fields unless the `@infer` directive is used.
+One thing I have also found is that some of the Sanity types do not map one to one with the schema types that are mapped in Gridsome. What this means is that you may have to map some types manually from the Sanity schema to the Gridsome schema. This may not always be the case and some types do map one to map, like image types. This is especially true with Sanity's block content type, since it becomes mapped in Gridsome as '\_raw' content, and as you'll see in the GROQ responses that Sanity returns the block content without the '\_raw' prefix. It is also important to note that these new types must implement the Node interface, and Gridsome will not infer field types for custom fields unless the `@infer` directive is used.
 
 Now you may also be asking, why can't I use the existing types I already have? To answer this, you absolutely could use the existing Sanity types that are already present in your schema. However you would still need to map all of the values manually from the GROQ query response that isn't a one to one map from Sanity to Gridsome, and depending on your types could be a lot of data you may not need for a taxonomy page. This is why I decided to make new types for this purpose. Since I know which values I needed from the post and project types for my categories page, I opted for creating new types for this solution. The choice is yours how on how you want to handle the reference types though, either choice would work.
 
@@ -156,7 +153,7 @@ With this query, I get the following output as a data structure in JSON that I c
               "publishedAt": "2020-04-28T06:00:00.000Z"
               "slug": {...}
               "title": "Jamstack Denver Meetup Livestreaming and Recording Setup"
-          }	
+          }
 		]
 	}
 ]
@@ -179,70 +176,76 @@ const client = sanityClient({
 
 module.exports = function(api) {
   api.loadSource(({ addSchemaResolvers }) => {
-      addSchemaResolvers({
-          SanityCategory: {
-              posts: {
-                type: ['ReferencedPost'],
-                async resolve(obj) {
-                  const posts = []
-                  const categoriesQuery =
-                    '*[_type == "category" && _id == $categoryID] {"posts": *[_type == "post" && references($categoryID)]{..., categories[]->{_id, title, slug}}}'
-                  const categoriesParams = { categoryID: obj._id }
+    addSchemaResolvers({
+      SanityCategory: {
+        posts: {
+          type: ['ReferencedPost'],
+          async resolve(obj) {
+            const posts = []
+            const categoriesQuery =
+              '*[_type == "category" && _id == $categoryID] {"posts": *[_type == "post" && references($categoryID)]{..., categories[]->{_id, title, slug}}}'
+            const categoriesParams = { categoryID: obj._id }
 
-                  await client.fetch(categoriesQuery, categoriesParams).then(category => {
-                    category.forEach(categoryPosts => {
-                      categoryPosts.posts.forEach(post => {
-                        //Dynamically set the variables that are mapped by gridsome
-                        post['id'] = post._id
-                        post['_rawBody'] = post.body
-                        post['_rawExcerpt'] = post.excerpt
-                        post['categories'] = post.categories.map(category => ({
-                          id: category._id,
-                          title: category.title,
-                          slug: category.slug
-                        }))
-                        post['path'] = `/blog/${post.slug.current}`
-                        posts.push(post)
-                      })
-                    })
+            await client
+              .fetch(categoriesQuery, categoriesParams)
+              .then(category => {
+                category.forEach(categoryPosts => {
+                  categoryPosts.posts.forEach(post => {
+                    //Dynamically set the variables that are mapped by gridsome
+                    post['id'] = post._id
+                    post['_rawBody'] = post.body
+                    post['_rawExcerpt'] = post.excerpt
+                    post['categories'] = post.categories.map(category => ({
+                      id: category._id,
+                      title: category.title,
+                      slug: category.slug
+                    }))
+                    post['path'] = `/blog/${post.slug.current}`
+                    posts.push(post)
                   })
-                  return posts
-                }
-              },
-              projects: {
-                type: ['ReferencedProject'],
-                async resolve(obj) {
-                  const projects = []
-                  const categoriesQuery =
-                    '*[_type == "category" && _id == $categoryID] {"projects": *[_type == "project" && references($categoryID)]{..., categories[]->{_id, title, slug}}}'
-                  const categoriesParams = { categoryID: obj._id }
-
-                  await client.fetch(categoriesQuery, categoriesParams).then(category => {
-                    category.forEach(categoryProjects => {
-                      categoryProjects.projects.forEach(project => {
-                        //Dynamically set the variables that are mapped by gridsome
-                        project['id'] = project._id
-                        project['_rawExcerpt'] = project.excerpt
-                        project['categories'] = project.categories.map(category => ({
-                          id: category._id,
-                          title: category.title,
-                          slug: category.slug
-                        }))
-                        project['path'] = `/projects/${project.slug.current}`
-                        projects.push(project)
-                      })
-                    })
-                  })
-                  return projects
-                }
-              }
+                })
+              })
+            return posts
           }
-      })
+        },
+        projects: {
+          type: ['ReferencedProject'],
+          async resolve(obj) {
+            const projects = []
+            const categoriesQuery =
+              '*[_type == "category" && _id == $categoryID] {"projects": *[_type == "project" && references($categoryID)]{..., categories[]->{_id, title, slug}}}'
+            const categoriesParams = { categoryID: obj._id }
+
+            await client
+              .fetch(categoriesQuery, categoriesParams)
+              .then(category => {
+                category.forEach(categoryProjects => {
+                  categoryProjects.projects.forEach(project => {
+                    //Dynamically set the variables that are mapped by gridsome
+                    project['id'] = project._id
+                    project['_rawExcerpt'] = project.excerpt
+                    project['categories'] = project.categories.map(
+                      category => ({
+                        id: category._id,
+                        title: category.title,
+                        slug: category.slug
+                      })
+                    )
+                    project['path'] = `/projects/${project.slug.current}`
+                    projects.push(project)
+                  })
+                })
+              })
+            return projects
+          }
+        }
+      }
+    })
   })
 }
 ```
 
-A couple of other things to note in the code above, you may have noticed in the `async resolve(obj)` function that when we resolve the type, we pass in an `obj` argument. What that `obj` value is, is a `SanityCategory` that the schema resolvers are essentially looping through each existing `SanityCategory` during build time so that they are resolved with posts and projects collections. The resolve function also needs to be async in this case because each `SanityCategory` is making a fetch request to our Sanity dataset with the passed GROQ queries. The `categoriesParams` are also an object with defined parameters that are passed into GROQ queries with the $ attribute.
+A couple of other things to note in the code above, you may have noticed in the `async resolve(obj)` function that when we resolve the type, we pass in an `obj` argument. What that `obj` value is, is a `SanityCategory` that the schema resolvers are essentially looping through each existing `SanityCategory` during build time so that they are resolved with posts and projects collections. The resolve function also needs to be async in this case because each `SanityCategory` is making a fetch request to our Sanity dataset with the passed GROQ queries. The `categoriesParams` are also an object with defined parameters that are passed into GROQ queries with the \$ attribute.
 
 ### Querying the Referenced Types in the Template
 
@@ -252,7 +255,7 @@ Once we have the schema built, we can now access a category's referenced content
 //templates/Category.vue
 
 <template>
-...
+  ...
 </template>
 
 <script>
@@ -333,7 +336,7 @@ query Category ($id: ID!) {
 </page-query>
 
 <style>
-...
+...;
 </style>
 ```
 

@@ -11,46 +11,40 @@ module.exports = {
       lg: '1024px',
       xl: '1280px'
     },
-    backgroundColor: theme => ({
-      primary: 'var(--color-bg-primary)',
-      secondary: 'var(--color-bg-secondary)',
-      tertiary: 'var(--color-bg-tertiary)',
-      inverse: 'var(--color-bg-inverse)',
-      code: 'var(--color-bg-code)',
-      accent: 'var(--color-primary)',
-      navigation: 'var(--color-bg-navigation)'
-    }),
-    textColor: theme => ({
-      initial: 'var(--color-primary)',
-      'initial--muted': 'var(--color-primary--muted)',
-      primary: 'var(--color-text-primary)',
-      'primary--muted': 'var(--color-text-primary--muted)',
-      'internal-link': 'var(--color-text-internal-link)',
-      secondary: 'var(--color-text-secondary)',
-      tertiary: 'var(--color-text-tertiary)',
-      nav: 'var(--color-text-nav)',
-      inverse: 'var(--color-text-inverse)',
-      success: 'var(--color-text-success)',
-      error: 'var(--color-text-error)'
-    }),
-    borderColor: theme => ({
-      primary: 'var(--color-border-primary)',
-      'primary-muted': 'var(--color-border-primary--muted)',
-      inverse: 'var(--color-border-inverse)',
-      'text-primary': 'var(--color-text-primary)'
-    }),
     flex: {
       '1': '1 0 auto'
     },
     fontFamily: {
       display: ['Montserrat', 'sans-serif'],
       body: ['Open Sans', 'sans-serif'],
-      sans: ['Cabin', 'sans-serif'] //new main font?
+      sans: ['Varela', 'sans-serif'] //new main font?
     },
     fontStyle: {
       italic: 'italic'
     },
     extend: {
+      backgroundColor: {
+        primary: 'var(--color-bg-primary)',
+        secondary: 'var(--color-bg-secondary)',
+        tertiary: 'var(--color-bg-tertiary)',
+        inverse: 'var(--color-bg-inverse)',
+        code: 'var(--color-bg-code)',
+        accent: 'var(--color-primary)',
+        navigation: 'var(--color-bg-navigation)'
+      },
+      textColor: {
+        initial: 'var(--color-primary)',
+        'initial--muted': 'var(--color-primary--muted)',
+        primary: 'var(--color-text-primary)',
+        'primary--muted': 'var(--color-text-primary--muted)',
+        'internal-link': 'var(--color-text-internal-link)',
+        secondary: 'var(--color-text-secondary)',
+        tertiary: 'var(--color-text-tertiary)',
+        nav: 'var(--color-text-nav)',
+        inverse: 'var(--color-text-inverse)',
+        success: 'var(--color-text-success)',
+        error: 'var(--color-text-error)'
+      },
       spacing: {
         '15': '3.75rem',
         '30': '7.5rem',
@@ -68,6 +62,12 @@ module.exports = {
       opacity: {
         inherit: 'inherit',
         '80': '0.80'
+      },
+      borderColor: {
+        primary: 'var(--color-border-primary)',
+        'primary-muted': 'var(--color-border-primary--muted)',
+        inverse: 'var(--color-border-inverse)',
+        'text-primary': 'var(--color-text-primary)'
       },
       borderRadius: {
         '1/2': '50%'

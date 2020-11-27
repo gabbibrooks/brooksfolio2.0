@@ -1,6 +1,12 @@
 <template>
   <div>
-    <component :is="icon" @click="toggleColorMode()" />
+    <button
+      class="p-1 transition duration-150 ease-in-out border-2 border-transparent text-white rounded-full focus:outline-none"
+      @click="toggleColorMode()"
+      type="button"
+    >
+      <component :is="icon" />
+    </button>
   </div>
 </template>
 
