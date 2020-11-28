@@ -1,14 +1,24 @@
+import { getMetadata } from './utils/meta'
+const meta = getMetadata()
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'Zachary Brooks Dev',
+    title: 'Zachary Brooks',
     meta: [
-      { charset: 'utf-8' },
+      ...meta,
+      { name: 'HandheldFriendly', content: 'True' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { property: 'og:site_name', content: 'David Parks' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Articles focused on Frontend, Jamstack, web performance and other interests!'
+      },
+      { charset: 'utf-8' }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },

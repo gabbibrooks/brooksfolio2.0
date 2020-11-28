@@ -98,7 +98,7 @@
 </template>
 
 <script>
-import { getCloudinaryId } from '~/utilities/image'
+import { getCloudinaryId } from '~/utils/image'
 
 export default {
   layout: 'content',

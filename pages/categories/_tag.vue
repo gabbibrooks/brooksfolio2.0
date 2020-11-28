@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import { capitalize } from '~/utilities/string'
+import { capitalize } from '~/utils/string'
 export default {
   layout: 'content',
   async asyncData({ $content, params }) {

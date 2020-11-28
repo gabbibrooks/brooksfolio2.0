@@ -36,8 +36,8 @@
 </template>
 
 <script>
-import { distinct, topEntries, countEntries } from '~/utilities/array'
-import { capitalize } from '~/utilities/string'
+import { topEntries } from '~/utils/array'
+import { capitalize } from '~/utils/string'
 
 export default {
   async asyncData({ $content }) {
