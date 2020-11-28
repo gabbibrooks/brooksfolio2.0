@@ -1,6 +1,6 @@
 <template>
   <nuxt-link to="/" class="flex items-center nav-link">
-    <component :is="logo" class="hidden w-auto h-8 lg:block" />
+    <component :is="logo" class="block w-auto h-8" />
     <span class="ml-3 text-xl font-bold">Zachary Brooks</span>
   </nuxt-link>
 </template>

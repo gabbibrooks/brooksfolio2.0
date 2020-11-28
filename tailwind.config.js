@@ -61,7 +61,8 @@ module.exports = {
       },
       opacity: {
         inherit: 'inherit',
-        '80': '0.80'
+        '80': 0.8,
+        '90': 0.9
       },
       borderColor: {
         primary: 'var(--color-border-primary)',
@@ -81,7 +82,8 @@ module.exports = {
         '14': '0.875rem',
         'screen-1/4': '25vh',
         'screen-1/3': '33vh',
-        'screen-1/2': '50vh'
+        'screen-1/2': '50vh',
+        '3/4': '75%'
       },
       inset: {
         '-7': '-0.4375rem',
@@ -90,12 +92,14 @@ module.exports = {
         '-25': '-1.5625rem',
         '-85': '-5.3125rem',
         '16': '4rem',
+        '100px': '100px',
         '1/2': '50%',
         full: '100%'
       },
       width: {
         auto: 'auto',
         '14': '0.875rem',
+        '3/4': '75%',
         '90': '90%'
       },
       minHeight: {
@@ -122,6 +126,7 @@ module.exports = {
         '600': '600px'
       },
       zIndex: {
+        '2': 2,
         '1000': 1000
       }
     }

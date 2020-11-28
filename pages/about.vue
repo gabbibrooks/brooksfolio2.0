@@ -7,8 +7,6 @@
             <cld-image
               class="flex object-cover w-full overflow-hidden rounded lg:h-64 lg:w-64"
               :public-id="src"
-              width="400"
-              height="400"
               crop="scale"
               fetchFormat="auto"
               quality="80"
