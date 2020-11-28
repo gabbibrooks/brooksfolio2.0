@@ -43,7 +43,16 @@ export default {
   async asyncData({ $content }) {
     const homepage = await $content('homepage').fetch()
     const recentPosts = await $content('blog')
-      .only(['path', 'title', 'description', 'tags', 'createdAt', 'updatedAt'])
+      .only([
+        'path',
+        'title',
+        'description',
+        'header',
+        'introduction',
+        'tags',
+        'createdAt',
+        'updatedAt'
+      ])
       .sortBy('createdAt', 'desc')
       .limit(5)
       .fetch()
@@ -68,6 +77,10 @@ export default {
       recentPosts,
       topCategories
     }
+  },
+  mounted() {
+    this.$store.dispatch('setPageHeader', this.homepage.header)
+    this.$store.dispatch('setPageSubheader', this.homepage.introduction)
   }
 }
 </script>

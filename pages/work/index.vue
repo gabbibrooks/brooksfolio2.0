@@ -13,12 +13,18 @@
 
 <script>
 export default {
+  layout: 'content',
   async asyncData({ $content }) {
     const projects = await $content('work/projects')
       .only(['path', 'title', 'tags', 'createdAt', 'updatedAt'])
       .fetch()
 
     return { projects }
+  },
+  mounted() {
+    this.$store.dispatch('setPageHeader', 'Work')
+    this.$store.dispatch('setPageSubheader', '')
+    this.$store.dispatch('setPageHeaderPosition', 'center')
   }
 }
 </script>

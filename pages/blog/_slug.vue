@@ -92,7 +92,7 @@ export default {
     const post = await $content('blog', params.slug).fetch()
     const surround = await $content('blog')
       .sortBy('createdAt', 'asc')
-      .only(['title', 'path', 'createdAt'])
+      .only(['title', 'subtitle', 'path', 'createdAt'])
       .surround(post.slug)
       .fetch()
 
@@ -115,6 +115,10 @@ export default {
     }
   },
   mounted() {
+    this.$store.dispatch('setPageHeader', this.post.title)
+    this.$store.dispatch('setPageSubheader', this.post.subtitle)
+    this.$store.dispatch('setPageHeaderPosition', 'left')
+
     this.observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         const id = entry.target.getAttribute('id')

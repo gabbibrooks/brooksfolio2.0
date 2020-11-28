@@ -115,6 +115,11 @@ export default {
     src() {
       return getCloudinaryId(this.aboutpage.main_image)
     }
+  },
+  mounted() {
+    this.$store.dispatch('setPageHeader', 'About Me')
+    this.$store.dispatch('setPageSubheader', '')
+    this.$store.dispatch('setPageHeaderPosition', 'center')
   }
 }
 </script>

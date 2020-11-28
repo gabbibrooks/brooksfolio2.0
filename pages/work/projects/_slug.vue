@@ -25,6 +25,11 @@ export default {
       .fetch()
 
     return { project, surround }
+  },
+  mounted() {
+    this.$store.dispatch('setPageHeader', this.project.title)
+    this.$store.dispatch('setPageSubheader', this.project.description)
+    this.$store.dispatch('setPageHeaderPosition', 'left')
   }
 }
 </script>
