@@ -116,7 +116,7 @@ export default {
   },
   mounted() {
     this.$store.dispatch('setPageHeader', this.post.title)
-    this.$store.dispatch('setPageSubheader', this.post.subtitle)
+    this.$store.dispatch('setPageSubheader', this.post.description)
     this.$store.dispatch('setPageHeaderPosition', 'left')
 
     this.observer = new IntersectionObserver(entries => {

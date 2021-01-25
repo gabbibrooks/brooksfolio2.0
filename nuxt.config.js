@@ -1,5 +1,7 @@
 import { getMetadata } from './utils/meta'
+const readingTime = require('reading-time')
 const meta = getMetadata()
+
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -42,6 +44,16 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: ['@nuxt/content', 'nuxt-webfontloader'],
 
+  hooks: {
+    'content:file:beforeInsert': document => {
+      // Adding reading time for markdown documents
+      if (document.extension === '.md') {
+        const { text } = readingTime(document.text)
+
+        document.readingTime = text
+      }
+    }
+  },
   //Module Configuration
   cloudinary: {
     cloudName: 'zacharybrooks-dev',

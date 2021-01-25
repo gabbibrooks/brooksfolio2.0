@@ -7,6 +7,7 @@
             {{ post.title }} &mdash;
             <small>{{ post.createdAt.split('T')[0] }}</small>
           </nuxt-link>
+          <div class="text-md">{{ post.readingTime }}</div>
         </article>
       </div>
     </section>
@@ -34,9 +35,7 @@ import { capitalize } from '~/utils/string'
 export default {
   layout: 'content',
   async asyncData({ $content }) {
-    const posts = await $content('blog')
-      .only(['path', 'title', 'description', 'tags', 'createdAt', 'updatedAt'])
-      .fetch()
+    const posts = await $content('blog').fetch()
     const blogTags = await $content('blog')
       .only(['tags'])
       .fetch()
