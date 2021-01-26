@@ -5,7 +5,7 @@ description:
   Meetup events.
 main_image: '/v1605461263/caspar-camille-rubin-DrL-cwqD6tM-unsplash_hdxsx8.jpg'
 tags:
-  - streaming
+  - Streaming
 ---
 
 ## Intro

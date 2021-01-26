@@ -9,10 +9,7 @@
       </div>
       <div class="block">
         <article v-for="post in posts" :key="post.slug" class="block mt-12">
-          <nuxt-link :to="post.path">
-            {{ post.title }} &mdash;
-            <small>{{ post.createdAt.split('T')[0] }}</small>
-          </nuxt-link>
+          <blog-post-link :post="post" />
         </article>
       </div>
     </section>
@@ -28,23 +25,19 @@
           v-for="project in projects"
           :key="project.slug"
           class="block mt-12"
-        >
-          <nuxt-link :to="project.path">
-            {{ project.title }} &mdash;
-            <small>{{ project.createdAt.split('T')[0] }}</small>
-          </nuxt-link>
-        </article>
+        ></article>
       </div>
     </section>
   </div>
 </template>
 
 <script>
-import { capitalize } from '~/utils/string'
+import BlogPostLink from '~/components/BlogPostLink'
+
 export default {
   layout: 'content',
   async asyncData({ $content, params }) {
-    const tag = params.tag.capitalize()
+    const tag = params.tag
     const posts = await $content('blog')
       .where({ tags: { $containsAny: [params.tag] } })
       .fetch()
@@ -67,6 +60,9 @@ export default {
       const projectCount = this.projects.length
       return projectCount > 1 ? `${projectCount} Projects` : '1 Project'
     }
+  },
+  components: {
+    BlogPostLink
   },
   mounted() {
     this.$store.dispatch('setPageHeader', this.tag)

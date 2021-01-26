@@ -8,17 +8,15 @@
 </template>
 
 <script>
+import { formatDate } from '~/utils/date'
+
 export default {
   props: {
     date: String
   },
   computed: {
     updatedDate() {
-      return new Date(this.date).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      })
+      return formatDate(this.date)
     }
   }
 }

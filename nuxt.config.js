@@ -1,4 +1,5 @@
 import { getMetadata } from './utils/meta'
+import { formatDate } from './utils/date'
 const readingTime = require('reading-time')
 const meta = getMetadata()
 
@@ -49,8 +50,10 @@ export default {
       // Adding reading time for markdown documents
       if (document.extension === '.md') {
         const { text } = readingTime(document.text)
+        const formattedCreatedAtDate = formatDate(document.createdAt)
 
         document.readingTime = text
+        document.formattedCreatedDate = formattedCreatedAtDate
       }
     }
   },

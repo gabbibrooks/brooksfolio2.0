@@ -10,10 +10,7 @@
           :key="post.slug"
           class="block mt-12"
         >
-          <nuxt-link :to="post.path">
-            {{ post.title }} &mdash;
-            <small>{{ post.createdAt.split('T')[0] }}</small>
-          </nuxt-link>
+          <blog-post-link :post="post" />
         </article>
       </div>
     </section>
@@ -22,13 +19,11 @@
         Top Categories
       </h3>
       <div class="flex flex-row flex-wrap mt-4">
-        <nuxt-link
+        <tag
           v-for="category in topCategories"
           :key="category"
-          class="px-3 py-1 mb-4 mr-3 text-sm rounded-lg first:pl-0 bg-secondary text-primary hover:text-secondary nav-link"
-          :to="`categories/${category}`"
-          >{{ category.capitalize() }}</nuxt-link
-        >
+          :category="category"
+        />
       </div>
     </section>
     <nuxt-content :document="homepage" />
@@ -36,6 +31,8 @@
 </template>
 
 <script>
+import BlogPostLink from '~/components/BlogPostLink'
+import Tag from '~/components/Tag'
 import { topEntries } from '~/utils/array'
 import { capitalize } from '~/utils/string'
 
@@ -43,21 +40,11 @@ export default {
   async asyncData({ $content }) {
     const homepage = await $content('homepage').fetch()
     const recentPosts = await $content('blog')
-      .only([
-        'path',
-        'title',
-        'description',
-        'header',
-        'introduction',
-        'tags',
-        'createdAt',
-        'updatedAt'
-      ])
       .sortBy('createdAt', 'desc')
       .limit(5)
       .fetch()
     const blogTags = await $content('blog')
-      .only(['tags'])
+      .only('tags')
       .fetch()
       .then(response => {
         const tags = Array.prototype.concat(...response.map(post => post.tags))
@@ -67,7 +54,9 @@ export default {
       .only('tags')
       .fetch()
       .then(response => {
-        const tags = Array.prototype.concat(...response.map(post => post.tags))
+        const tags = Array.prototype.concat(
+          ...response.map(project => project.tags)
+        )
         return tags
       })
     const topCategories = topEntries(blogTags.concat(projectTags), 5)
@@ -78,9 +67,14 @@ export default {
       topCategories
     }
   },
+  components: {
+    BlogPostLink,
+    Tag
+  },
   mounted() {
     this.$store.dispatch('setPageHeader', this.homepage.header)
     this.$store.dispatch('setPageSubheader', this.homepage.introduction)
+    this.$store.dispatch('setPageHeaderPosition', 'center')
   }
 }
 </script>
