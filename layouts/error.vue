@@ -8,7 +8,7 @@
         >
           <h1 class="" v-if="error.statusCode === 404">Page not found</h1>
           <h1 v-else>An error occurred</h1>
-          <nuxt-link class="nav-link" to="/">Go to Home page</nuxt-link>
+          <nuxt-link class="no-external-link" to="/">Go to Home page</nuxt-link>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link to="/" class="flex items-center nav-link">
+  <nuxt-link to="/" class="flex items-center no-external-link">
     <component :is="logo" class="block w-auto h-8" />
     <span class="ml-3 text-xl font-bold">Zachary Brooks</span>
   </nuxt-link>

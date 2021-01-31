@@ -15,19 +15,25 @@
             class="flex flex-col items-start justify-start mb-0 ml-0 md:flex-row lg:justify-center lg:items-center lg:relative"
           >
             <nuxt-link
-              class="px-3 py-2 text-sm rounded-md nav-link"
+              class="px-3 py-2 text-sm rounded-md no-external-link"
               to="/about"
             >
               About
             </nuxt-link>
-            <nuxt-link class="px-3 py-2 text-sm rounded-md nav-link" to="/blog">
+            <nuxt-link
+              class="px-3 py-2 text-sm rounded-md no-external-link"
+              to="/blog"
+            >
               Blog
             </nuxt-link>
-            <nuxt-link class="px-3 py-2 text-sm rounded-md nav-link" to="/work">
+            <nuxt-link
+              class="px-3 py-2 text-sm rounded-md no-external-link"
+              to="/work"
+            >
               Work
             </nuxt-link>
             <nuxt-link
-              class="px-3 py-2 text-sm rounded-md nav-link"
+              class="px-3 py-2 text-sm rounded-md no-external-link"
               to="/speaking"
             >
               Speaking
@@ -56,28 +62,28 @@
             <div class="ml-12">
               <nuxt-link
                 @click.native="menuOpen = false"
-                class="block px-3 py-2 mt-1 text-2xl transition duration-150 ease-in-out rounded-md nav-link focus:outline-none"
+                class="block px-3 py-2 mt-1 text-2xl transition duration-150 ease-in-out rounded-md no-external-link focus:outline-none"
                 to="/about"
               >
                 About
               </nuxt-link>
               <nuxt-link
                 @click.native="menuOpen = false"
-                class="block px-3 py-2 mt-1 text-2xl transition duration-150 ease-in-out rounded-md nav-link focus:outline-none"
+                class="block px-3 py-2 mt-1 text-2xl transition duration-150 ease-in-out rounded-md no-external-link focus:outline-none"
                 to="/blog"
               >
                 Blog
               </nuxt-link>
               <nuxt-link
                 @click.native="menuOpen = false"
-                class="block px-3 py-2 mt-1 text-2xl transition duration-150 ease-in-out rounded-md nav-link focus:outline-none"
+                class="block px-3 py-2 mt-1 text-2xl transition duration-150 ease-in-out rounded-md no-external-link focus:outline-none"
                 to="/work"
               >
                 Work
               </nuxt-link>
               <nuxt-link
                 @click.native="menuOpen = false"
-                class="block px-3 py-2 mt-1 text-2xl transition duration-150 ease-in-out rounded-md nav-link focus:outline-none"
+                class="block px-3 py-2 mt-1 text-2xl transition duration-150 ease-in-out rounded-md no-external-link focus:outline-none"
                 to="/speaking"
               >
                 Speaking

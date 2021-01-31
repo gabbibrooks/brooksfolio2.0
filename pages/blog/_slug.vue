@@ -1,6 +1,8 @@
 <template>
-  <div class="grid grid-cols-1 gap-24 lg:grid-cols-3 table-of-contents">
-    <section class="block col-span-1 mt-0 lg:col-span-2">
+  <div
+    class="grid grid-cols-1 gap-4 lg:gap-24 lg:grid-cols-3 table-of-contents"
+  >
+    <section class="order-2 block col-span-1 mt-0 lg:col-span-2 lg:order-1">
       <article class="prose lg:prose-xl">
         <nuxt-content ref="nuxtContent" :document="post" />
       </article>
@@ -8,8 +10,14 @@
       <prev-next :surround="surround" />
     </section>
 
-    <aside class="lg:col-span-1 lg:flex lg:flex-col">
-      <div class="sticky top-16">
+    <aside class="order-1 lg:col-span-1 lg:flex lg:flex-col lg:order-2">
+      <small class="text-secondary"
+        >{{ post.formattedCreatedDate }} &mdash; {{ post.readingTime }}</small
+      >
+      <div class="flex-row flex-wrap hidden py-4 lg:flex">
+        <tag v-for="tag in post.tags" :key="tag" :category="tag" />
+      </div>
+      <div class="sticky hidden top-16 lg:block ">
         <h2 class="text-lg tracking-wider uppercase text-primary lg:mt-16">
           Table of contents
         </h2>
@@ -31,7 +39,7 @@
                   'text-secondary hover:text-primary':
                     link.id !== currentlyActiveToc
                 }"
-                class="block mb-2 text-base transition-colors duration-75 nav-link"
+                class="block mb-2 text-base transition-colors duration-75 no-external-link"
                 :href="`#${link.id}`"
                 >{{ link.text }}</a
               >
@@ -46,6 +54,7 @@
 <script>
 import PrevNext from '~/components/PrevNext'
 import LastUpdated from '~/components/LastUpdated'
+import Tag from '~/components/Tag'
 
 export default {
   head() {
@@ -85,7 +94,8 @@ export default {
   },
   components: {
     LastUpdated,
-    PrevNext
+    PrevNext,
+    Tag
   },
   layout: 'content',
   async asyncData({ $content, params }) {

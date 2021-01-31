@@ -19,7 +19,7 @@ export const topEntries = (array, n) => {
   const sortedList = Object.entries(entries).sort((a, b) => {
     if (b[1] > a[1]) return 1
     else if (b[1] < a[1]) return -1
-    //if values are same do edition checking if keys are in the right order
+    //if values are same do additional checking if keys are in the right order
     else {
       if (a[0] > b[0]) return 1
       else if (a[0] < b[0]) return -1

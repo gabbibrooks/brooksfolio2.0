@@ -30,10 +30,10 @@
   --color-text-nav: theme('colors.gray.100');
 
   /* --color-border-primary: #fbc758; */
-  --color-border-primary: #2f40eb;
+  --color-border-primary: #fed318;
   --color-border-primary--muted: rgba(251, 199, 88, 0.3);
   /* --color-border-inverse: #154a9f; */
-  --color-border-inverse: #fed318;
+  --color-border-inverse: #2f40eb;
 
   --box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 0.4);
   --box-shadow--lg: 0 0 4rem -2rem rgba(0, 0, 0, 0.6);

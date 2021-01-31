@@ -9,7 +9,7 @@
       </div>
       <div class="block">
         <article v-for="post in posts" :key="post.slug" class="block mt-12">
-          <blog-post-link :post="post" />
+          <blog-post-card :post="post" />
         </article>
       </div>
     </section>
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import BlogPostLink from '~/components/BlogPostLink'
+import BlogPostCard from '~/components/BlogPostCard'
 
 export default {
   layout: 'content',
@@ -62,7 +62,7 @@ export default {
     }
   },
   components: {
-    BlogPostLink
+    BlogPostCard
   },
   mounted() {
     this.$store.dispatch('setPageHeader', this.tag)
