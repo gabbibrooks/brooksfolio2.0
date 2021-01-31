@@ -45,7 +45,12 @@ module.exports = {
         success: 'var(--color-text-success)',
         error: 'var(--color-text-error)'
       },
+      gridTemplateColumns: {
+        'projects': 'minmax(0,1fr) minmax(0,1fr)'
+      },
       spacing: {
+        '-12': '-3rem',
+        '1/2': '50%',
         '15': '3.75rem',
         '30': '7.5rem',
         '35': '2.1875rem',
@@ -121,11 +126,12 @@ module.exports = {
         '1/2': '50%'
       },
       maxHeight: {
-        '400': '400px',
+        '400px': '400px',
         '300': '300px',
         '600': '600px'
       },
       zIndex: {
+        '-1': '-1',
         '2': 2,
         '1000': 1000
       }

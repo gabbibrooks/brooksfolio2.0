@@ -1,28 +1,32 @@
 <template>
   <div>
-    <ul class="">
-      <li v-for="project in projects" :key="project.slug" class="">
-        <nuxt-link class="" :to="project.path">
-          {{ project.title }} &mdash;
-          <small>{{ project.createdAt.split('T')[0] }}</small>
-        </nuxt-link>
+    <ol class="grid gap-12 list-none grid-cols-projects">
+      <li
+        clss="relative flex flex-col"
+        v-for="project in projects"
+        :key="project.slug"
+      >
+        <project-card :project="project" />
       </li>
-    </ul>
+    </ol>
   </div>
 </template>
 
 <script>
+import ProjectCard from '~/components/ProjectCard'
+
 export default {
   layout: 'content',
   async asyncData({ $content }) {
-    const projects = await $content('work/projects')
-      .only(['path', 'title', 'tags', 'createdAt', 'updatedAt'])
-      .fetch()
+    const projects = await $content('work/projects').fetch()
 
     return { projects }
   },
+  components: {
+    ProjectCard
+  },
   mounted() {
-    this.$store.dispatch('setPageHeader', 'Work')
+    this.$store.dispatch('setPageHeader', 'My Work')
     this.$store.dispatch('setPageSubheader', '')
     this.$store.dispatch('setPageHeaderPosition', 'center')
   }

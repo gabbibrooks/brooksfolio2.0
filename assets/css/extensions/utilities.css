@@ -73,25 +73,25 @@
 .theme-transition {
   transition: color 0.2s ease-out, background 0.2s ease-out;
 }
-/* a.nav-link {
+/* a.no-external-link {
   position: relative;
   transition: opacity 0.25s cubic-bezier(0.4, 0.25, 0.3, 1);
   opacity: 0.75;
   cursor: pointer;
   color: var(--color-primary);
 }
-a.nav-link:hover,
-a.nav-link.nuxt-link-active,
-a.nav-link.active--exact {
+a.no-external-link:hover,
+a.no-external-link.nuxt-link-active,
+a.no-external-link.active--exact {
   opacity: 1;
 }
-a.nav-link:hover::after,
-a.nav-link.nuxt-link-active::after,
-a.nav-link.active--exact::after {
+a.no-external-link:hover::after,
+a.no-external-link.nuxt-link-active::after,
+a.no-external-link.active--exact::after {
   opacity: 1;
   transform: translateZ(0);
 }
-a.nav-link::after {
+a.no-external-link::after {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -105,13 +105,13 @@ a.nav-link::after {
   -webkit-transform: 325ms cubic-bezier(0.4, 0.25, 0.3, 1);
   transform: 325ms cubic-bezier(0.4, 0.25, 0.3, 1);
 } */
-a:not(.nav-link) {
+a:not(.no-external-link) {
   transition: all 0.3s;
   border-bottom: 1px solid var(--color-primary);
   text-decoration: none;
   color: var(--color-primary);
 }
-a:not(.nav-link):hover {
+a:not(.no-external-link):hover {
   border-bottom-color: transparent;
   background-color: var(--color-primary);
   text-decoration: none;

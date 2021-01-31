@@ -11,7 +11,9 @@
               fetchFormat="auto"
               quality="80"
               loading="lazy"
-            />
+            >
+              <cld-placeholder type="blur" />
+            </cld-image>
           </div>
         </div>
       </div>
@@ -35,7 +37,7 @@
               :key="work.company_name"
             >
               <div
-                class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 bg-transparent border rounded-full border-primary"
+                class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 bg-transparent border rounded-full border-inverse"
               ></div>
               <div class="flex flex-col ml-4 space-y-12">
                 <div class="transition-all duration-100">
@@ -75,7 +77,7 @@
             :key="education.subtitle"
           >
             <div
-              class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 bg-transparent border rounded-full border-primary"
+              class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 bg-transparent border rounded-full border-inverse"
             ></div>
             <div class="flex flex-col ml-4 space-y-12">
               <div class="transition-all duration-100">

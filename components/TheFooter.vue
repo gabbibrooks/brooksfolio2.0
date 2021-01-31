@@ -10,7 +10,7 @@
             rel="noreferrer"
             target="_blank"
             title="Twitter Profile"
-            class="mx-2 my-2 nav-link text-primary--muted hover:text-primary"
+            class="mx-2 my-2 no-external-link text-primary--muted hover:text-primary"
           >
             <fa :icon="['fab', 'twitter']" size="lg" />
           </a>
@@ -19,7 +19,7 @@
             rel="noreferrer"
             target="_blank"
             title="Github Profile"
-            class="mx-2 my-2 nav-link text-primary--muted hover:text-primary"
+            class="mx-2 my-2 no-external-link text-primary--muted hover:text-primary"
           >
             <fa :icon="['fab', 'github']" size="lg" />
           </a>
@@ -28,7 +28,7 @@
             rel="noreferrer"
             target="_blank"
             title="Linkedin Profile"
-            class="mx-2 my-2 nav-link text-primary--muted hover:text-primary lg:mr-0"
+            class="mx-2 my-2 no-external-link text-primary--muted hover:text-primary lg:mr-0"
           >
             <fa :icon="['fab', 'linkedin']" size="lg" />
           </a>
