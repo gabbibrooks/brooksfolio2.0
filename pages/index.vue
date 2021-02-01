@@ -66,6 +66,11 @@ export default {
       topCategories
     }
   },
+  head() {
+    return {
+      title: 'Home - Zachary Brooks'
+    }
+  },
   components: {
     BlogPostCard,
     Tag

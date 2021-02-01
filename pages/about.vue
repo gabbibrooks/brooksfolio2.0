@@ -111,6 +111,11 @@ export default {
       aboutpage
     }
   },
+  head() {
+    return {
+      title: 'About - Zachary Brooks'
+    }
+  },
   computed: {
     src() {
       return getCloudinaryId(this.aboutpage.main_image)

@@ -25,6 +25,11 @@ export const getMetadata = meta => {
       content: (meta && meta.url) || url
     },
     {
+      hid: 'og:site_name',
+      property: 'og:site_name',
+      content: (meta && meta.title) || title
+    },
+    {
       hid: 'og:title',
       property: 'og:title',
       content: (meta && meta.title) || title

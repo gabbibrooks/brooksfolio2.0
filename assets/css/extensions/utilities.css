@@ -200,6 +200,10 @@ a:not(.no-external-link):hover {
     width: 100%;
   }
 }
+
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
 /* // '.loading': {
 //   width: '2em',
 //   height: '2em',

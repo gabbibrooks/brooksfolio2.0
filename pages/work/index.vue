@@ -22,6 +22,11 @@ export default {
 
     return { projects }
   },
+  head() {
+    return {
+      title: 'Work - Zachary Brooks'
+    }
+  },
   components: {
     ProjectCard
   },

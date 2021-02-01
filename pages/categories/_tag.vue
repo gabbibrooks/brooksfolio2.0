@@ -51,6 +51,11 @@ export default {
       tag
     }
   },
+  head() {
+    return {
+      title: `Category: ${this.tag} - Zachary Brooks`
+    }
+  },
   computed: {
     numberOfArticles() {
       const postCount = this.posts.length

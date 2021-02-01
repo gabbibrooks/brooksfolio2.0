@@ -11,7 +11,7 @@
       >{{ post.formattedCreatedDate }} &mdash; {{ post.readingTime }}</small
     >
     <div class="py-2 text-primary">{{ post.description }}</div>
-    <div class="text-sm text-initial">Read More</div>
+    <div class="text-sm">Read More</div>
   </nuxt-link>
 </template>
 

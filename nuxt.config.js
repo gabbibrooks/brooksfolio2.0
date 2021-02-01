@@ -14,13 +14,6 @@ export default {
       ...meta,
       { name: 'HandheldFriendly', content: 'True' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { property: 'og:site_name', content: 'David Parks' },
-      {
-        hid: 'description',
-        name: 'description',
-        content:
-          'Articles focused on Frontend, Jamstack, web performance and other interests!'
-      },
       { charset: 'utf-8' }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
@@ -28,7 +21,7 @@ export default {
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [],
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [],
+  plugins: [{ src: '~/plugins/vue-plyr', mode: 'client' }],
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
   // Build Configuration (https://go.nuxtjs.dev/config-build)

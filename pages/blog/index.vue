@@ -41,6 +41,11 @@ export default {
     const topCategories = topEntries(blogTags, 5)
     return { posts, topCategories }
   },
+  head() {
+    return {
+      title: 'Blog - Zachary Brooks'
+    }
+  },
   components: {
     BlogPostCard,
     Tag
