@@ -16,17 +16,11 @@ fields:
     time_format: 
     display_utc: false
   label: Date
-- name: description
-  type: textarea
-  default: ''
+- name: event_name
+  type: text
   config:
-    required: true
-    wysiwyg: true
-    schema:
-      format: markdown
-  label: Description
-  description: Short description and title of the talk including any relevant links
-    related to it
+    required: false
+  label: Event Name
 - name: link
   type: text
   config:
