@@ -204,6 +204,9 @@ a:not(.no-external-link):hover {
 .smooth-scroll {
   scroll-behavior: smooth;
 }
+
+.grid-cols-full {
+}
 /* // '.loading': {
 //   width: '2em',
 //   height: '2em',

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ol class="grid gap-12 list-none grid-cols-projects">
+    <ol class="grid gap-12 list-none md:grid-cols-projects grid-cols-full">
       <li
         clss="relative flex flex-col"
         v-for="project in projects"

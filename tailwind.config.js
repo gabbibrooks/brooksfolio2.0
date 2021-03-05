@@ -7,7 +7,7 @@ module.exports = {
     screens: {
       xs: '375px',
       sm: '640px',
-      md: '768px',
+      md: '800px',
       lg: '1024px',
       xl: '1280px'
     },
@@ -81,6 +81,13 @@ module.exports = {
       boxShadow: {
         base: 'var(--box-shadow)',
         lg: 'var(--box-shadow--lg)'
+      },
+      gridTemplateColumns: {
+        'full': '100%'
+      },
+      gridTemplateRows: {
+        'auto': 'auto auto',
+        'auto-1': 'auto 1fr'
       },
       height: {
         auto: 'auto',
