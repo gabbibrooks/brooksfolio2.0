@@ -154,16 +154,3 @@
     }
   }
 }
-
-/*vue-plyr overrides*/
-div.plyr {
-  max-height: 30vh !important;
-  max-width: 100vw !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-
-  @screen md {
-    max-height: 50vh !important;
-    max-width: 50vw !important;
-  }
-}

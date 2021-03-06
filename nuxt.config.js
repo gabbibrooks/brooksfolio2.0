@@ -6,7 +6,10 @@ const meta = getMetadata()
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
-
+  // server: {
+  //   host: '0.0.0.0', //set to active to test mobile
+  //   port: 8000
+  // },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'Zachary Brooks',
@@ -21,7 +24,7 @@ export default {
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [],
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [{ src: '~/plugins/vue-plyr', mode: 'client' }],
+  plugins: [],
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
   // Build Configuration (https://go.nuxtjs.dev/config-build)

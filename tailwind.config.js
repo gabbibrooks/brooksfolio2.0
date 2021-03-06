@@ -45,9 +45,6 @@ module.exports = {
         success: 'var(--color-text-success)',
         error: 'var(--color-text-error)'
       },
-      gridTemplateColumns: {
-        'projects': 'minmax(0,1fr) minmax(0,1fr)'
-      },
       spacing: {
         '-12': '-3rem',
         '1/2': '50%',
@@ -83,7 +80,8 @@ module.exports = {
         lg: 'var(--box-shadow--lg)'
       },
       gridTemplateColumns: {
-        'full': '100%'
+        'full': '100%',
+        'projects': 'minmax(0,1fr) minmax(0,1fr)'
       },
       gridTemplateRows: {
         'auto': 'auto auto',

@@ -37,10 +37,6 @@
 
   --box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 0.4);
   --box-shadow--lg: 0 0 4rem -2rem rgba(0, 0, 0, 0.6);
-
-  /*plyr component overrides*/
-  --plyr-color-main: var(--color-primary);
-  --plyr-video-control-color: var(--color-text-inverse);
 }
 
 .light {

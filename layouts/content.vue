@@ -11,7 +11,6 @@
         </main>
       </div>
     </div>
-
     <the-footer></the-footer>
   </div>
 </template>

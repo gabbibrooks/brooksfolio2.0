@@ -1,7 +1,5 @@
 <template>
-  <nav
-    class="fixed top-0 left-0 w-full leading-8 z-1000 bg-navigation text-nav"
-  >
+  <nav class="fixed top-0 left-0 z-10 w-full leading-8 bg-navigation text-nav">
     <a href="#content" id="skip-navigation" class="sr-only">Skip to Content</a>
     <div
       class="relative flex flex-wrap items-center justify-between max-w-6xl px-4 mx-auto my-0 sm:px-6 lg:px-8"
@@ -42,20 +40,28 @@
         </div>
       </div>
       <color-mode-picker class="hidden mr-0 lg:block" />
-      <div class="fixed inset-0 z-50 overflow-hidden lg:hidden">
+      <button
+        v-if="!menuOpen"
+        @click="clickMenu"
+        class="inline-flex items-center justify-center lg:hidden text-primary hover:text-secondary"
+        :aria-label="menuLabel"
+        :aria-expanded="menuOpen"
+      >
+        <component :is="'menu-open'" />
+      </button>
+      <div v-if="menuOpen" class="fixed inset-0 z-50 overflow-hidden lg:hidden">
         <button
           @click="clickMenu"
           class="absolute top-0 right-0 z-50 inline-flex items-center justify-center p-2 m-3 lg:hidden text-primary hover:text-secondary"
           :aria-label="menuLabel"
           :aria-expanded="menuOpen"
         >
-          <component :is="menuIcon" />
+          <component :is="'menu-close'" />
         </button>
         <div
           class="absolute inset-0 w-screen h-screen opacity-90 bg-secondary"
-          v-show="menuOpen"
         ></div>
-        <div class="block" v-show="menuOpen">
+        <div class="block">
           <nav
             class="absolute left-0 flex flex-col justify-between w-3/4 z-2 h-3/4 bottom-100px"
           >
@@ -119,9 +125,6 @@ export default {
   computed: {
     menuLabel() {
       return this.menuOpen ? 'Close navigation' : 'Open navigation'
-    },
-    menuIcon() {
-      return this.menuOpen ? 'menu-close' : 'menu-open'
     }
   },
   methods: {
