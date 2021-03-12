@@ -26,7 +26,7 @@
     >
       <div>
         <h2 class="inline-flex items-center text-4xl text-primary">
-          <fa class="w-8 h-8 mr-2" :icon="['fas', 'laptop-code']" size="xs" />
+          <!-- <fa class="w-8 h-8 mr-2" :icon="['fas', 'laptop-code']" size="xs" /> -->
           Work History
         </h2>
         <div class="mt-4">
@@ -63,11 +63,11 @@
       </div>
       <div>
         <h2 class="inline-flex items-center text-4xl text-primary">
-          <fa
+          <!-- <fa
             class="w-8 h-8 mr-2"
             :icon="['fas', 'graduation-cap']"
             size="xs"
-          />
+          /> -->
           Education
         </h2>
         <div class="mt-4">
