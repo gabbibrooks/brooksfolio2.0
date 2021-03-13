@@ -24,15 +24,22 @@ module.exports = {
         css: {
           color: 'var(--color-text-primary)',
           h1: {
+            position: 'relative',
             color: 'var(--color-text-primary)',
-            scrollMarginTop: '6rem'
+            scrollSnapMarginTop: '6rem',
+            scrollMarginTop: '6rem',
+            paddingBottom: '.25rem'
           },
           h2: {
+            position: 'relative',
             color: 'var(--color-text-primary)',
-            scrollMarginTop: '6rem'
+            scrollSnapMarginTop: '6rem',
+            scrollMarginTop: '6rem',
+            paddingBottom: '.25rem'
           },
           h3: {
             color: 'var(--color-text-primary)',
+            scrollSnapMarginTop: '6rem',
             scrollMarginTop: '6rem'
           },
           blockquote: {
@@ -168,7 +175,8 @@ module.exports = {
         '38': '38vh',
         px250: '250px',
         px275: '275px',
-        px300: '300px'
+        px300: '300px',
+        'screen-w-footer': 'calc(100vh - 112px)'
       },
       minWidth: {
         '70': '70%'
@@ -213,7 +221,7 @@ module.exports = {
       'nuxt.config.js'
     ],
     options: {
-      whitelist: [/svg.*/, /fa.*/],
+      whitelist: [/svg.*/],
       extractors: [
         {
           extractor: content => {

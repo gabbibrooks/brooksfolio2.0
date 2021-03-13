@@ -46,14 +46,14 @@
   --color-secondary: #fed318;
   /* --color-secondary: #fbc758; */
 
-  --color-bg-primary: #ffffff;
+  --color-bg-primary: #f9f9fb;
   --color-bg-primary--muted: rgba(249, 249, 251, 0.6);
   --color-bg-secondary: #eef0f1;
   --color-bg-tertiary: #fbc758;
   --color-bg-inverse: black;
   /* --color-bg-code: rgba(0, 0, 0, 0.1); */
   --color-bg-code: #2d3748;
-  --color-bg-navigation: hsla(0, 0%, 100%, 1);
+  --color-bg-navigation: #eef0f1;
 
   --color-text-primary: theme('colors.gray.900');
   --color-text-primary--muted: rgba(0, 0, 0, 0.6);

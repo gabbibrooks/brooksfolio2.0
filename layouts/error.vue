@@ -1,10 +1,10 @@
 <template>
-  <div class="min-h-screen pt-16 transition-colors duration-500">
+  <div class="min-h-screen-w-footer pt-16 transition-colors duration-500">
     <the-navigation></the-navigation>
     <div>
       <div class="relative">
         <div
-          class="flex flex-col justify-center w-full mx-auto text-4xl text-center text-primary"
+          class="text-primary flex flex-col justify-center w-full mx-auto text-4xl text-center"
         >
           <h1 class="" v-if="error.statusCode === 404">Page not found</h1>
           <h1 v-else>An error occurred</h1>

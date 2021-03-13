@@ -1,5 +1,6 @@
 <template>
   <div
+    v-if="surround[0] || surround[1]"
     class="grid-rows-auto border-primary rounded-2xl grid my-16 border-2"
     :class="[layoutClasses]"
   >

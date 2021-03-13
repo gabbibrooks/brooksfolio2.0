@@ -2,41 +2,48 @@
   content: ' \2014';
 }
 
-.nuxt-content h2 > a::before,
-.nuxt-content h3 > a::before {
-  content: '#';
+.nuxt-content h2 > a > span,
+.nuxt-content h3 > a > span {
   color: var(--color-primary);
-  font-weight: 400;
-  font-size: 1.25rem;
-  line-height: 1.75;
-  margin-left: -1.25rem;
-  padding-right: 0.5rem;
-  position: absolute;
   opacity: 1;
   @media (min-width: theme('screens.lg')) {
     opacity: 0;
   }
 }
 
-.nuxt-content h2:hover > a::before,
-.nuxt-content h3:hover > a::before {
+.nuxt-content h2:hover > a > span,
+.nuxt-content h3:hover > a > span {
   opacity: 1;
 }
 
 .nuxt-content h2 > a,
 .nuxt-content h3 > a {
-  margin-left: 1.25rem;
-  @media (min-width: theme('screens.lg')) {
-    margin-left: 0;
-  }
+  text-decoration: none;
 }
 
-.prose code::before {
-  content: none !important;
-}
-
+.prose code::before,
 .prose code::after {
   content: none !important;
+}
+
+.prose ul > li::before,
+.prose ol > li::before {
+  background-color: var(--color-text-primary);
+}
+
+.prose h1::after,
+.prose h2::after {
+  background: linear-gradient(
+    90deg,
+    var(--color-text-primary--muted),
+    transparent
+  );
+  bottom: 0;
+  content: '';
+  height: 0.2vmin;
+  left: 0;
+  position: absolute;
+  width: 100%;
 }
 
 .theme-transition {

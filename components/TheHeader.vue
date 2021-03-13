@@ -1,18 +1,18 @@
 <template>
-  <div class="overflow-hidden transition-colors duration-500 bg-secondary">
+  <div class="bg-secondary overflow-hidden">
     <div class="hero">
       <header
-        class="relative max-w-screen-xl px-4 mx-auto mt-10 sm:mt-12 sm:px-6 md:mt-16 lg:mt-32 xl:mt-28"
+        class="sm:mt-12 sm:px-6 md:mt-16 lg:mt-32 xl:mt-28 relative max-w-screen-xl px-4 mx-auto mt-10"
       >
         <div class="relative text-center">
           <h1
-            class="text-4xl leading-10 tracking-tight text-primary sm:text-5xl sm:leading-none md:text-6xl"
+            class="text-primary sm:text-5xl sm:leading-none md:text-6xl text-4xl leading-10 tracking-tight"
           >
             {{ header }}
           </h1>
           <p
             v-if="body"
-            class="max-w-md mx-auto mt-3 text-base text-primary sm:text-lg md:mt-5 md:text-xl md:max-w-2xl"
+            class="text-primary sm:text-lg md:mt-5 md:text-xl md:max-w-2xl max-w-md mx-auto mt-3 text-base"
           >
             {{ body }}
           </p>

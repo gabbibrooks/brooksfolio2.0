@@ -70,6 +70,21 @@ export default {
   },
   content: {
     markdown: {
+      remarkAutolinkHeadings: {
+        behavior: 'append',
+        linkProperties: {
+          ariaHidden: 'true',
+          tabIndex: -1,
+          title: 'Link to Section',
+          className: ['no-external-link']
+        },
+        content: {
+          type: 'element',
+          tagName: 'span',
+          properties: { className: ['icon', 'icon-link'] },
+          children: [{ type: 'text', value: ' #' }]
+        }
+      },
       remarkExternalLinks: {
         content: {
           type: 'element',
@@ -103,25 +118,6 @@ export default {
       }
     }
   },
-  // fontawesome: {
-  //   component: 'fa',
-  //   icons: {
-  //     solid: [
-  //       'faEnvelope',
-  //       'faNewspaper',
-  //       'faCode',
-  //       'faUser',
-  //       'faArrowRight',
-  //       'faArrowLeft',
-  //       'faShareAlt',
-  //       'faThumbsUp',
-  //       'faTimesCircle',
-  //       'faLaptopCode',
-  //       'faGraduationCap'
-  //     ],
-  //     brands: ['faGithub', 'faTwitter', 'faLinkedin']
-  //   }
-  // },
   tailwindcss: {
     // exposeConfig: true
   },
