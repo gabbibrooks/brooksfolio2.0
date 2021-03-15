@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen-w-footer pt-16 transition-colors duration-100">
+  <div class="min-h-screen-w-footer pt-16 transition-colors duration-500">
     <the-navigation></the-navigation>
     <the-header></the-header>
     <div>

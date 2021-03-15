@@ -53,6 +53,12 @@ export default {
       }
     }
   },
+
+  loadingIndicator: {
+    name: 'chasing-dots',
+    color: 'var(--color-primary)',
+    background: 'var(--color-bg-primary)'
+  },
   //Module Configuration
   cloudinary: {
     cloudName: 'zacharybrooks-dev',

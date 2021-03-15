@@ -1,6 +1,6 @@
 <template>
   <header
-    class="pt-16 pb-24 overflow-hidden transition-colors duration-500 lg:pt-16 lg:pb-32 bg-secondary content-hero"
+    class="pt-16 pb-24 overflow-hidden lg:pt-16 lg:pb-32 bg-secondary content-hero"
   >
     <div
       class="relative max-w-6xl px-4 mx-auto md:pb-4 sm:px-6 lg:px-8"
