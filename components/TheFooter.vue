@@ -2,39 +2,42 @@
   <footer class="relative w-full opacity-75">
     <div class="bg-navigation">
       <div
-        class="max-w-6xl px-4 py-6 mx-auto sm:px-6 md:flex md:items-center md:justify-between lg:px-8"
+        class="sm:px-6 md:flex md:items-center md:justify-between lg:px-8 max-w-6xl px-4 py-6 mx-auto"
       >
-        <div class="flex justify-center md:order-2">
+        <div class="md:order-2 flex justify-center">
           <a
             href="https://twitter.com/zacann0n"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             target="_blank"
-            title="Twitter Profile"
-            class="mx-2 my-2 no-external-link text-primary--muted hover:text-primary"
+            title="Twitter"
+            class="no-external-link text-primary--muted hover:text-primary mx-2 my-2"
           >
-            <fa :icon="['fab', 'twitter']" size="lg" />
+            <span class="sr-only">Twitter</span>
+            <twitter class="w-6 h-6" />
           </a>
           <a
             href="https://github.com/brooksztb"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             target="_blank"
-            title="Github Profile"
-            class="mx-2 my-2 no-external-link text-primary--muted hover:text-primary"
+            title="Github"
+            class="no-external-link text-primary--muted hover:text-primary mx-2 my-2"
           >
-            <fa :icon="['fab', 'github']" size="lg" />
+            <span class="sr-only">GitHub</span>
+            <github class="w-6 h-6" />
           </a>
           <a
             href="https://www.linkedin.com/in/zachary-brooks-3b8b5b84/"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             target="_blank"
-            title="Linkedin Profile"
-            class="mx-2 my-2 no-external-link text-primary--muted hover:text-primary lg:mr-0"
+            title="Linkedin"
+            class="no-external-link text-primary--muted hover:text-primary lg:mr-0 mx-2 my-2"
           >
-            <fa :icon="['fab', 'linkedin']" size="lg" />
+            <span class="sr-only">LinkedIn</span>
+            <linked-in class="w-6 h-6" />
           </a>
         </div>
-        <div class="mt-8 md:mt-0 md:order-1">
-          <p class="text-base leading-6 text-center text-primary-muted">
+        <div class="md:mt-0 md:order-1 mt-8">
+          <p class="text-primary-muted text-base leading-6 text-center">
             © {{ new Date().getFullYear() }} Zachary Brooks
           </p>
         </div>
@@ -44,7 +47,17 @@
 </template>
 
 <script>
-export default {}
+import Twitter from '@/assets/images/icons/twitter.svg?inline'
+import Github from '@/assets/images/icons/github.svg?inline'
+import LinkedIn from '@/assets/images/icons/linked_in.svg?inline'
+
+export default {
+  components: {
+    Twitter,
+    Github,
+    LinkedIn
+  }
+}
 </script>
 
 <style></style>

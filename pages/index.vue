@@ -1,8 +1,8 @@
 <template>
-  <div class="grid grid-cols-1 gap-24 md:grid-cols-3">
+  <div class="md:grid-cols-3 grid grid-cols-1 gap-24">
     <section class="col-span-2">
-      <h2 class="text-3xl leading-9 text-primary sm:text-4xl sm:leading-10">
-        Recent Blog Posts
+      <h2 class="text-primary sm:text-4xl sm:leading-10 text-3xl leading-9">
+        Recently Published
       </h2>
       <div class="block">
         <article
@@ -15,7 +15,7 @@
       </div>
     </section>
     <section class="flex flex-col col-span-1">
-      <h3 class="text-3xl leading-9 text-primary sm:text-2xl sm:leading-10">
+      <h3 class="text-primary sm:text-2xl sm:leading-10 text-3xl leading-9">
         Top Categories
       </h3>
       <div class="flex flex-row flex-wrap mt-4">
@@ -76,6 +76,7 @@ export default {
     Tag
   },
   mounted() {
+    console.log(this.$style.red)
     this.$store.dispatch('setPageHeader', this.homepage.header)
     this.$store.dispatch('setPageSubheader', this.homepage.introduction)
     this.$store.dispatch('setPageHeaderPosition', 'center')

@@ -1,8 +1,5 @@
 module.exports = {
-  experimental: {
-    darkModeVariant: true
-  },
-  dark: 'class',
+  darkMode: 'class',
   theme: {
     screens: {
       xs: '375px',
@@ -22,6 +19,67 @@ module.exports = {
     fontStyle: {
       italic: 'italic'
     },
+    typography: theme => ({
+      default: {
+        css: {
+          color: 'var(--color-text-primary)',
+          h1: {
+            position: 'relative',
+            color: 'var(--color-text-primary)',
+            scrollSnapMarginTop: '6rem',
+            scrollMarginTop: '6rem',
+            paddingBottom: '.25rem'
+          },
+          h2: {
+            position: 'relative',
+            color: 'var(--color-text-primary)',
+            scrollSnapMarginTop: '6rem',
+            scrollMarginTop: '6rem',
+            paddingBottom: '.25rem'
+          },
+          h3: {
+            color: 'var(--color-text-primary)',
+            scrollSnapMarginTop: '6rem',
+            scrollMarginTop: '6rem'
+          },
+          blockquote: {
+            borderLeft: '4px solid var(--color-border-primary)',
+            paddingLeft: 'calc(var(--space) / 2)',
+            color: 'var(--color-text-primary)'
+          },
+          strong: {
+            color: 'var(--color-text-primary)',
+            fontWeight: theme('fontWeight.semibold')
+          },
+          small: {
+            fontSize: theme('fontSize.sm')
+          },
+          p: {
+            marginTop: '1.25em',
+            marginBottom: '1.25em'
+          },
+          a: {
+            // color: 'var',
+            // '&:hover': {
+            //   color: '#2F40EB',
+            // },
+          },
+          em: {
+            fontStyle: theme('fontStyle.italic')
+          },
+          code: {
+            color: '#f7fafc',
+            fontWeight: '400',
+            fontSize: '.875em',
+            backgroundColor: '#2d3748',
+            padding: '.25rem',
+            borderWidth: '0',
+            borderColor: '#edf2f7',
+            borderRadius: '.25rem'
+          }
+        }
+      }
+    }),
     extend: {
       backgroundColor: {
         primary: 'var(--color-bg-primary)',
@@ -117,7 +175,8 @@ module.exports = {
         '38': '38vh',
         px250: '250px',
         px275: '275px',
-        px300: '300px'
+        px300: '300px',
+        'screen-w-footer': 'calc(100vh - 112px)'
       },
       minWidth: {
         '70': '70%'
@@ -149,7 +208,7 @@ module.exports = {
     transitionDuration: ['responsive', 'hover', 'focus'],
     margin: ['responsive', 'hover', 'first']
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
   purge: {
     enabled: process.env.NODE_ENV === 'production',
     content: [
@@ -162,7 +221,7 @@ module.exports = {
       'nuxt.config.js'
     ],
     options: {
-      whitelist: [/svg.*/, /fa.*/],
+      whitelist: [/svg.*/],
       extractors: [
         {
           extractor: content => {
