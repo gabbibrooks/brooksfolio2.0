@@ -11,7 +11,7 @@
   "dependencies": {
     "@nuxt/content": "^1.14.0",
     "@nuxtjs/cloudinary": "^1.0.3-beta-3",
-    "@tailwindcss/typography": "^0.2.0",
+    "@tailwindcss/typography": "^0.4.0",
     "core-js": "^3.9.1",
     "nuxt": "^2.15.3",
     "prism-themes": "^1.5.0",
@@ -20,8 +20,9 @@
   "devDependencies": {
     "@nuxtjs/color-mode": "^2.0.5",
     "@nuxtjs/svg": "^0.1.12",
-    "@nuxtjs/tailwindcss": "^3.4.3",
+    "@nuxtjs/tailwindcss": "^4.0.1",
     "nuxt-webfontloader": "^1.1.0",
+    "postcss": "^8.2.8",
     "stylelint": "^13.12.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^21.0.0"
