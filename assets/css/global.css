@@ -9,6 +9,7 @@
 
 /* Blocks */
 @import './blocks/content.css';
+@import './blocks/hero.css';
 @import './blocks/layout.css';
 
 /* Global CSS Starts */

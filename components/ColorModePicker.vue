@@ -35,7 +35,7 @@ export default {
       return `icon-${this.$colorMode.value}`
     },
     label() {
-      return `Activate ${
+      return `Turn on ${
         this.$colorMode.value == 'dark' ? 'light' : 'dark'
       } mode`
     }
