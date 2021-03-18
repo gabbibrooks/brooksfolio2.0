@@ -2,6 +2,7 @@
 
 /* Utilities */
 @import './utilities/flow.css';
+@import './utilities/link.css';
 @import './utilities/theme.css';
 @import './utilities/transition.css';
 @import './utilities/wrapper.css';

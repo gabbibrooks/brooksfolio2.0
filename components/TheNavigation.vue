@@ -8,16 +8,28 @@
         <logo></logo>
         <div class="site-nav-inner-items">
           <div class="site-nav-links">
-            <nuxt-link class="[ nav-link ] [ text-primary ]" to="/about">
+            <nuxt-link
+              class="[ nav-link ] [ not-external-link text-primary ]"
+              to="/about"
+            >
               About
             </nuxt-link>
-            <nuxt-link class="[ nav-link ] [ text-primary ]" to="/blog">
+            <nuxt-link
+              class="[ nav-link ] [ not-external-link text-primary ]"
+              to="/blog"
+            >
               Blog
             </nuxt-link>
-            <nuxt-link class="[ nav-link ] [ text-primary ]" to="/work">
+            <nuxt-link
+              class="[ nav-link ] [ not-external-link text-primary ]"
+              to="/work"
+            >
               Work
             </nuxt-link>
-            <nuxt-link class="[ nav-link ] [ text-primary ]" to="/speaking">
+            <nuxt-link
+              class="[ nav-link ] [ not-external-link text-primary ]"
+              to="/speaking"
+            >
               Speaking
             </nuxt-link>
           </div>
@@ -171,12 +183,9 @@ export default {
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.25rem;
-  border: none;
 }
 
 .nav-link:hover {
-  cursor: pointer;
-  background-color: transparent;
   color: var(--color-text-primary);
 }
 

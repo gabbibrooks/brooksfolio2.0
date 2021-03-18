@@ -1,0 +1,8 @@
+.not-external-link {
+  border: none;
+}
+
+.not-external-link:hover {
+  cursor: pointer;
+  background-color: transparent;
+}
