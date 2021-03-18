@@ -22,7 +22,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [],
+  css: ['@/assets/css/global.css'],
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [],
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -32,9 +32,8 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
+    // '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
-    // '@nuxtjs/fontawesome',
     '@nuxtjs/svg',
     '@nuxtjs/cloudinary'
   ],
@@ -124,13 +123,13 @@ export default {
       }
     }
   },
-  tailwindcss: {
-    // exposeConfig: true
-  },
+  // tailwindcss: {
+  //   // exposeConfig: true
+  // },
   webfontloader: {
     google: {
       families: [
-        'Varela:300,400,600,700&display=swap',
+        'Varela:300,400,500,600,700&display=swap',
         'Open+Sans:300,400&display=swap'
       ]
     },

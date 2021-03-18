@@ -1,6 +1,6 @@
 <template>
-  <div class="transition-colors duration-500">
-    <div class="min-h-screen-w-footer pt-16">
+  <div class="transition-colors-500">
+    <div class="layout">
       <the-navigation></the-navigation>
       <div>
         <the-content-header></the-content-header>

@@ -208,7 +208,7 @@ module.exports = {
     transitionDuration: ['responsive', 'hover', 'focus'],
     margin: ['responsive', 'hover', 'first']
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [],
   purge: {
     enabled: process.env.NODE_ENV === 'production',
     content: [

@@ -76,7 +76,6 @@ export default {
     Tag
   },
   mounted() {
-    console.log(this.$style.red)
     this.$store.dispatch('setPageHeader', this.homepage.header)
     this.$store.dispatch('setPageSubheader', this.homepage.introduction)
     this.$store.dispatch('setPageHeaderPosition', 'center')

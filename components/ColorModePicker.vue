@@ -1,15 +1,13 @@
 <template>
-  <div>
-    <button
-      class="p-1 text-white transition duration-150 ease-in-out border-2 border-transparent rounded-full focus:outline-none"
-      @click="toggleColorMode()"
-      type="button"
-      :aria-label="label"
-      :title="label"
-    >
-      <component class="w-10 h-10 lg:h-6 lg:w-6" :is="icon" />
-    </button>
-  </div>
+  <button
+    class="[ color-mode-btn ] [ transition ease-in-out ]"
+    @click="toggleColorMode()"
+    type="button"
+    :aria-label="label"
+    :title="label"
+  >
+    <component :is="icon" />
+  </button>
 </template>
 
 <script>
@@ -45,4 +43,38 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.color-mode-btn {
+  background-color: transparent;
+  border: 2px transparent;
+  border-radius: 9999px;
+  padding: 0.25rem;
+  height: 3rem;
+}
+
+.color-mode-btn:hover svg {
+  cursor: pointer;
+  color: var(--color-primary);
+}
+
+.color-mode-btn:focus {
+  outline: none;
+}
+
+.color-mode-btn svg {
+  color: var(--color-text-primary);
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+@media screen and (min-width: 800px) {
+  .color-mode-btn {
+    height: 2rem;
+  }
+
+  .color-mode-btn svg {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+</style>

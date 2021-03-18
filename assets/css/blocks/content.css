@@ -1,0 +1,17 @@
+.content-inner {
+  max-width: 72rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 640px) {
+  .content-inner {
+    padding: 0 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .content-inner {
+    padding: 0 2rem;
+  }
+}

@@ -1,11 +1,11 @@
 <template>
-  <div class="min-h-screen-w-footer pt-16 transition-colors duration-500">
+  <div class="[ layout ] [ transition-colors-500 ]">
     <the-navigation></the-navigation>
     <the-header></the-header>
     <div>
-      <div class="relative">
-        <main id="content" class="lg:pt-12 lg:pb-28 relative pt-8 pb-20">
-          <div class="sm:px-6 lg:px-8 max-w-6xl px-4 mx-auto">
+      <div class="main-content-outer">
+        <main id="content" class="main-content">
+          <div class="content-inner">
             <nuxt keep-alive />
           </div>
         </main>
@@ -18,7 +18,7 @@
 <script>
 import TheNavigation from '@/components/TheNavigation'
 import TheFooter from '@/components/TheFooter'
-import TheHeader from '../components/TheHeader.vue'
+import TheHeader from '@/components/TheHeader.vue'
 
 export default {
   components: {
@@ -28,4 +28,21 @@ export default {
   }
 }
 </script>
-<style></style>
+<style scoped>
+.main-content-outer {
+  position: relative;
+}
+
+.main-content-outer .main-content {
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .main-content-outer .main-content {
+    padding-top: 3rem;
+    padding-bottom: 7rem;
+  }
+}
+</style>
