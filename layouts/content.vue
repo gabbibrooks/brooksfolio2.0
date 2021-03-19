@@ -1,14 +1,12 @@
 <template>
-  <div class="transition-colors-500">
-    <div class="layout">
+  <div class="transition-colors-300">
+    <div class="layout-wrapper">
       <the-navigation></the-navigation>
       <div>
         <the-content-header></the-content-header>
-        <div class="relative">
-          <main id="content" class="lg:pt-12 lg:pb-28 relative pt-8 pb-20">
-            <div class="sm:px-6 lg:px-8 max-w-6xl px-4 mx-auto">
-              <nuxt keep-alive />
-            </div>
+        <div class="main-content-container">
+          <main id="content" class="[ main-content ] [ wrapper ]">
+            <nuxt keep-alive />
           </main>
         </div>
       </div>

@@ -6,3 +6,16 @@
   cursor: pointer;
   background-color: transparent;
 }
+
+.external-link {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.external-link .icn {
+  height: 1rem;
+  width: 1rem;
+  margin-top: -0.25rem;
+  margin-left: 0.25rem;
+  stroke-width: 2;
+}

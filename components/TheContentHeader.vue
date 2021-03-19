@@ -1,7 +1,7 @@
 <template>
   <header class="[ content-header ] [ bg-secondary ]">
     <div
-      class="[ content-header-inner content-inner ]"
+      class="[ content-header-items ] [ wrapper ]"
       :data-position="textAlignment"
     >
       <h1 class=" [ headline ] [ text-primary ] ">
@@ -36,20 +36,20 @@ export default {
   padding: 4rem 0 6rem 0;
 }
 
-.content-header-inner {
+.content-header-items {
   text-align: center;
   position: relative;
 }
 
-.content-header-inner[data-position='left'] {
+.content-header-items[data-position='left'] {
   text-align: left;
 }
 
-.content-header-inner[data-position='center'] {
+.content-header-items[data-position='center'] {
   text-align: center;
 }
 
-.content-header-inner[data-position='right'] {
+.content-header-items[data-position='right'] {
   text-align: right;
 }
 
@@ -79,7 +79,7 @@ export default {
 }
 
 @media screen and (min-width: 800px) {
-  .content-header-inner {
+  .content-header-items {
     padding-bottom: 1rem;
   }
 

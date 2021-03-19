@@ -1,13 +1,11 @@
 <template>
   <div>
-    <div class="[ layout ] [ transition-colors-500 ]">
+    <div class="[ layout-wrapper ] [ transition-colors-300 ]">
       <the-navigation></the-navigation>
       <the-header></the-header>
       <div class="main-content-container">
-        <main id="content" class="main-content">
-          <div class="content-inner">
-            <nuxt keep-alive />
-          </div>
+        <main id="content" class="[ main-content ] [ wrapper ]">
+          <nuxt keep-alive />
         </main>
       </div>
     </div>
@@ -28,21 +26,4 @@ export default {
   }
 }
 </script>
-<style scoped>
-.main-content-container {
-  position: relative;
-}
-
-.main-content {
-  position: relative;
-  padding-top: 2rem;
-  padding-bottom: 5rem;
-}
-
-@media screen and (min-width: 1024px) {
-  .main-content {
-    padding-top: 3rem;
-    padding-bottom: 7rem;
-  }
-}
-</style>
+<style scoped></style>

@@ -1,17 +1,16 @@
-.content-inner {
-  max-width: 72rem;
-  padding: 0 1rem;
-  margin: 0 auto;
+.main-content-container {
+  position: relative;
 }
 
-@media screen and (min-width: 640px) {
-  .content-inner {
-    padding: 0 1.5rem;
-  }
+.main-content {
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 5rem;
 }
 
 @media screen and (min-width: 1024px) {
-  .content-inner {
-    padding: 0 2rem;
+  .main-content {
+    padding-top: 3rem;
+    padding-bottom: 7rem;
   }
 }

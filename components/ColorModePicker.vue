@@ -6,7 +6,7 @@
     :aria-label="label"
     :title="label"
   >
-    <component :is="icon" />
+    <component class="icn" :is="icon" />
   </button>
 </template>
 
@@ -52,7 +52,7 @@ export default {
   height: 3rem;
 }
 
-.color-mode-btn:hover svg {
+.color-mode-btn:hover .icn {
   cursor: pointer;
   color: var(--color-primary);
 }
@@ -61,7 +61,7 @@ export default {
   outline: none;
 }
 
-.color-mode-btn svg {
+.color-mode-btn .icn {
   color: var(--color-text-primary);
   height: 2.5rem;
   width: 2.5rem;
@@ -72,7 +72,7 @@ export default {
     height: 2rem;
   }
 
-  .color-mode-btn svg {
+  .color-mode-btn .icn {
     height: 1.5rem;
     width: 1.5rem;
   }

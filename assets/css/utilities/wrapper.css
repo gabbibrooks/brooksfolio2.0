@@ -1,6 +1,10 @@
 .wrapper {
   max-width: 75rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 1.33rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.layout-wrapper {
+  min-height: calc(100vh - 7rem);
+  padding-top: 4rem;
 }

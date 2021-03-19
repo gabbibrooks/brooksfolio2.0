@@ -1,6 +1,6 @@
 <template>
   <footer class="[ footer ] [ bg-secondary ]">
-    <div class="[ footer-inner content-inner ]">
+    <div class="[ footer-items ] [ wrapper ]">
       <div class="footer-links">
         <a
           href="https://twitter.com/zacann0n"
@@ -10,7 +10,7 @@
           class="[ footer-link ] [ not-external-link text-primary--muted ]"
         >
           <span class="visually-hidden">Twitter</span>
-          <twitter />
+          <twitter class="icn" />
         </a>
         <a
           href="https://github.com/brooksztb"
@@ -20,7 +20,7 @@
           class="[ footer-link ] [ not-external-link text-primary--muted ]"
         >
           <span class="visually-hidden">GitHub</span>
-          <github />
+          <github class="icn" />
         </a>
         <a
           href="https://www.linkedin.com/in/zachary-brooks-3b8b5b84/"
@@ -30,7 +30,7 @@
           class="[ footer-link ] [ not-external-link text-primary--muted ]"
         >
           <span class="visually-hidden">LinkedIn</span>
-          <linked-in />
+          <linked-in class="icn" />
         </a>
       </div>
       <div class="[ footer-copyright ] [ text-primary--muted]">
@@ -61,7 +61,7 @@ export default {
   opacity: 0.75;
 }
 
-.footer-inner {
+.footer-items {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
@@ -80,7 +80,7 @@ export default {
   color: var(--color-text-primary);
 }
 
-.footer-link svg {
+.footer-link .icn {
   height: 2rem;
   width: 2rem;
 }
@@ -96,13 +96,13 @@ export default {
 }
 
 @media screen and (min-width: 800px) {
-  .footer-inner {
+  .footer-items {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  .footer-link svg {
+  .footer-link .icn {
     height: 1.5rem;
     width: 1.5rem;
   }

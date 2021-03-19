@@ -3,7 +3,7 @@
     <a href="#content" id="skip-navigation" class="visually-hidden"
       >Skip to Content</a
     >
-    <div class="[ site-nav content-inner ]">
+    <div class="[ site-nav ] [ wrapper ]">
       <div class="site-nav-inner">
         <logo></logo>
         <div class="site-nav-inner-items">
@@ -59,28 +59,28 @@
           <div class="nav-menu-links">
             <nuxt-link
               @click.native="menuOpen = false"
-              class="[ nav-link ] [ text-primary ]"
+              class="[ nav-link ] [ not-external-link text-primary ]"
               to="/about"
             >
               About
             </nuxt-link>
             <nuxt-link
               @click.native="menuOpen = false"
-              class="[ nav-link ] [ text-primary ]"
+              class="[ nav-link ] [ not-external-link text-primary ]"
               to="/blog"
             >
               Blog
             </nuxt-link>
             <nuxt-link
               @click.native="menuOpen = false"
-              class="[ nav-link ] [ text-primary ]"
+              class="[ nav-link ] [ not-external-link text-primary ]"
               to="/work"
             >
               Work
             </nuxt-link>
             <nuxt-link
               @click.native="menuOpen = false"
-              class="[ nav-link ] [ text-primary ]"
+              class="[ nav-link ] [ not-external-link text-primary ]"
               to="/speaking"
             >
               Speaking
@@ -211,7 +211,7 @@ export default {
   top: 0;
   right: 0;
   z-index: 50;
-  margin: 0.9rem 1rem;
+  margin: 0.9rem 1.5rem;
 }
 
 .nav-menu-btn:hover {

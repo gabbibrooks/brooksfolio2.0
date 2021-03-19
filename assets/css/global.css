@@ -11,7 +11,7 @@
 /* Blocks */
 @import './blocks/content.css';
 @import './blocks/hero.css';
-@import './blocks/layout.css';
+@import './blocks/prose.css';
 
 /* Global CSS Starts */
 * {
@@ -90,6 +90,6 @@ a:hover {
 }
 
 ::selection {
-  background-color: var(--color-primary--muted);
+  background-color: var(--color-primary);
   text-shadow: none;
 }
