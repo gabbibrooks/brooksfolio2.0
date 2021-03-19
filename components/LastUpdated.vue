@@ -1,9 +1,7 @@
 <template>
-  <div class="flex">
-    <div class="flex flex-col text-primary">
-      <p class="mb-0 text-lg uppercase">Last Updated</p>
-      <span class="text-secondary">{{ updatedDate }}</span>
-    </div>
+  <div class="[ last-updated ] [ text-primary fit-content ]">
+    <p class="[ title ] [ text-secondary ]">Last Updated</p>
+    <span class="date">{{ updatedDate }}</span>
   </div>
 </template>
 
@@ -22,4 +20,24 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.last-updated {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.date {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+</style>

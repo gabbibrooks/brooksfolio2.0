@@ -11,6 +11,7 @@
   --color-text-primary: #f3f4f6;
   --color-text-primary--muted: rgba(243, 244, 246, 0.6);
   --color-text-secondary: #9ca3af;
+  --color-text-tertiary: #111827;
   --color-text-success: #8cda93;
   --color-text-error: #f78483;
   /* --color-text-internal-link: #ffffff; */
@@ -33,6 +34,7 @@
   --color-text-primary: #111827;
   --color-text-primary--muted: rgba(17, 24, 39, 0.6);
   --color-text-secondary: #6b7280;
+  --color-text-tertiary: #f3f4f6;
   --color-text-success: #36a93f;
   --color-text-error: #e4100e;
   /* --color-text-internal-link: #2d3748; */
@@ -48,6 +50,10 @@
 
 .bg-secondary {
   background-color: var(--color-bg-secondary);
+}
+
+.bg-tertiary {
+  background-color: var(--color-primary);
 }
 
 .bg-code {
@@ -72,6 +78,18 @@
 
 .text-secondary {
   color: var(--color-text-secondary);
+}
+
+.text-tertiary {
+  color: var(--color-text-tertiary);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+.border-primary--muted {
+  border-color: var(--color-primary--muted);
 }
 
 /* Breakpoints

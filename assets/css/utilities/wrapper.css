@@ -8,3 +8,7 @@
   min-height: calc(100vh - 7rem);
   padding-top: 4rem;
 }
+
+.fit-content {
+  width: fit-content;
+}

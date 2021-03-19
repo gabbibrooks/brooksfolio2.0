@@ -9,10 +9,6 @@
     </section>
 
     <aside class="sidebar">
-      <small class="text-secondary"
-        >{{ content.formattedCreatedDate }} &mdash;
-        {{ content.readingTime }}</small
-      >
       <div v-if="content.tags.length > 0" class="tags">
         <tag v-for="tag in content.tags" :key="tag" :category="tag" />
       </div>
@@ -112,7 +108,7 @@ export default {
 @media screen and (min-width: 1024px) {
   .block-content {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 6rem;
+    gap: 10rem;
   }
 
   .main {
