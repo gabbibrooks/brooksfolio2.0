@@ -79,14 +79,13 @@ export default {
         behavior: 'append',
         linkProperties: {
           ariaHidden: 'true',
-          tabIndex: -1,
+          tabIndex: '-1',
           title: 'Link to Section',
-          className: ['not-external-link']
+          className: ['[ heading-permalink ] [ not-external-link ]']
         },
         content: {
           type: 'element',
           tagName: 'span',
-          properties: { className: ['[ icon icon-link ]'] },
           children: [
             {
               type: 'element',

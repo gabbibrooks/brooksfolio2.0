@@ -7,6 +7,16 @@
   background-color: transparent;
 }
 
+.heading-permalink {
+  font-size: 0.6em;
+  margin-left: 1rem;
+  border: none;
+}
+
+.heading-permalink:hover {
+  background-color: transparent;
+}
+
 .external-link {
   display: inline-block;
   vertical-align: middle;

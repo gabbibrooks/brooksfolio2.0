@@ -1,54 +1,26 @@
 <template>
-  <div class="lg:gap-24 lg:grid-cols-3 smooth-scroll grid grid-cols-1 gap-4">
-    <section class="lg:col-span-2 lg:order-1 order-2 block col-span-1 mt-0">
-      <article class="lg:prose-xl prose">
+  <div class="block-content">
+    <section class="main">
+      <article class="prose">
         <nuxt-content ref="nuxtContent" :document="content" />
       </article>
       <last-updated :date="content.updatedAt" />
       <prev-next :surround="surround" />
     </section>
 
-    <aside class="lg:col-span-1 lg:flex lg:flex-col lg:order-2 order-1">
+    <aside class="sidebar">
       <small class="text-secondary"
         >{{ content.formattedCreatedDate }} &mdash;
         {{ content.readingTime }}</small
       >
-      <div
-        v-if="content.tags.length > 0"
-        class="lg:flex flex-row flex-wrap hidden py-4"
-      >
+      <div v-if="content.tags.length > 0" class="tags">
         <tag v-for="tag in content.tags" :key="tag" :category="tag" />
       </div>
-      <div v-if="content.toc.length > 0" class="top-16 lg:block sticky hidden">
-        <h2 class="text-primary lg:mt-16 text-lg tracking-wider uppercase">
-          Table of contents
-        </h2>
-        <nav class="mt-4">
-          <ul class="table-of-contents-list">
-            <li
-              @click="tableOfContentsHeadingClick(link)"
-              :class="{
-                'pl-4': link.depth === 3
-              }"
-              v-for="link of content.toc"
-              :key="link.id"
-            >
-              <a
-                role="button"
-                :class="{
-                  'text-initial hover:text-initial--muted':
-                    link.id === currentlyActiveToc,
-                  'text-secondary hover:text-primary':
-                    link.id !== currentlyActiveToc
-                }"
-                class="no-external-link block mb-2 text-base transition-colors duration-75"
-                :href="`#${link.id}`"
-                >{{ tableOfContentsLinkText(link.text) }}</a
-              >
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <table-of-contents
+        :toc="content.toc"
+        :currentlyActiveToc="currentlyActiveToc"
+        @tocHeadingClick="tableOfContentsHeadingClick"
+      />
     </aside>
   </div>
 </template>
@@ -57,6 +29,7 @@
 import PrevNext from '~/components/PrevNext'
 import LastUpdated from '~/components/LastUpdated'
 import Tag from '~/components/Tag'
+import TableOfContents from './TableOfContents.vue'
 
 export default {
   props: {
@@ -66,6 +39,7 @@ export default {
   components: {
     LastUpdated,
     PrevNext,
+    TableOfContents,
     Tag
   },
   data() {
@@ -82,9 +56,6 @@ export default {
   methods: {
     tableOfContentsHeadingClick(link) {
       this.currentlyActiveToc = link.id
-    },
-    tableOfContentsLinkText(link) {
-      return link.replace(/\#$/, '')
     }
   },
   mounted() {
@@ -109,4 +80,51 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.block-content {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.main {
+  display: block;
+  order: 2;
+  grid-column: span 1 / span 1;
+  margin-top: 0;
+}
+
+.sidebar {
+  order: 1;
+}
+
+.sidebar .tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+
+.sidebar .tags:first-child {
+  padding-left: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .block-content {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6rem;
+  }
+
+  .main {
+    order: 1;
+    grid-column: span 2 / span 2;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    grid-column: span 1 / span 1;
+    order: 2;
+  }
+}
+</style>

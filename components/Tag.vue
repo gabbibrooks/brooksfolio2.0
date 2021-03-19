@@ -1,6 +1,6 @@
 <template>
   <nuxt-link
-    class="px-3 py-1 mb-4 mr-3 text-sm rounded-lg first:pl-0 bg-secondary text-primary hover:text-secondary no-external-link"
+    class="[ tag ] [ not-external-link bg-secondary text-primary ]"
     :to="`/categories/${category}`"
     >{{ category }}</nuxt-link
   >
@@ -14,4 +14,16 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.tag {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 0.25rem 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
+.tag:hover {
+  color: var(--color-text-secondary);
+}
+</style>
