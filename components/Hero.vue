@@ -1,5 +1,5 @@
 <template>
-  <div class="[ hero-container ] [ bg-secondary ]">
+  <div class="[ hero-container ] [ bg-primary ]">
     <div class="hero">
       <header class="hero-header">
         <div class="hero-header-inner">
@@ -11,7 +11,9 @@
           </p>
         </div>
       </header>
-      <div class="hero-break"><div class="spacer"></div></div>
+      <div class="hero-break">
+        <div class="[ spacer ] [ bg-color-primary ]"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -66,7 +68,6 @@ export default {
   height: 0.25rem;
   width: 18rem;
   border-radius: 9999px;
-  background-color: var(--color-primary);
 }
 
 @media screen and (min-width: 640px) {

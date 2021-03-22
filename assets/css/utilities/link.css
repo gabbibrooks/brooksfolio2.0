@@ -1,5 +1,6 @@
 .not-external-link {
   border: none;
+  transition: none;
 }
 
 .not-external-link:hover {

@@ -1,5 +1,5 @@
 <template>
-  <nav class="[ site-nav-layout ] [ bg-secondary text-primary ]">
+  <nav class="[ site-nav-layout ] [ bg-color-secondary text-primary ]">
     <a href="#content" id="skip-navigation" class="visually-hidden"
       >Skip to Content</a
     >

@@ -1,5 +1,5 @@
 <template>
-  <footer class="[ footer ] [ bg-secondary ]">
+  <footer class="[ footer ] [ bg-primary ]">
     <div class="[ footer-items ] [ wrapper ]">
       <div class="footer-links">
         <a
