@@ -9,6 +9,7 @@
 @import './utilities/visually-hidden.css';
 
 /* Blocks */
+@import './blocks/articles.css';
 @import './blocks/content.css';
 @import './blocks/hero.css';
 @import './blocks/prose.css';

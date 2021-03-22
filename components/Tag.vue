@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
     class="[ tag ] [ not-external-link bg-secondary text-primary ]"
-    :to="`/categories/${category}`"
+    :to="tagLink"
     >{{ category }}</nuxt-link
   >
 </template>
@@ -10,17 +10,20 @@
 export default {
   props: {
     category: String
+  },
+  computed: {
+    tagLink() {
+      return `/blog/${this.category.toLowerCase()}`
+    }
   }
 }
 </script>
 
 <style scoped>
 .tag {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  padding: 0.25rem 0.75rem;
+  padding: 0.5rem;
   margin-bottom: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
 }
 
 .tag:hover {

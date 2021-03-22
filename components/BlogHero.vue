@@ -1,0 +1,155 @@
+<template>
+  <header class="[ content-header ] [ bg-secondary ]">
+    <div class="[ content-header-items ] [ wrapper ]">
+      <div class="content-hero-site-path">
+        <nuxt-link to="/" class="[ site-path-link ] [ text-primary ]"
+          >Home</nuxt-link
+        >
+        <chevron class="[ chevron ] [ text-secondary ]" />
+        <nuxt-link to="/blog/" class="[ site-path-link ] [ text-primary ]"
+          >Blog</nuxt-link
+        >
+        <chevron class="[ chevron ] [ text-secondary ]" />
+        <nuxt-link
+          :to="`/blog/${category}`"
+          class="[ site-path-link ] [ text-primary ]"
+          >{{ article.category }}</nuxt-link
+        >
+      </div>
+      <h1 class=" [ headline ] [ text-primary ] ">
+        {{ article.title }}
+      </h1>
+      <h2
+        v-if="article.description"
+        class="[ sub-headline ] [ text-secondary ]"
+      >
+        {{ article.description }}
+      </h2>
+    </div>
+  </header>
+</template>
+
+<script>
+import Chevron from '@/assets/images/icons/chevron.svg?inline'
+
+export default {
+  props: {
+    article: Object
+  },
+  computed: {
+    category() {
+      return this.article.category.toLowerCase()
+    }
+  },
+  components: {
+    Chevron
+  }
+}
+</script>
+
+<style scoped>
+.content-header {
+  overflow: hidden;
+  padding: 4rem 0 6rem 0;
+}
+
+.content-header-items {
+  position: relative;
+  text-align: left;
+}
+
+.content-hero-site-path {
+  display: flex;
+  align-items: center;
+}
+
+.site-path-link {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  border-radius: 0.375rem;
+  border: none;
+}
+
+.site-path-link:nth-of-type(2),
+.site-path-link:nth-of-type(3) {
+  margin-left: 0.5rem;
+}
+
+.content-hero-site-path .chevron {
+  height: 1rem;
+  width: 1rem;
+  margin: 0 0.5rem;
+}
+
+.site-path-link:focus,
+.site-path-link:hover {
+  outline: none;
+  color: var(--color-text-primary);
+  background: transparent;
+}
+
+.headline {
+  font-size: 1.875rem;
+  font-weight: 800;
+  line-height: 2rem;
+  margin-top: 1rem;
+}
+
+.sub-headline {
+  font-size: 1.125rem;
+  font-weight: 800;
+  line-height: 1.75rem;
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 640px) {
+  .headline {
+    font-size: 2.25rem;
+    line-height: none;
+  }
+
+  .sub-headline {
+    line-height: none;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .content-header-items {
+    padding-bottom: 1rem;
+  }
+
+  .headline {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .sub-headline {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .content-hero-site-path .chevron {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: 0 0.5rem;
+  }
+
+  .site-path-link {
+    font-size: 1.125rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .content-header {
+    padding-bottom: 8rem;
+  }
+
+  .headline {
+    margin-top: 3rem;
+  }
+}
+</style>

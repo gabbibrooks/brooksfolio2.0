@@ -9,8 +9,12 @@
     </section>
 
     <aside class="sidebar">
-      <div v-if="content.tags.length > 0" class="tags">
-        <tag v-for="tag in content.tags" :key="tag" :category="tag" />
+      <div v-if="content.category.length > 0" class="tags">
+        <tag
+          v-for="category in content.category"
+          :key="category"
+          :category="category"
+        />
       </div>
       <table-of-contents
         :toc="content.toc"

@@ -11,19 +11,16 @@
           </p>
         </div>
       </header>
+      <div class="hero-break"><div class="spacer"></div></div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  computed: {
-    header() {
-      return this.$store.state.pageHeader || ''
-    },
-    body() {
-      return this.$store.state.pageSubheader || ''
-    }
+  props: {
+    header: String,
+    body: String
   }
 }
 </script>
@@ -56,6 +53,20 @@ export default {
   line-height: 1.5rem;
   max-width: 28rem;
   margin: 0.75rem auto 0 auto;
+}
+
+.hero-break {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.hero-break .spacer {
+  display: inline-flex;
+  height: 0.25rem;
+  width: 18rem;
+  border-radius: 9999px;
+  background-color: var(--color-primary);
 }
 
 @media screen and (min-width: 640px) {
@@ -94,13 +105,11 @@ export default {
 
 @media screen and (min-width: 1024px) {
   .hero-header {
-    margin-top: 8rem;
+    margin-top: 6rem;
   }
-}
 
-@media screen and (min-width: 1280px) {
-  .hero-header {
-    margin-top: 7rem;
+  .hero-break .spacer {
+    width: 24rem;
   }
 }
 </style>

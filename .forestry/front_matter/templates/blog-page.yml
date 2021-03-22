@@ -1,0 +1,21 @@
+---
+label: Blog Page
+hide_body: false
+fields:
+  - name: header
+    type: text
+    config:
+      required: false
+    label: Header
+    description: Introductory message
+  - name: description
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: true
+      schema:
+        format: markdown
+    label: Description
+pages:
+  - content/blogpage.md

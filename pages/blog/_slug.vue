@@ -1,11 +1,17 @@
 <template>
-  <block-content :content="post" :surround="surround" />
+  <div>
+    <blog-hero :article="post" />
+    <div class="main-content-container">
+      <main id="content" class="[ main-content ] [ wrapper ]">
+        <block-content :content="post" :surround="surround" />
+      </main>
+    </div>
+  </div>
 </template>
 
 <script>
-import BlockContent from '~/components/BlockContent'
-
 export default {
+  layout: 'article',
   async asyncData({ $content, params }) {
     const post = await $content('blog', params.slug).fetch()
     const surround = await $content('blog')
@@ -28,7 +34,7 @@ export default {
         {
           hid: 'keywords',
           name: 'keywords',
-          content: this.post.tag
+          content: this.post.category
         },
         // Open Graph
         { hid: 'og:title', property: 'og:title', content: this.post.title },
@@ -51,16 +57,7 @@ export default {
       ]
     }
   },
-  components: {
-    BlockContent
-  },
-  layout: 'content',
-  scrollToTop: true,
-  mounted() {
-    this.$store.dispatch('setPageHeader', this.post.title)
-    this.$store.dispatch('setPageSubheader', this.post.description)
-    this.$store.dispatch('setPageHeaderPosition', 'left')
-  }
+  scrollToTop: true
 }
 </script>
 
