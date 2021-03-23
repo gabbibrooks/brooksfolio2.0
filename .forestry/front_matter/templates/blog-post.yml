@@ -17,10 +17,11 @@ fields:
     description:
       This ends up on summary pages, on Google, when people share your post
       in social media.
-  - name: category
-    type: text
-    label: Category
-    description: Tags for your blog posts to be grouped by, limit 1
+  - name: tags
+  type: tag_list
+  default: ['All']
+  label: Tags
+  description: Tags for your blog posts to be grouped by
 pages:
   - content/blog/how-to-make-taxonomy-pages-with-gridsome-and-sanity.io.md
   - content/blog/jamstack-denver-meetup-livestreaming-and-recording-setup.md

@@ -1,20 +1,16 @@
 <template>
-  <header class="[ content-header ] [ bg-secondary ]">
+  <header class="[ content-header ] [ bg-primary ]">
     <div class="[ content-header-items ] [ wrapper ]">
       <div class="content-hero-site-path">
-        <nuxt-link to="/" class="[ site-path-link ] [ text-primary ]"
+        <nuxt-link to="/" class="[ site-path-link ] [ text-secondary ]"
           >Home</nuxt-link
         >
         <chevron class="[ chevron ] [ text-secondary ]" />
-        <nuxt-link to="/blog/" class="[ site-path-link ] [ text-primary ]"
+        <nuxt-link to="/blog/" class="[ site-path-link ] [ text-secondary ]"
           >Blog</nuxt-link
         >
         <chevron class="[ chevron ] [ text-secondary ]" />
-        <nuxt-link
-          :to="`/blog/${category}`"
-          class="[ site-path-link ] [ text-primary ]"
-          >{{ article.category }}</nuxt-link
-        >
+        <div class="[ title ] [ text-primary ]">{{ article.title }}</div>
       </div>
       <h1 class=" [ headline ] [ text-primary ] ">
         {{ article.title }}
@@ -63,13 +59,11 @@ export default {
   align-items: center;
 }
 
-.site-path-link {
-  font-size: 0.875rem;
+.site-path-link,
+.title {
+  font-size: 1.125rem;
   line-height: 1.25rem;
   font-weight: 500;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
   border-radius: 0.375rem;
   border: none;
 }
@@ -145,7 +139,7 @@ export default {
 
 @media screen and (min-width: 1024px) {
   .content-header {
-    padding-bottom: 8rem;
+    padding-bottom: 2rem;
   }
 
   .headline {

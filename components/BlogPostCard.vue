@@ -1,13 +1,13 @@
 <template>
   <div class="[ blog-post-card ] [ bg-secondary text-primary ]">
-    <article>
-      <nuxt-link class="[ not-external-link text-primary ]" :to="post.path">
+    <article class="blog-post-content-wrapper">
+      <nuxt-link class="text-primary" :to="post.path">
         <h2 class="title">{{ post.title }}</h2>
         <small class="text-secondary"
           >{{ post.formattedCreatedDate }} &mdash; {{ post.readingTime }}</small
         >
         <div class="description">{{ post.description }}</div>
-        <span class="read-more">Read More</span>
+        <div class="read-more">Read More</div>
       </nuxt-link>
     </article>
   </div>
@@ -26,24 +26,32 @@ export default {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 0.5rem;
+  box-shadow: 0 0 4rem -2rem rgba(0, 0, 0, 0.4);
 }
 
-.blog-post-card:hover {
-  background-color: var(--color-bg-secondary);
+.blog-post-content-wrapper:focus-within {
+  outline: 2px solid;
+  outline-offset: 0.25rem;
+}
+
+.blog-post-content-wrapper:focus-within * {
+  outline: none;
 }
 
 .blog-post-card .description {
+  font-size: 1rem;
   padding: 0.5rem 0;
 }
 
-.blog-post-card:hover .description {
-  color: var(--color-text-primary);
+.title {
+  font-size: 1.35rem;
+  font-weight: 500;
 }
 
-.blog-post-card:hover .title,
-.blog-post-card:hover .read-more {
+.blog-post-content-wrapper:hover .title,
+.blog-post-content-wrapper:hover .read-more {
   color: var(--color-primary);
 }
 </style>

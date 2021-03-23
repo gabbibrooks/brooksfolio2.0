@@ -7,7 +7,7 @@
           rel="noopener noreferrer"
           target="_blank"
           title="Twitter"
-          class="[ footer-link ] [ not-external-link text-primary--muted ]"
+          class="[ footer-link ] [ not-external-link text-primary ]"
         >
           <span class="visually-hidden">Twitter</span>
           <twitter class="icn" />
@@ -17,7 +17,7 @@
           rel="noopener noreferrer"
           target="_blank"
           title="Github"
-          class="[ footer-link ] [ not-external-link text-primary--muted ]"
+          class="[ footer-link ] [ not-external-link text-primary ]"
         >
           <span class="visually-hidden">GitHub</span>
           <github class="icn" />
@@ -27,13 +27,13 @@
           rel="noopener noreferrer"
           target="_blank"
           title="Linkedin"
-          class="[ footer-link ] [ not-external-link text-primary--muted ]"
+          class="[ footer-link ] [ not-external-link text-primary ]"
         >
           <span class="visually-hidden">LinkedIn</span>
           <linked-in class="icn" />
         </a>
       </div>
-      <div class="[ footer-copyright ] [ text-primary--muted]">
+      <div class="[ footer-copyright ] [ not-external-link text-primary ]">
         <p>© {{ new Date().getFullYear() }} Zachary Brooks</p>
       </div>
     </div>
@@ -77,7 +77,7 @@ export default {
 }
 
 .footer-link:hover {
-  color: var(--color-text-primary);
+  color: var(--color-primary);
 }
 
 .footer-link .icn {

@@ -23,7 +23,6 @@
 </template>
 
 <script>
-import Tag from '~/components/Tag'
 import { getCloudinaryId } from '~/utils/image'
 
 export default {
@@ -34,9 +33,6 @@ export default {
     imageSrc() {
       return getCloudinaryId(this.project.main_image)
     }
-  },
-  components: {
-    Tag
   }
 }
 </script>

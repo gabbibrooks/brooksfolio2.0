@@ -2,7 +2,7 @@
 title: Spirited Hooves LLC
 description: "Website built with Vue and Vuetify for my mother's horse and goat boarding business"
 main_image: '/v1605465855/SpiritedHooves_Home.png'
-category:
+tags:
   - Vue
 ---
 

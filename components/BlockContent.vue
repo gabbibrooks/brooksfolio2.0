@@ -9,13 +9,6 @@
     </section>
 
     <aside class="sidebar">
-      <div v-if="content.category.length > 0" class="tags">
-        <tag
-          v-for="category in content.category"
-          :key="category"
-          :category="category"
-        />
-      </div>
       <table-of-contents
         :toc="content.toc"
         :currentlyActiveToc="currentlyActiveToc"
@@ -26,21 +19,10 @@
 </template>
 
 <script>
-import PrevNext from '~/components/PrevNext'
-import LastUpdated from '~/components/LastUpdated'
-import Tag from '~/components/Tag'
-import TableOfContents from './TableOfContents.vue'
-
 export default {
   props: {
     content: Object,
     surround: Array
-  },
-  components: {
-    LastUpdated,
-    PrevNext,
-    TableOfContents,
-    Tag
   },
   data() {
     return {

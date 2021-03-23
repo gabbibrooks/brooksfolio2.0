@@ -1,5 +1,5 @@
 <template>
-  <nav class="[ site-nav-layout ] [ bg-color-secondary text-primary ]">
+  <nav class="[ site-nav-layout ] [ bg-primary text-primary ]">
     <a href="#content" id="skip-navigation" class="visually-hidden"
       >Skip to Content</a
     >
@@ -95,18 +95,13 @@
 </template>
 
 <script>
-import Logo from './Logo'
-import ColorModePicker from './ColorModePicker'
-
-const tailwindConfig = require('../tailwind.config.js')
-
 export default {
   name: 'TheNavigation',
   data() {
     return {
       windowWidth: 0,
       menuOpen: false,
-      mdBreakpoint: Number(tailwindConfig.theme.screens.md.replace('px', ''))
+      mdBreakpoint: 800
     }
   },
   computed: {
@@ -130,10 +125,6 @@ export default {
   },
   beforeDestroyed() {
     window.removeEventListener('resize', this.updateWindowSize)
-  },
-  components: {
-    ColorModePicker,
-    Logo
   }
 }
 </script>

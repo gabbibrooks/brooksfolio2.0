@@ -17,8 +17,8 @@
 }
 
 .light {
-  --color: #003566;
-  --color-primary: #ffc300;
+  --color: #ffc300;
+  --color-primary: #003566;
   --color-secondary: #041628;
 
   --color-bg-primary: #f3f5f4;

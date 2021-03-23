@@ -1,13 +1,13 @@
 .hero {
   /* background-image: url(/_nuxt/img/trimmed-optim.53d3459.svg); */
-  background-repeat: no-repeat, no-repeat;
+  /* background-repeat: no-repeat, no-repeat;
   background-position: bottom, 50% -100px;
-  background-size: 100%, 100%;
+  background-size: 100%, 100%; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 450px;
-  margin-bottom: -1px;
+  /* min-height: 450px; */
+  /* margin-bottom: -1px; */
   position: relative;
 }
 
