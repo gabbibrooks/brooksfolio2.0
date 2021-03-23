@@ -28,9 +28,15 @@
             </nuxt-link>
             <nuxt-link
               class="[ nav-link ] [ not-external-link text-primary ]"
-              to="/speaking"
+              to="/resources/talks"
             >
-              Speaking
+              Talks
+            </nuxt-link>
+            <nuxt-link
+              class="[ nav-link ] [ not-external-link text-primary ]"
+              to="/resources"
+            >
+              Resources
             </nuxt-link>
           </div>
         </div>
@@ -81,9 +87,16 @@
             <nuxt-link
               @click.native="menuOpen = false"
               class="[ nav-link ] [ not-external-link text-primary ]"
-              to="/speaking"
+              to="/resources/talks"
             >
-              Speaking
+              Talks
+            </nuxt-link>
+            <nuxt-link
+              @click.native="menuOpen = false"
+              class="[ nav-link ] [ not-external-link text-primary ]"
+              to="/resources"
+            >
+              Resources
             </nuxt-link>
           </div>
 
@@ -171,7 +184,7 @@ export default {
 
 .nav-link {
   padding: 0.5rem 0.75rem;
-  font-size: 0.875rem;
+  font-size: 1.125rem;
   font-weight: 500;
   line-height: 1.25rem;
 }

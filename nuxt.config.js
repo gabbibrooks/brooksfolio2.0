@@ -139,15 +139,10 @@ export default {
         }
       },
       prism: {
-        //decide between the code highlighter themes
-        // theme: 'prism-themes/themes/prism-shades-of-purple.css'
-        theme: 'prism-themes/themes/prism-nord.css'
+        theme: './assets/css/prism-cobalt2.css'
       }
     }
   },
-  // tailwindcss: {
-  //   // exposeConfig: true
-  // },
   webfontloader: {
     google: {
       families: [

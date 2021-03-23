@@ -199,10 +199,10 @@
 }
 
 .prose code {
-  color: #f7fafc;
+  color: #f3f4f6;
   font-weight: 400;
   font-size: 0.875em;
-  background-color: #2d3748;
+  background-color: #193549;
   padding: 0.25rem;
   border-width: 0;
   border-color: #edf2f7;
@@ -223,7 +223,7 @@
 
 .prose pre {
   color: #e5e7eb;
-  background-color: #1f2937;
+  background-color: #193549;
   overflow-x: auto;
   font-size: 0.875em;
   line-height: 1.7142857;

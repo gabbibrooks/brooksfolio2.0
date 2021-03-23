@@ -38,7 +38,7 @@ export default {
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.75rem;
-  margin-left: 0.75rem;
+  margin: 0 0.75rem;
 }
 
 .logo-link:hover {
