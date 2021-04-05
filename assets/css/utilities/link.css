@@ -4,15 +4,15 @@
 }
 
 .not-external-link:hover {
-  cursor: pointer;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .heading-permalink {
-  font-size: 0.6em;
-  margin-left: 1rem;
-  text-decoration: none;
   border: none;
+  margin-left: 1rem;
+  font-size: 0.6em;
+  text-decoration: none;
 }
 
 .heading-permalink:hover {
@@ -25,8 +25,8 @@
 }
 
 .external-link .icn {
-  height: 1rem;
   width: 1rem;
+  height: 1rem;
   margin-top: -0.25rem;
   margin-left: 0.25rem;
   stroke-width: 2;
