@@ -10,13 +10,13 @@ import { formatDate } from '~/utils/date'
 
 export default {
   props: {
-    date: String
+    date: String,
   },
   computed: {
     updatedDate() {
       return formatDate(this.date)
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -28,16 +28,16 @@ export default {
 }
 
 .title {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 600;
-  text-transform: uppercase;
   margin-bottom: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  text-transform: uppercase;
 }
 
 .date {
   font-size: 1.125rem;
-  line-height: 1.75rem;
   font-weight: 600;
+  line-height: 1.75rem;
 }
 </style>

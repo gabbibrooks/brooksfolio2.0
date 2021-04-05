@@ -60,7 +60,7 @@
         >
           Close
         </button>
-        <div class="[ nav-menu-overlay ] [ bg-primary ] "></div>
+        <div class="[ nav-menu-overlay ] [ bg-primary ]"></div>
         <nav class="nav-menu-layout">
           <div class="nav-menu-links">
             <nuxt-link
@@ -114,13 +114,13 @@ export default {
     return {
       windowWidth: 0,
       menuOpen: false,
-      mdBreakpoint: 800
+      mdBreakpoint: 800,
     }
   },
   computed: {
     menuLabel() {
       return this.menuOpen ? 'Close navigation' : 'Open navigation'
-    }
+    },
   },
   methods: {
     updateWindowSize() {
@@ -130,7 +130,7 @@ export default {
     },
     clickMenu() {
       this.menuOpen = !this.menuOpen
-    }
+    },
   },
   mounted() {
     this.updateWindowSize()
@@ -138,16 +138,16 @@ export default {
   },
   beforeDestroyed() {
     window.removeEventListener('resize', this.updateWindowSize)
-  }
+  },
 }
 </script>
 
 <style scoped>
 .site-nav-layout {
   position: fixed;
+  z-index: 10;
   top: 0;
   left: 0;
-  z-index: 10;
   width: 100%;
   line-height: 2rem;
 }
@@ -162,15 +162,15 @@ export default {
 
 .site-nav-inner {
   display: flex;
-  align-items: center;
   height: 4rem;
+  align-items: center;
 }
 
 .site-nav-inner-items {
   position: relative;
   display: none;
-  order: 3;
   width: 100%;
+  order: 3;
   padding: 1rem 0;
 }
 
@@ -202,19 +202,19 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
-  font-weight: 700;
-  background-color: transparent;
   border: 2px solid var(--color-text-primary);
+  background-color: transparent;
   border-radius: 0.25rem;
   cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .nav-menu-btn.close {
   position: absolute;
+  z-index: 50;
   top: 0;
   right: 0;
-  z-index: 50;
   margin: 0.9rem 1.5rem;
 }
 
@@ -224,11 +224,11 @@ export default {
 
 .site-nav .nav-menu {
   position: fixed;
+  z-index: 50;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 50;
   overflow: hidden;
 }
 
@@ -238,21 +238,21 @@ export default {
   right: 0;
   bottom: 0;
   left: 0;
-  opacity: 0.9;
-  height: 100vh;
   width: 100vh;
+  height: 100vh;
+  opacity: 0.9;
 }
 
 .nav-menu-layout {
   position: absolute;
-  left: 0;
+  z-index: 2;
   bottom: 100px;
+  left: 0;
   display: flex;
+  width: 75%;
+  height: 75%;
   flex-direction: column;
   justify-content: space-between;
-  height: 75%;
-  width: 75%;
-  z-index: 2;
 }
 
 .nav-menu-links {
@@ -286,16 +286,16 @@ export default {
 @media screen and (min-width: 800px) {
   .site-nav-inner-items {
     display: flex;
+    width: auto;
+    height: auto;
     flex-direction: row;
     align-items: center;
-    height: auto;
-    width: auto;
     padding: 0;
   }
 
   .site-nav-links {
-    flex-direction: row;
     position: relative;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
   }

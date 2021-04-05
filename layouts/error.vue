@@ -21,10 +21,5 @@
 export default {
   props: ['error'],
   layout: 'content',
-  mounted() {
-    this.$store.dispatch('setPageHeader', '404')
-    this.$store.dispatch('setPageSubheader', '')
-    this.$store.dispatch('setPageHeaderPosition', 'center')
-  }
 }
 </script>

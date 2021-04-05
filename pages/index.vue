@@ -2,7 +2,7 @@
   <div class="main-content-container">
     <hero :header="homepage.header" :body="homepage.introduction" />
     <main id="content" class="[ home-content main-content ] [ wrapper ]">
-      <section class="recently-published" style="grid-area: recent;">
+      <section class="recently-published" style="grid-area: recent">
         <h2 class="text-primary sm:text-4xl sm:leading-10 text-3xl leading-9">
           Recently Published
         </h2>
@@ -10,7 +10,7 @@
           <blog-post-card :post="post" />
         </div>
       </section>
-      <section class="popular-content" style="grid-area: popular;"></section>
+      <section class="popular-content" style="grid-area: popular"></section>
     </main>
   </div>
 </template>
@@ -26,24 +26,24 @@ export default {
 
     return {
       homepage,
-      recentPosts
+      recentPosts,
     }
   },
   head() {
     return {
-      title: 'Home - Zachary Brooks'
+      title: 'Home - Zachary Brooks',
     }
-  }
+  },
 }
 </script>
 
 <style scoped>
 .home-content {
   display: grid;
+  gap: 16rem 8rem;
+  grid-template-areas: 'recent' 'popular';
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  grid-template-areas: 'recent' 'popular';
-  gap: 16rem 8rem;
 }
 
 .recently-published {

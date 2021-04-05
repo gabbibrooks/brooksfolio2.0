@@ -13,12 +13,12 @@ export default {
   computed: {
     logo() {
       return `logo-${this.$colorMode.value}`
-    }
+    },
   },
   components: {
     LogoLight,
-    LogoDark
-  }
+    LogoDark,
+  },
 }
 </script>
 <style scoped>
@@ -35,15 +35,15 @@ export default {
 }
 
 .logo-link .text {
+  margin: 0 0.75rem;
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.75rem;
-  margin: 0 0.75rem;
 }
 
 .logo-link:hover {
-  cursor: pointer;
   background-color: transparent;
   color: var(--color-text-primary);
+  cursor: pointer;
 }
 </style>

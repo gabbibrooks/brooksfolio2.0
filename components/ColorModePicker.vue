@@ -17,18 +17,18 @@ import IconDark from '@/assets/images/icons/dark.svg?inline'
 export default {
   components: {
     IconLight,
-    IconDark
+    IconDark,
   },
   data() {
     return {
-      color: 'dark'
+      color: 'dark',
     }
   },
   methods: {
     toggleColorMode() {
       this.$colorMode.preference =
         this.$colorMode.value == 'dark' ? 'light' : 'dark'
-    }
+    },
   },
   computed: {
     icon() {
@@ -38,23 +38,23 @@ export default {
       return `Turn on ${
         this.$colorMode.value == 'dark' ? 'light' : 'dark'
       } mode`
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style scoped>
 .color-mode-btn {
-  background-color: transparent;
-  border: 2px transparent;
-  border-radius: 9999px;
-  padding: 0.25rem;
   height: 3rem;
+  padding: 0.25rem;
+  border: 2px transparent;
+  background-color: transparent;
+  border-radius: 9999px;
 }
 
 .color-mode-btn:hover .icn {
-  cursor: pointer;
   color: var(--color-primary);
+  cursor: pointer;
 }
 
 .color-mode-btn:focus {
@@ -62,9 +62,9 @@ export default {
 }
 
 .color-mode-btn .icn {
-  color: var(--color-text-primary);
-  height: 2.5rem;
   width: 2.5rem;
+  height: 2.5rem;
+  color: var(--color-text-primary);
 }
 
 @media screen and (min-width: 800px) {
@@ -73,8 +73,8 @@ export default {
   }
 
   .color-mode-btn .icn {
-    height: 1.5rem;
     width: 1.5rem;
+    height: 1.5rem;
   }
 }
 </style>

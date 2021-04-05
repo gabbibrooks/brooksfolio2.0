@@ -27,13 +27,13 @@ import { getCloudinaryId } from '~/utils/image'
 
 export default {
   props: {
-    project: Object
+    project: Object,
   },
   computed: {
     imageSrc() {
       return getCloudinaryId(this.project.main_image)
-    }
-  }
+    },
+  },
 }
 </script>
 

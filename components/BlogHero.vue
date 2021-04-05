@@ -12,7 +12,7 @@
         <chevron class="[ chevron ] [ text-secondary ]" />
         <div class="[ title ] [ text-primary ]">{{ article.title }}</div>
       </div>
-      <h1 class=" [ headline ] [ text-primary ] ">
+      <h1 class="[ headline ] [ text-primary ]">
         {{ article.title }}
       </h1>
       <h2
@@ -30,16 +30,16 @@ import Chevron from '@/assets/images/icons/chevron.svg?inline'
 
 export default {
   props: {
-    article: Object
+    article: Object,
   },
   computed: {
     category() {
       return this.article.category.toLowerCase()
-    }
+    },
   },
   components: {
-    Chevron
-  }
+    Chevron,
+  },
 }
 </script>
 
@@ -61,11 +61,11 @@ export default {
 
 .site-path-link,
 .title {
-  font-size: 1.125rem;
-  line-height: 1.25rem;
-  font-weight: 500;
-  border-radius: 0.375rem;
   border: none;
+  border-radius: 0.375rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.25rem;
 }
 
 .site-path-link:nth-of-type(2),
@@ -74,30 +74,30 @@ export default {
 }
 
 .content-hero-site-path .chevron {
-  height: 1rem;
   width: 1rem;
+  height: 1rem;
   margin: 0 0.5rem;
 }
 
 .site-path-link:focus,
 .site-path-link:hover {
-  outline: none;
-  color: var(--color-text-primary);
   background: transparent;
+  color: var(--color-text-primary);
+  outline: none;
 }
 
 .headline {
+  margin-top: 1rem;
   font-size: 1.875rem;
   font-weight: 800;
   line-height: 2rem;
-  margin-top: 1rem;
 }
 
 .sub-headline {
+  margin-top: 1rem;
   font-size: 1.125rem;
   font-weight: 800;
   line-height: 1.75rem;
-  margin-top: 1rem;
 }
 
 @media screen and (min-width: 640px) {
@@ -127,8 +127,8 @@ export default {
   }
 
   .content-hero-site-path .chevron {
-    height: 1.5rem;
     width: 1.5rem;
+    height: 1.5rem;
     margin: 0 0.5rem;
   }
 

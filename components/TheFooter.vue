@@ -49,8 +49,8 @@ export default {
   components: {
     Twitter,
     Github,
-    LinkedIn
-  }
+    LinkedIn,
+  },
 }
 </script>
 
@@ -81,15 +81,15 @@ export default {
 }
 
 .footer-link .icn {
-  height: 2rem;
   width: 2rem;
+  height: 2rem;
 }
 
 .footer-copyright {
+  margin-top: 2rem;
   font-size: 1rem;
   line-height: 1.5rem;
   text-align: center;
-  margin-top: 2rem;
 }
 
 .footer-copyright p {
@@ -103,13 +103,13 @@ export default {
   }
 
   .footer-link .icn {
-    height: 1.5rem;
     width: 1.5rem;
+    height: 1.5rem;
   }
 
   .footer-copyright {
-    margin-top: 0;
     order: 1;
+    margin-top: 0;
   }
 }
 </style>

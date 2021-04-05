@@ -23,11 +23,11 @@ import ExternalLink from '@/assets/images/icons/external_link.svg?inline'
 
 export default {
   props: {
-    speakingEngagement: Object
+    speakingEngagement: Object,
   },
   components: {
-    ExternalLink
-  }
+    ExternalLink,
+  },
 }
 </script>
 

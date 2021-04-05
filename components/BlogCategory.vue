@@ -18,14 +18,14 @@
 export default {
   props: {
     categorytitle: String,
-    articles: Array
+    articles: Array,
   },
   computed: {
     numberOfArticles() {
       const articleCount = this.articles.length
       return articleCount > 1 ? `${articleCount} Articles` : '1 Article'
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -37,8 +37,8 @@ export default {
 }
 
 .title {
-  padding-left: 2rem;
   padding-bottom: 1rem;
+  padding-left: 2rem;
 }
 
 .num-articles {
@@ -48,8 +48,8 @@ export default {
 @media screen and (min-width: 640px) {
   .num-articles {
     display: block;
-    font-size: 1.25rem;
     padding-right: 2rem;
+    font-size: 1.25rem;
   }
 
   .title {

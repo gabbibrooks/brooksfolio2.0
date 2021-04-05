@@ -112,19 +112,19 @@ export default {
     const aboutpage = await $content('aboutpage').fetch()
 
     return {
-      aboutpage
+      aboutpage,
     }
   },
   head() {
     return {
-      title: 'About - Zachary Brooks'
+      title: 'About - Zachary Brooks',
     }
   },
   computed: {
     src() {
       return getCloudinaryId(this.aboutpage.main_image)
-    }
-  }
+    },
+  },
 }
 </script>
 

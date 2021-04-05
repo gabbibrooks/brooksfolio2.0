@@ -39,8 +39,8 @@ export default {
       type: Array,
       default() {
         return []
-      }
-    }
+      },
+    },
   },
   computed: {
     layoutClasses() {
@@ -56,22 +56,22 @@ export default {
       }
 
       return 'rounded-xl'
-    }
+    },
   },
   components: {
     ArrowRight,
-    ArrowLeft
-  }
+    ArrowLeft,
+  },
 }
 </script>
 
 <style scoped>
 .prev-next-navigation {
   display: grid;
-  grid-template-rows: auto auto;
   border: 2px solid var(--color-primary);
-  border-radius: 1rem;
   margin: 4rem 0;
+  border-radius: 1rem;
+  grid-template-rows: auto auto;
 }
 
 .prev-next-navigation[data-links='1'] {
@@ -80,29 +80,29 @@ export default {
 
 .prev-next-navigation[data-links='2'] .content-link.prev {
   border: none;
-  border-top-left-radius: 0.75rem;
   border-bottom-left-radius: 0;
-  border-top-right-radius: 0.75rem;
   border-bottom-right-radius: 0;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
 }
 
 .prev-next-navigation[data-links='2'] .content-link.next {
   border: none;
-  border-top-left-radius: 0;
   border-bottom-left-radius: 0.75rem;
+  border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
 .content-link {
   display: grid;
+  border: none;
   grid-template-rows: auto 1fr;
   text-decoration: none;
-  border: none;
 }
 
 .content-link.prev {
-  border-top-left-radius: 0.75rem;
   border-bottom-left-radius: 0.75rem;
+  border-top-left-radius: 0.75rem;
 }
 
 .content-link.prev[data-full-width='true'] {
@@ -110,15 +110,15 @@ export default {
 }
 
 .content-link.next {
-  border-top-right-radius: 0.75rem;
-  border-bottom-right-radius: 0.75rem;
   border-left: 2px solid var(--color-primary);
+  border-bottom-right-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
   text-align: right;
 }
 
 .content-link.next[data-full-width='true'] {
-  border-radius: 0.75rem;
   border-left: none;
+  border-radius: 0.75rem;
 }
 
 .content-link-text,
@@ -138,8 +138,8 @@ export default {
 }
 
 .arrow {
-  height: 1.5rem;
   width: 1.5rem;
+  height: 1.5rem;
 }
 
 .arrow.left {
@@ -160,17 +160,17 @@ export default {
   }
 
   .prev-next-navigation[data-links='2'] .content-link.prev {
-    border-top-left-radius: 0.75rem;
     border-bottom-left-radius: 0.75rem;
+    border-top-left-radius: 0.75rem;
     border-top-right-radius: 0;
   }
 
   .prev-next-navigation[data-links='2'] .content-link.next {
     border-left: 2px solid var(--color-primary);
-    border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    border-top-right-radius: 0.75rem;
     border-bottom-right-radius: 0.75rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0.75rem;
   }
 }
 </style>

@@ -22,8 +22,8 @@
 export default {
   props: {
     header: String,
-    body: String
-  }
+    body: String,
+  },
 }
 </script>
 
@@ -46,15 +46,15 @@ export default {
 
 .headline {
   font-size: 2.25rem;
-  line-height: 2.5rem;
   letter-spacing: -0.025em;
+  line-height: 2.5rem;
 }
 
 .body {
-  font-size: 1rem;
-  line-height: 1.5rem;
   max-width: 28rem;
   margin: 0.75rem auto 0 auto;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .hero-break {
@@ -65,8 +65,8 @@ export default {
 
 .hero-break .spacer {
   display: inline-flex;
-  height: 0.25rem;
   width: 18rem;
+  height: 0.25rem;
   border-radius: 9999px;
 }
 
@@ -98,9 +98,9 @@ export default {
   }
 
   .body {
-    font-size: 1.25rem;
-    margin-top: 1.25rem;
     max-width: 42rem;
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
   }
 }
 

@@ -29,35 +29,35 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.post.description
+          content: this.post.description,
         },
         {
           hid: 'keywords',
           name: 'keywords',
-          content: this.post.category
+          content: this.post.category,
         },
         // Open Graph
         { hid: 'og:title', property: 'og:title', content: this.post.title },
         {
           hid: 'og:description',
           property: 'og:description',
-          content: this.post.description
+          content: this.post.description,
         },
         // Twitter Card
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: this.post.title
+          content: this.post.title,
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: this.post.description
-        }
-      ]
+          content: this.post.description,
+        },
+      ],
     }
   },
-  scrollToTop: true
+  scrollToTop: true,
 }
 </script>
 

@@ -42,9 +42,9 @@ export default {
     const blogCategories = await $content('blog')
       .only('tags')
       .fetch()
-      .then(response => {
+      .then((response) => {
         const tags = Array.prototype.concat(
-          ...response.map(article => article.tags)
+          ...response.map((article) => article.tags)
         )
         return tags
       })
@@ -54,29 +54,29 @@ export default {
   data() {
     return {
       selectedTag: 'All',
-      categoryTitle: 'All'
+      categoryTitle: 'All',
     }
   },
   head() {
     return {
-      title: 'Blog - Zachary Brooks'
+      title: 'Blog - Zachary Brooks',
     }
   },
   computed: {
     articleList() {
-      return this.articles.filter(el => el.tags.includes(this.selectedTag))
+      return this.articles.filter((el) => el.tags.includes(this.selectedTag))
     },
     numberOfArticles() {
       const articleCount = this.articleList.length
       return articleCount > 1 ? `${articleCount} Articles` : '1 Article'
-    }
+    },
   },
   methods: {
     filterBlogByType(tag) {
       this.selectedTag = tag
       this.categoryTitle = tag
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -95,8 +95,8 @@ export default {
 }
 
 .title {
-  padding-left: 2rem;
   padding-bottom: 1rem;
+  padding-left: 2rem;
 }
 
 .num-articles {
@@ -105,9 +105,9 @@ export default {
 
 .tag {
   padding: 0.5rem;
+  border: none;
   margin-right: 1rem;
   margin-bottom: 1rem;
-  border: none;
   border-radius: 0.25rem;
 }
 
@@ -118,8 +118,8 @@ export default {
 @media screen and (min-width: 640px) {
   .num-articles {
     display: block;
-    font-size: 1.25rem;
     padding-right: 2rem;
+    font-size: 1.25rem;
   }
 
   .title {

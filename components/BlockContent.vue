@@ -22,7 +22,7 @@
 export default {
   props: {
     content: Object,
-    surround: Array
+    surround: Array,
   },
   data() {
     return {
@@ -31,18 +31,18 @@ export default {
       observerOptions: {
         root: this.$refs.nuxtContent,
         rootMargin: '0px',
-        threshold: 1.0
-      }
+        threshold: 1.0,
+      },
     }
   },
   methods: {
     tableOfContentsHeadingClick(link) {
       this.currentlyActiveToc = link.id
-    }
+    },
   },
   mounted() {
-    this.observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
         const id = entry.target.getAttribute('id')
         if (entry.isIntersecting && entry.intersectionRatio === 1) {
           this.currentlyActiveToc = id
@@ -52,28 +52,28 @@ export default {
     // Track all sections that have an `id` applied
     document
       .querySelectorAll('.nuxt-content h2[id], .nuxt-content h3[id]')
-      .forEach(section => {
+      .forEach((section) => {
         this.observer.observe(section)
       })
   },
   beforeDestroy() {
     this.observer.disconnect()
-  }
+  },
 }
 </script>
 
 <style scoped>
 .block-content {
   display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 1rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .main {
   display: block;
   order: 2;
-  grid-column: span 1 / span 1;
   margin-top: 0;
+  grid-column: span 1 / span 1;
 }
 
 .sidebar {
@@ -93,8 +93,8 @@ export default {
 
 @media screen and (min-width: 1024px) {
   .block-content {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 10rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .main {
@@ -105,8 +105,8 @@ export default {
   .sidebar {
     display: flex;
     flex-direction: column;
-    grid-column: span 1 / span 1;
     order: 2;
+    grid-column: span 1 / span 1;
   }
 }
 </style>

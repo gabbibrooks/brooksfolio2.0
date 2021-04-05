@@ -24,17 +24,12 @@ export default {
   },
   head() {
     return {
-      title: 'Work - Zachary Brooks'
+      title: 'Work - Zachary Brooks',
     }
   },
   components: {
-    ProjectCard
+    ProjectCard,
   },
-  mounted() {
-    this.$store.dispatch('setPageHeader', 'My Work')
-    this.$store.dispatch('setPageSubheader', '')
-    this.$store.dispatch('setPageHeaderPosition', 'center')
-  }
 }
 </script>
 

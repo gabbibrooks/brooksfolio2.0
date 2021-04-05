@@ -16,16 +16,16 @@
 <script>
 export default {
   props: {
-    post: Object
-  }
+    post: Object,
+  },
 }
 </script>
 
 <style scoped>
 .blog-post-card {
   display: flex;
-  flex-direction: column;
   width: 100%;
+  flex-direction: column;
   padding: 2rem;
   border-radius: 0.5rem;
   box-shadow: 0 0 4rem -2rem rgba(0, 0, 0, 0.4);
@@ -41,8 +41,8 @@ export default {
 }
 
 .blog-post-card .description {
-  font-size: 1rem;
   padding: 0.5rem 0;
+  font-size: 1rem;
 }
 
 .title {
