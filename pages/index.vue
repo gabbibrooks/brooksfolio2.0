@@ -2,15 +2,13 @@
   <div class="main-content-container">
     <hero :header="homepage.header" :body="homepage.introduction" />
     <main id="content" class="[ home-content main-content ] [ wrapper ]">
-      <section class="recently-published" style="grid-area: recent">
-        <h2 class="text-primary sm:text-4xl sm:leading-10 text-3xl leading-9">
-          Recently Published
-        </h2>
+      <section class="recently-published">
+        <h2 class="[ title ] [ text-primary ]">Recently Published</h2>
         <div class="posts-group" v-for="post in recentPosts" :key="post.slug">
           <blog-post-card :post="post" />
         </div>
       </section>
-      <section class="popular-content" style="grid-area: popular"></section>
+      <section class="popular-content"></section>
     </main>
   </div>
 </template>
@@ -47,6 +45,16 @@ export default {
 }
 
 .recently-published {
+  grid-area: recent;
+}
+
+.recently-published .title {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.popular-content {
+  grid-area: popular;
 }
 
 .posts-group {
@@ -58,6 +66,13 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 1rem;
+}
+
+@media screen and (min-width: 640px) {
+  .recently-published .title {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
 }
 
 @media screen and (min-width: 800px) {
