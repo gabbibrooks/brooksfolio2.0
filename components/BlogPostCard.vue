@@ -31,12 +31,12 @@ export default {
   box-shadow: 0 0 4rem -2rem rgba(0, 0, 0, 0.4);
 }
 
-.blog-post-content-wrapper:focus-within {
+.blog-post-card:focus-within {
   outline: 2px solid;
   outline-offset: 0.25rem;
 }
 
-.blog-post-content-wrapper:focus-within * {
+.blog-post-card:focus-within * {
   outline: none;
 }
 

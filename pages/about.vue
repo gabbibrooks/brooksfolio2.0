@@ -11,6 +11,7 @@
               fetchFormat="auto"
               quality="80"
               loading="lazy"
+              alt="Image of Zachary Brooks"
             >
               <cld-placeholder type="blur" />
             </cld-image>

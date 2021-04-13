@@ -1,7 +1,7 @@
 <template>
   <header class="[ content-header ] [ bg-primary ]">
     <div class="[ content-header-items ] [ wrapper ]">
-      <div class="content-hero-site-path">
+      <div v-if="showSitePath" class="content-hero-site-path">
         <nuxt-link to="/" class="[ site-path-link ] [ text-secondary ]"
           >Home</nuxt-link
         >
@@ -31,6 +31,7 @@ import Chevron from '@/assets/images/icons/chevron.svg?inline'
 export default {
   props: {
     article: Object,
+    showSitePath: Boolean,
   },
   computed: {
     category() {
@@ -74,8 +75,8 @@ export default {
 }
 
 .content-hero-site-path .chevron {
-  width: 1rem;
-  height: 1rem;
+  width: 1.25rem;
+  height: 1.25rem;
   margin: 0 0.5rem;
 }
 

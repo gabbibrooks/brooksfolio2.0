@@ -8,7 +8,7 @@
       <prev-next :surround="surround" />
     </section>
 
-    <aside class="sidebar">
+    <aside v-if="content.toc.length > 0" class="sidebar">
       <table-of-contents
         :toc="content.toc"
         :currentlyActiveToc="currentlyActiveToc"
@@ -22,7 +22,12 @@
 export default {
   props: {
     content: Object,
-    surround: Array,
+    surround: {
+      type: Array,
+      default: () => {
+        return []
+      },
+    },
   },
   data() {
     return {

@@ -1,10 +1,15 @@
 <template>
-  <block-content :content="project" :surround="surround" />
+  <div>
+    <content-hero :article="project" :showSitePath="false" />
+    <div class="main-content-container">
+      <main id="content" class="[ main-content ] [ wrapper ]">
+        <block-content :content="project" :surround="surround" />
+      </main>
+    </div>
+  </div>
 </template>
 
 <script>
-import BlockContent from '~/components/BlockContent'
-
 export default {
   async asyncData({ $content, params }) {
     const project = await $content('work/projects', params.slug).fetch()
@@ -51,10 +56,7 @@ export default {
       ],
     }
   },
-  components: {
-    BlockContent,
-  },
-  layout: 'content',
+  layout: 'article',
   scrollToTop: true,
 }
 </script>

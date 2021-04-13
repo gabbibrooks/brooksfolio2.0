@@ -1,6 +1,6 @@
 <template>
   <div>
-    <blog-hero :article="post" />
+    <content-hero :article="post" />
     <div class="main-content-container">
       <main id="content" class="[ main-content ] [ wrapper ]">
         <block-content :content="post" :surround="surround" />
@@ -20,6 +20,7 @@ export default {
       .surround(post.slug)
       .fetch()
 
+    let heroLinks = ['Home', 'Blog']
     return { post, surround }
   },
   head() {

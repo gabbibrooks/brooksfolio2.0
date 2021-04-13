@@ -1,7 +1,7 @@
 <template>
   <div class="main-content-container">
     <hero :header="blogPage.header" :body="blogPage.description" />
-    <div class="category-buttons">
+    <div class="[ category-buttons ] [ wrapper ]">
       <div v-for="(category, i) in topCategories" :key="i" :category="category">
         <button
           class="[ tag ] [ bg-secondary text-primary ]"
