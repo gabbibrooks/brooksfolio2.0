@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="[ speaking-header ] [ text-primary ]">
-      <h1 class="title">Speaking Engagements</h1>
+      <h1 class="title">Conference and Meetup Talks</h1>
       <span class="num-speaking-engagements">
         {{ numberOfSpeakingEngagements }}</span
       >
