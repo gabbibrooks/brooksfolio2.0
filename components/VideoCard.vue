@@ -77,11 +77,6 @@ export default {
   padding: 1rem;
 }
 
-.video-card .body .title {
-  font-size: 1.35rem;
-  font-weight: 500;
-}
-
 .video-card .body .tags {
   margin-bottom: 0.25rem;
 }
