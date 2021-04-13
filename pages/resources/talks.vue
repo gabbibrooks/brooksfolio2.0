@@ -11,7 +11,7 @@
         v-for="speakingEngagement in speakingEngagements"
         :key="speakingEngagement.title"
       >
-        <speaking-card :speakingEngagement="speakingEngagement" />
+        <video-card :speakingEngagement="speakingEngagement" />
       </li>
     </ol>
   </div>
@@ -61,7 +61,8 @@ export default {
 
 .speaking-engagements {
   display: grid;
-  gap: 2rem;
+  margin-top: 3rem;
+  gap: 3rem;
   grid-template-columns: 1fr;
 }
 
