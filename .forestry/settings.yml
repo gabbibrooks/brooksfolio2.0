@@ -12,6 +12,10 @@ sections:
 - type: document
   path: content/aboutpage.md
   label: About
+- type: document
+  path: content/blogpage.md
+  label: Blog
+  match: "**/*"
 - type: heading
   label: Work
 - type: directory
