@@ -44,7 +44,7 @@ export default {
     '@nuxtjs/cloudinary',
   ],
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxt/content', 'nuxt-webfontloader'],
+  modules: ['@nuxt/content', 'nuxt-webfontloader', '@nuxtjs/sitemap'],
 
   hooks: {
     'content:file:beforeInsert': (document) => {
@@ -148,6 +148,10 @@ export default {
         theme: './assets/css/prism-cobalt2.css',
       },
     },
+  },
+  sitemap: {
+    hostname: 'https://zacharybrooks.dev',
+    gzip: true,
   },
   webfontloader: {
     google: {

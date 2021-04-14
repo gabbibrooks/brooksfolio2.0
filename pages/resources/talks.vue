@@ -24,14 +24,23 @@ export default {
     const speakingEngagements = await $content('speaking')
       .sortBy('date', 'desc')
       .fetch()
+    const talksPage = await $content('talkspage').fetch()
 
     return {
       speakingEngagements,
+      talksPage,
     }
   },
   head() {
     return {
-      title: 'Speaking - Zachary Brooks',
+      title: 'Conference and Meetup Talks - Zachary Brooks',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.talkspage.description,
+        },
+      ],
     }
   },
   computed: {

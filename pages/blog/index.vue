@@ -57,6 +57,13 @@ export default {
   head() {
     return {
       title: 'Blog - Zachary Brooks',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.blogPage.description,
+        },
+      ],
     }
   },
   computed: {

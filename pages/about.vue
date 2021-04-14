@@ -93,6 +93,13 @@ export default {
   head() {
     return {
       title: 'About - Zachary Brooks',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.aboutpage.description,
+        },
+      ],
     }
   },
   computed: {

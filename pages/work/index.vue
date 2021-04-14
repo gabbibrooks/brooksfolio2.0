@@ -1,6 +1,6 @@
 <template>
   <div class="main-content-container">
-    <hero :header="pageHeader" :body="pageDescription" />
+    <hero :header="workPage.header" :body="workPage.description" />
     <main id="content" class="[ main-content ] [ wrapper ]">
       <section v-if="projects.length > 0">
         <ol class="projects-list">
@@ -17,19 +17,20 @@
 export default {
   async asyncData({ $content }) {
     const projects = await $content('work/projects').fetch()
+    const workPage = await $content('workpage').fetch()
 
-    return { projects }
-  },
-  data() {
-    return {
-      pageHeader: 'My Work',
-      pageDescription:
-        'Here you fill find various projects that I have worked on including open source projects and work for clients',
-    }
+    return { projects, workPage }
   },
   head() {
     return {
       title: 'Work - Zachary Brooks',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.workPage.description,
+        },
+      ],
     }
   },
 }

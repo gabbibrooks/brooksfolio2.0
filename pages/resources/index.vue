@@ -1,6 +1,6 @@
 <template>
   <div class="main-content-container">
-    <hero :header="header" :body="description" />
+    <hero :header="resourcePage.header" :body="resourcePage.description" />
     <main id="content" class="[ main-content ] [ wrapper ]">
       <section v-if="resources.length > 0">
         <div class="resources">
@@ -30,12 +30,21 @@
 export default {
   async asyncData({ $content }) {
     const resources = await $content('resources').fetch()
+    const resourcePage = await $content('resourcepage').fetch()
 
-    const header = 'My Resources'
-    const description =
-      'Here is a list of my resources which include my blog posts, talks I have given, some of my projects that I have worked on, and much more.'
-
-    return { header, description, resources }
+    return { resources, resourcePage }
+  },
+  head() {
+    return {
+      title: 'Resources - Zachary Brooks',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.resourcePage.description,
+        },
+      ],
+    }
   },
 }
 </script>

@@ -17,34 +17,11 @@ export default {
   },
   head() {
     return {
-      title: this.uses.title,
+      title: 'Uses - Zachary Brooks',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.uses.description,
-        },
-        {
-          hid: 'keywords',
-          name: 'keywords',
-          content: this.uses.tags,
-        },
-        // Open Graph
-        { hid: 'og:title', property: 'og:title', content: this.uses.title },
-        {
-          hid: 'og:description',
-          property: 'og:description',
-          content: this.uses.description,
-        },
-        // Twitter Card
-        {
-          hid: 'twitter:title',
-          name: 'twitter:title',
-          content: this.uses.title,
-        },
-        {
-          hid: 'twitter:description',
-          name: 'twitter:description',
           content: this.uses.description,
         },
       ],
