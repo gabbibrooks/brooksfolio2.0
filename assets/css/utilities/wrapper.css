@@ -1,0 +1,15 @@
+.wrapper {
+  width: 100%;
+  max-width: 75rem;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+
+.layout-wrapper {
+  min-height: calc(100vh - 7rem);
+  padding-top: 4rem;
+}
+
+.fit-content {
+  width: fit-content;
+}

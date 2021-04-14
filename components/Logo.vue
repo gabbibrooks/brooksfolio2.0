@@ -1,7 +1,7 @@
 <template>
-  <nuxt-link to="/" class="flex items-center no-external-link">
-    <component :is="logo" class="block w-auto h-8" />
-    <span class="ml-3 text-xl font-bold">Zachary Brooks</span>
+  <nuxt-link to="/" class="logo-link">
+    <component :is="logo" />
+    <span class="[ text ] [ text-primary ]">Zachary Brooks</span>
   </nuxt-link>
 </template>
 
@@ -13,12 +13,37 @@ export default {
   computed: {
     logo() {
       return `logo-${this.$colorMode.value}`
-    }
+    },
   },
   components: {
     LogoLight,
-    LogoDark
-  }
+    LogoDark,
+  },
 }
 </script>
-<style></style>
+<style scoped>
+.logo-link {
+  display: flex;
+  align-items: center;
+  border: none;
+}
+
+.logo-link svg {
+  display: block;
+  width: auto;
+  height: 2rem;
+}
+
+.logo-link .text {
+  margin: 0 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+}
+
+.logo-link:hover {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+</style>

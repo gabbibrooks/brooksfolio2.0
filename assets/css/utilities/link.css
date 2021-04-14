@@ -1,0 +1,33 @@
+.not-external-link {
+  border: none;
+  transition: none;
+}
+
+.not-external-link:hover {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.heading-permalink {
+  border: none;
+  margin-left: 1rem;
+  font-size: 0.6em;
+  text-decoration: none;
+}
+
+.heading-permalink:hover {
+  background-color: transparent;
+}
+
+.external-link {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.external-link .icn {
+  width: 1rem;
+  height: 1rem;
+  margin-top: -0.25rem;
+  margin-left: 0.25rem;
+  stroke-width: 2;
+}

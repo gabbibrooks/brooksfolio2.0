@@ -1,87 +1,83 @@
 <template>
-  <div class="md:grid-cols-3 grid grid-cols-1 gap-24">
-    <section class="col-span-2">
-      <h2 class="text-primary sm:text-4xl sm:leading-10 text-3xl leading-9">
-        Recently Published
-      </h2>
-      <div class="block">
-        <article
-          v-for="post in recentPosts"
-          :key="post.slug"
-          class="block mt-12"
-        >
+  <div class="main-content-container">
+    <hero :header="homepage.header" :body="homepage.introduction" />
+    <main id="content" class="[ home-content main-content ] [ wrapper ]">
+      <section class="recently-published">
+        <h2 class="[ title ] [ text-primary ]">Recently Published</h2>
+        <div class="posts-group" v-for="post in recentPosts" :key="post.slug">
           <blog-post-card :post="post" />
-        </article>
-      </div>
-    </section>
-    <section class="flex flex-col col-span-1">
-      <h3 class="text-primary sm:text-2xl sm:leading-10 text-3xl leading-9">
-        Top Categories
-      </h3>
-      <div class="flex flex-row flex-wrap mt-4">
-        <tag
-          v-for="category in topCategories"
-          :key="category"
-          :category="category"
-        />
-      </div>
-    </section>
-    <nuxt-content :document="homepage" />
+        </div>
+      </section>
+      <section class="popular-content"></section>
+    </main>
   </div>
 </template>
 
 <script>
-import BlogPostCard from '~/components/BlogPostCard'
-import Tag from '~/components/Tag'
-import { topEntries } from '~/utils/array'
-
 export default {
   async asyncData({ $content }) {
     const homepage = await $content('homepage').fetch()
     const recentPosts = await $content('blog')
-      .sortBy('createdAt', 'desc')
+      .sortBy('updatedAt', 'desc')
       .limit(5)
       .fetch()
-    const blogTags = await $content('blog')
-      .only('tags')
-      .fetch()
-      .then(response => {
-        const tags = Array.prototype.concat(...response.map(post => post.tags))
-        return tags
-      })
-    const projectTags = await $content('work/projects')
-      .only('tags')
-      .fetch()
-      .then(response => {
-        const tags = Array.prototype.concat(
-          ...response.map(project => project.tags)
-        )
-        return tags
-      })
-    const topCategories = topEntries(blogTags.concat(projectTags), 5)
 
     return {
       homepage,
       recentPosts,
-      topCategories
     }
   },
   head() {
     return {
-      title: 'Home - Zachary Brooks'
+      title: 'Home - Zachary Brooks',
     }
   },
-  components: {
-    BlogPostCard,
-    Tag
-  },
-  mounted() {
-    console.log(this.$style.red)
-    this.$store.dispatch('setPageHeader', this.homepage.header)
-    this.$store.dispatch('setPageSubheader', this.homepage.introduction)
-    this.$store.dispatch('setPageHeaderPosition', 'center')
-  }
 }
 </script>
 
-<style></style>
+<style scoped>
+.home-content {
+  display: grid;
+  gap: 16rem 8rem;
+  grid-template-areas: 'recent' 'popular';
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+
+.recently-published {
+  grid-area: recent;
+}
+
+.recently-published .title {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.popular-content {
+  grid-area: popular;
+}
+
+.posts-group {
+  margin-top: 2.25rem;
+}
+
+.categories-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 640px) {
+  .recently-published .title {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .home-content {
+    grid-template: 'recent popular' 1fr / 2fr;
+  }
+}
+</style>

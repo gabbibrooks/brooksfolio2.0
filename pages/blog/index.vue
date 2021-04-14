@@ -1,61 +1,135 @@
 <template>
-  <div class="grid grid-cols-1 gap-24 md:grid-cols-3">
-    <section class="col-span-2">
-      <div class="block">
-        <article v-for="post in posts" :key="post.slug" class="block mt-12">
-          <blog-post-card :post="post" />
-        </article>
+  <div class="main-content-container">
+    <hero :header="blogPage.header" :body="blogPage.description" />
+    <div class="[ category-buttons ] [ wrapper ]">
+      <div v-for="(category, i) in topCategories" :key="i" :category="category">
+        <button class="tag" @click="filterBlogByType(category)">
+          {{ category }}
+        </button>
       </div>
-    </section>
-    <section class="flex flex-col col-span-1">
-      <h3 class="text-3xl leading-9 text-primary sm:text-2xl sm:leading-10">
-        Top Categories
-      </h3>
-      <div class="flex flex-row flex-wrap mt-4">
-        <tag
-          v-for="category in topCategories"
-          :key="category"
-          :category="category"
-        />
-      </div>
-    </section>
+    </div>
+    <main id="content" class="[ main-content ] [ wrapper ]">
+      <section v-if="articleList.length > 0">
+        <div class="[ category-header ] [ text-primary ]">
+          <h1 class="title">
+            {{ categoryTitle }}
+          </h1>
+          <span class="num-articles"> {{ numberOfArticles }}</span>
+        </div>
+        <div class="articles">
+          <div v-for="article in articleList" :key="article.slug">
+            <blog-post-card :post="article" />
+          </div>
+        </div>
+      </section>
+    </main>
   </div>
 </template>
 
 <script>
-import BlogPostCard from '~/components/BlogPostCard'
-import Tag from '~/components/Tag'
 import { topEntries } from '~/utils/array'
 
 export default {
-  layout: 'content',
   async asyncData({ $content }) {
-    const posts = await $content('blog').fetch()
-    const blogTags = await $content('blog')
+    const blogPage = await $content('blogpage').fetch()
+    const articles = await $content('blog')
+      .where({ published: { $ne: false } })
+      .sortBy('updatedAt', 'desc')
+      .fetch()
+    const blogCategories = await $content('blog')
       .only('tags')
       .fetch()
-      .then(response => {
-        const tags = Array.prototype.concat(...response.map(post => post.tags))
+      .then((response) => {
+        const tags = Array.prototype.concat(
+          ...response.map((article) => article.tags)
+        )
         return tags
       })
-    const topCategories = topEntries(blogTags, 5)
-    return { posts, topCategories }
+    const topCategories = topEntries(blogCategories, 9)
+    return { blogPage, articles, topCategories }
+  },
+  data() {
+    return {
+      selectedTag: 'All',
+      categoryTitle: 'All',
+    }
   },
   head() {
     return {
-      title: 'Blog - Zachary Brooks'
+      title: 'Blog - Zachary Brooks',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.blogPage.description,
+        },
+      ],
     }
   },
-  components: {
-    BlogPostCard,
-    Tag
+  computed: {
+    articleList() {
+      return this.articles.filter((el) => el.tags.includes(this.selectedTag))
+    },
+    numberOfArticles() {
+      const articleCount = this.articleList.length
+      return articleCount > 1 ? `${articleCount} Articles` : '1 Article'
+    },
   },
-  mounted() {
-    this.$store.dispatch('setPageHeader', 'Blog')
-    this.$store.dispatch('setPageSubheader', '')
-    this.$store.dispatch('setPageHeaderPosition', 'center')
-  }
+  methods: {
+    filterBlogByType(tag) {
+      this.selectedTag = tag
+      this.categoryTitle = tag
+    },
+  },
 }
 </script>
 
-<style></style>
+<style scoped>
+.category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.category-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.title {
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+}
+
+.num-articles {
+  display: none;
+}
+
+.tag {
+  padding: 0.5rem;
+  border: none;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  background-color: #003566;
+  border-radius: 0.25rem;
+  color: #f3f4f6;
+}
+
+.tag:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 640px) {
+  .num-articles {
+    display: block;
+    padding-right: 2rem;
+    font-size: 1.25rem;
+  }
+
+  .title {
+    padding-left: 0;
+  }
+}
+</style>

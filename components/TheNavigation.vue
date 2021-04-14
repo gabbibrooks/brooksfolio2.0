@@ -1,131 +1,126 @@
 <template>
-  <nav class="fixed top-0 left-0 z-10 w-full leading-8 bg-navigation text-nav">
-    <a href="#content" id="skip-navigation" class="sr-only">Skip to Content</a>
-    <div
-      class="relative flex flex-wrap items-center justify-between max-w-6xl px-4 mx-auto my-0 sm:px-6 lg:px-8"
+  <nav class="[ site-nav-layout ] [ bg-primary text-primary ]">
+    <a href="#content" id="skip-navigation" class="visually-hidden"
+      >Skip to Content</a
     >
-      <div class="flex items-center h-16">
+    <div class="[ site-nav ] [ wrapper ]">
+      <div class="site-nav-inner">
         <logo></logo>
-        <div
-          class="relative flex-row items-center order-3 hidden w-full py-4 lg:flex lg:h-auto lg:w-auto lg:py-0"
-        >
-          <div
-            class="flex flex-col items-start justify-start mb-0 ml-0 md:flex-row lg:justify-center lg:items-center lg:relative"
-          >
+        <div class="site-nav-inner-items">
+          <div class="site-nav-links">
             <nuxt-link
-              class="px-3 py-2 text-sm rounded-md no-external-link"
+              class="[ nav-link ] [ not-external-link text-primary ]"
               to="/about"
             >
               About
             </nuxt-link>
             <nuxt-link
-              class="px-3 py-2 text-sm rounded-md no-external-link"
+              class="[ nav-link ] [ not-external-link text-primary ]"
               to="/blog"
             >
               Blog
             </nuxt-link>
             <nuxt-link
-              class="px-3 py-2 text-sm rounded-md no-external-link"
+              class="[ nav-link ] [ not-external-link text-primary ]"
               to="/work"
             >
               Work
             </nuxt-link>
             <nuxt-link
-              class="px-3 py-2 text-sm rounded-md no-external-link"
-              to="/speaking"
+              class="[ nav-link ] [ not-external-link text-primary ]"
+              to="/resources/talks"
             >
-              Speaking
+              Talks
+            </nuxt-link>
+            <nuxt-link
+              class="[ nav-link ] [ not-external-link text-primary ]"
+              to="/resources"
+            >
+              Resources
             </nuxt-link>
           </div>
         </div>
       </div>
-      <color-mode-picker class="hidden mr-0 lg:block" />
+      <color-mode-picker class="color-mode" />
       <button
         v-if="!menuOpen"
         @click="clickMenu"
-        class="inline-flex items-center justify-center lg:hidden text-primary hover:text-secondary"
+        class="[ nav-menu-btn open] [ text-primary ]"
         :aria-label="menuLabel"
         :aria-expanded="menuOpen"
       >
-        <component :is="'menu-open'" />
+        Menu
       </button>
-      <div v-if="menuOpen" class="fixed inset-0 z-50 overflow-hidden lg:hidden">
+      <div v-if="menuOpen" class="nav-menu">
         <button
           @click="clickMenu"
-          class="absolute top-0 right-0 z-50 inline-flex items-center justify-center p-2 m-3 lg:hidden text-primary hover:text-secondary"
+          class="[ nav-menu-btn close ] [ text-primary ]"
           :aria-label="menuLabel"
           :aria-expanded="menuOpen"
         >
-          <component :is="'menu-close'" />
+          Close
         </button>
-        <div
-          class="absolute inset-0 w-screen h-screen opacity-90 bg-secondary"
-        ></div>
-        <div class="block">
-          <nav
-            class="absolute left-0 flex flex-col justify-between w-3/4 z-2 h-3/4 bottom-100px"
-          >
-            <div class="ml-12">
-              <nuxt-link
-                @click.native="menuOpen = false"
-                class="block px-3 py-2 mt-1 text-2xl transition duration-150 ease-in-out rounded-md no-external-link focus:outline-none"
-                to="/about"
-              >
-                About
-              </nuxt-link>
-              <nuxt-link
-                @click.native="menuOpen = false"
-                class="block px-3 py-2 mt-1 text-2xl transition duration-150 ease-in-out rounded-md no-external-link focus:outline-none"
-                to="/blog"
-              >
-                Blog
-              </nuxt-link>
-              <nuxt-link
-                @click.native="menuOpen = false"
-                class="block px-3 py-2 mt-1 text-2xl transition duration-150 ease-in-out rounded-md no-external-link focus:outline-none"
-                to="/work"
-              >
-                Work
-              </nuxt-link>
-              <nuxt-link
-                @click.native="menuOpen = false"
-                class="block px-3 py-2 mt-1 text-2xl transition duration-150 ease-in-out rounded-md no-external-link focus:outline-none"
-                to="/speaking"
-              >
-                Speaking
-              </nuxt-link>
-            </div>
-            <div class="ml-12">
-              <color-mode-picker />
-            </div>
-          </nav>
-        </div>
+        <div class="[ nav-menu-overlay ] [ bg-primary ]"></div>
+        <nav class="nav-menu-layout">
+          <div class="nav-menu-links">
+            <nuxt-link
+              @click.native="menuOpen = false"
+              class="[ nav-link ] [ not-external-link text-primary ]"
+              to="/about"
+            >
+              About
+            </nuxt-link>
+            <nuxt-link
+              @click.native="menuOpen = false"
+              class="[ nav-link ] [ not-external-link text-primary ]"
+              to="/blog"
+            >
+              Blog
+            </nuxt-link>
+            <nuxt-link
+              @click.native="menuOpen = false"
+              class="[ nav-link ] [ not-external-link text-primary ]"
+              to="/work"
+            >
+              Work
+            </nuxt-link>
+            <nuxt-link
+              @click.native="menuOpen = false"
+              class="[ nav-link ] [ not-external-link text-primary ]"
+              to="/resources/talks"
+            >
+              Talks
+            </nuxt-link>
+            <nuxt-link
+              @click.native="menuOpen = false"
+              class="[ nav-link ] [ not-external-link text-primary ]"
+              to="/resources"
+            >
+              Resources
+            </nuxt-link>
+          </div>
+
+          <color-mode-picker class="color-mode" />
+        </nav>
       </div>
     </div>
   </nav>
 </template>
 
 <script>
-import Logo from './Logo'
-import ColorModePicker from './ColorModePicker'
-import MenuOpen from '@/assets/images/icons/menu_open.svg?inline'
-import MenuClose from '@/assets/images/icons/menu_close.svg?inline'
-
-const tailwindConfig = require('../tailwind.config.js')
-
 export default {
   name: 'TheNavigation',
   data() {
     return {
       windowWidth: 0,
       menuOpen: false,
-      mdBreakpoint: Number(tailwindConfig.theme.screens.md.replace('px', ''))
+      mdBreakpoint: 800,
     }
   },
   computed: {
     menuLabel() {
       return this.menuOpen ? 'Close navigation' : 'Open navigation'
-    }
+    },
   },
   methods: {
     updateWindowSize() {
@@ -135,7 +130,7 @@ export default {
     },
     clickMenu() {
       this.menuOpen = !this.menuOpen
-    }
+    },
   },
   mounted() {
     this.updateWindowSize()
@@ -144,13 +139,174 @@ export default {
   beforeDestroyed() {
     window.removeEventListener('resize', this.updateWindowSize)
   },
-  components: {
-    ColorModePicker,
-    Logo,
-    MenuClose,
-    MenuOpen
-  }
 }
 </script>
 
-<style></style>
+<style scoped>
+.site-nav-layout {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  line-height: 2rem;
+}
+
+.site-nav {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-nav-inner {
+  display: flex;
+  height: 4rem;
+  align-items: center;
+}
+
+.site-nav-inner-items {
+  position: relative;
+  display: none;
+  width: 100%;
+  order: 3;
+  padding: 1rem 0;
+}
+
+.site-nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0;
+}
+
+.nav-link {
+  padding: 0.5rem 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+.site-nav .color-mode {
+  display: none;
+  margin-right: 0;
+}
+
+.nav-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-text-primary);
+  background-color: transparent;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.nav-menu-btn.close {
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  right: 0;
+  margin: 0.9rem 1.5rem;
+}
+
+.nav-menu-btn:hover {
+  color: var(--text-secondary);
+}
+
+.site-nav .nav-menu {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.nav-menu-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vh;
+  height: 100vh;
+  opacity: 0.9;
+}
+
+.nav-menu-layout {
+  position: absolute;
+  z-index: 2;
+  bottom: 100px;
+  left: 0;
+  display: flex;
+  width: 75%;
+  height: 75%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-menu-links {
+  margin-left: 2rem;
+}
+
+.nav-menu .nav-menu-layout .color-mode {
+  display: block;
+  align-self: start;
+  margin-left: 2rem;
+}
+
+.nav-menu .nav-menu-layout .nav-menu-links .nav-link {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-top: 0.25rem;
+  font-size: 1.75rem;
+  line-height: 1.75rem;
+}
+
+.nav-menu .nav-menu-layout .nav-menu-links .nav-link:focus {
+  outline: none;
+}
+
+@media screen and (min-width: 640px) {
+  .nav-menu-btn.close {
+    margin: 0.9rem 1.5rem;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .site-nav-inner-items {
+    display: flex;
+    width: auto;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+  }
+
+  .site-nav-links {
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .site-nav .color-mode {
+    display: block;
+  }
+
+  .nav-menu-btn,
+  .nav-menu {
+    display: none;
+  }
+}
+</style>

@@ -3,28 +3,29 @@ label: Project
 hide_body: false
 display_field: title
 fields:
-- name: title
-  type: text
-  config:
-    required: true
-  label: Title
-- name: description
-  type: textarea
-  default: ''
-  config:
-    required: true
-    wysiwyg: true
-    schema:
-      format: markdown
-  label: Description
-  description: This ends up on summary pages, on Google, when people share your post
-    in social media.
-- name: tags
-  type: tag_list
-  default: []
-  label: Tags
-- name: main_image
-  type: file
-  config:
-    maxSize: 64
-  label: Main Image
+  - name: title
+    type: text
+    config:
+      required: true
+    label: Title
+  - name: description
+    type: textarea
+    default: ''
+    config:
+      required: true
+      wysiwyg: true
+      schema:
+        format: markdown
+    label: Description
+    description:
+      This ends up on summary pages, on Google, when people share your post
+      in social media.
+  - name: tags
+    type: tag_list
+    default: []
+    label: Tags
+  - name: main_image
+    type: file
+    config:
+      maxSize: 64
+    label: Main Image

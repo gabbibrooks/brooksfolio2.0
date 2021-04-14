@@ -1,19 +1,26 @@
 <template>
-  <block-content :content="post" :surround="surround" />
+  <div>
+    <content-hero :article="post" :showSitePath="true" />
+    <div class="main-content-container">
+      <main id="content" class="[ main-content ] [ wrapper ]">
+        <block-content :content="post" :surround="surround" />
+      </main>
+    </div>
+  </div>
 </template>
 
 <script>
-import BlockContent from '~/components/BlockContent'
-
 export default {
+  layout: 'article',
   async asyncData({ $content, params }) {
     const post = await $content('blog', params.slug).fetch()
     const surround = await $content('blog')
-      .sortBy('createdAt', 'asc')
-      .only(['title', 'subtitle', 'path', 'createdAt'])
+      .sortBy('updatedAt', 'asc')
+      .only(['title', 'subtitle', 'path', 'updatedAt'])
       .surround(post.slug)
       .fetch()
 
+    let heroLinks = ['Home', 'Blog']
     return { post, surround }
   },
   head() {
@@ -23,44 +30,35 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.post.description
+          content: this.post.description,
         },
         {
           hid: 'keywords',
           name: 'keywords',
-          content: this.post.tag
+          content: this.post.category,
         },
         // Open Graph
         { hid: 'og:title', property: 'og:title', content: this.post.title },
         {
           hid: 'og:description',
           property: 'og:description',
-          content: this.post.description
+          content: this.post.description,
         },
         // Twitter Card
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: this.post.title
+          content: this.post.title,
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: this.post.description
-        }
-      ]
+          content: this.post.description,
+        },
+      ],
     }
   },
-  components: {
-    BlockContent
-  },
-  layout: 'content',
   scrollToTop: true,
-  mounted() {
-    this.$store.dispatch('setPageHeader', this.post.title)
-    this.$store.dispatch('setPageSubheader', this.post.description)
-    this.$store.dispatch('setPageHeaderPosition', 'left')
-  }
 }
 </script>
 

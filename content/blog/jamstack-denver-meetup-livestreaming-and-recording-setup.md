@@ -3,9 +3,9 @@ title: Jamstack Denver Meetup Livestreaming and Recording Setup
 description:
   The tools and setup we use at Jamstack Denver to record and stream our
   Meetup events.
-main_image: '/v1605461263/caspar-camille-rubin-DrL-cwqD6tM-unsplash_hdxsx8.jpg'
 tags:
   - Streaming
+  - All
 ---
 
 ## Intro

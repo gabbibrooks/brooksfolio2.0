@@ -1,0 +1,95 @@
+.dark {
+  --color: #003566;
+  --color-primary: #ffc300;
+  --color-secondary: #041628;
+
+  --color-bg-primary: #001429;
+  --color-bg-secondary: #003166;
+  --color-bg-code: #193549;
+
+  --color-text-primary: #f3f4f6;
+  --color-text-primary--muted: rgba(243, 244, 246, 0.6);
+  --color-text-secondary: #9ca3af;
+  --color-text-tertiary: #111827;
+
+  --box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 0.4);
+  --box-shadow--lg: 0 0 4rem -2rem rgba(0, 0, 0, 0.6);
+}
+
+.light {
+  --color: #ffc300;
+  --color-primary: #0054a3;
+  --color-secondary: #041628;
+
+  --color-bg-primary: #f3f5f4;
+  --color-bg-secondary: #ffffff;
+  --color-bg-code: #193549;
+
+  --color-text-primary: #111827;
+  --color-text-primary--muted: rgba(17, 24, 39, 0.6);
+  --color-text-secondary: #374151;
+  --color-text-tertiary: #f3f4f6;
+
+  --box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 0.2);
+  --box-shadow--lg: 0 0 4rem -2rem rgba(0, 0, 0, 0.4);
+}
+
+.bg-color-base {
+  background-color: var(--color);
+}
+
+.bg-color-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-color-secondary {
+  background-color: var(--color-secondary);
+}
+
+.bg-primary {
+  background-color: var(--color-bg-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-bg-secondary);
+}
+
+.bg-code {
+  background-color: var(--color-bg-code);
+}
+
+.color-primary {
+  color: var(--color-primary);
+}
+
+.color-secondary {
+  color: var(--color-secondary);
+}
+
+.color-tertiary {
+  color: var(--color-tertiary);
+}
+
+.text-primary {
+  color: var(--color-text-primary);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-tertiary {
+  color: var(--color-text-tertiary);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+/* Breakpoints
+xs: '375px',
+sm: '640px',
+md: '800px',
+lg: '1024px',
+xl: '1280px'
+*/

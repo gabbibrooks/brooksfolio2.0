@@ -1,0 +1,79 @@
+@import './reset.css';
+
+/* Utilities */
+@import './utilities/flow.css';
+@import './utilities/link.css';
+@import './utilities/theme.css';
+@import './utilities/transition.css';
+@import './utilities/wrapper.css';
+@import './utilities/visually-hidden.css';
+
+/* Blocks */
+@import './blocks/articles.css';
+@import './blocks/content.css';
+@import './blocks/hero.css';
+@import './blocks/prose.css';
+
+/* Global CSS Starts */
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Varela', Arial, sans-serif;
+  font-size: 1rem;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  word-spacing: 1px;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.4rem;
+}
+
+h2,
+h3 {
+  font-size: 1.77rem;
+}
+
+h4 {
+  font-size: 1.33rem;
+}
+
+p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+:focus {
+  outline: 2px solid;
+  outline-offset: 0.25rem;
+}
+
+::selection {
+  background-color: var(--color);
+  text-shadow: none;
+}

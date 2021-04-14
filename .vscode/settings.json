@@ -1,0 +1,9 @@
+{
+  "vetur.validation.style": false,
+  "css.validate": false,
+  "scss.validate": false,
+  "less.validate": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true
+  }
+}
