@@ -1,6 +1,6 @@
 <template>
   <div>
-    <content-hero :article="post" />
+    <content-hero :article="post" :showSitePath="true" />
     <div class="main-content-container">
       <main id="content" class="[ main-content ] [ wrapper ]">
         <block-content :content="post" :surround="surround" />

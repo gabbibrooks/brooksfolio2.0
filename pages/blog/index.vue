@@ -3,10 +3,7 @@
     <hero :header="blogPage.header" :body="blogPage.description" />
     <div class="[ category-buttons ] [ wrapper ]">
       <div v-for="(category, i) in topCategories" :key="i" :category="category">
-        <button
-          class="[ tag ] [ bg-secondary text-primary ]"
-          @click="filterBlogByType(category)"
-        >
+        <button class="tag" @click="filterBlogByType(category)">
           {{ category }}
         </button>
       </div>
@@ -108,7 +105,9 @@ export default {
   border: none;
   margin-right: 1rem;
   margin-bottom: 1rem;
+  background-color: #003566;
   border-radius: 0.25rem;
+  color: #f3f4f6;
 }
 
 .tag:hover {

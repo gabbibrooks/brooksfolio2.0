@@ -190,7 +190,7 @@ export default {
 }
 
 .nav-link:hover {
-  color: var(--color-text-primary);
+  color: var(--color-primary);
 }
 
 .site-nav .color-mode {

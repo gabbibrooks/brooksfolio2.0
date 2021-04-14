@@ -106,7 +106,7 @@ export default {
 <style scope>
 .content-layout {
   display: grid;
-  grid-gap: 2rem;
+  grid-gap: 1rem;
   grid-template-areas: 'image' 'content';
   grid-template-columns: minmax(0, 1fr);
 }
@@ -121,8 +121,8 @@ export default {
 .image-container .image .cld-image {
   display: flex;
   overflow: hidden;
-  width: 20rem;
-  height: 20rem;
+  width: 100%;
+  height: 100%;
   border-radius: 0.25rem;
   object-fit: cover;
 }

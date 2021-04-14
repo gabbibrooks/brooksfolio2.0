@@ -19,11 +19,6 @@ export default {
     IconLight,
     IconDark,
   },
-  data() {
-    return {
-      color: 'dark',
-    }
-  },
   methods: {
     toggleColorMode() {
       this.$colorMode.preference =

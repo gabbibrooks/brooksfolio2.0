@@ -84,10 +84,10 @@ export default {
 .video-card .body .tag {
   display: inline-flex;
   align-items: center;
-  padding: 0.5rem;
+  padding: 0.25rem 0.75rem;
   border: none;
   margin-right: 0.5rem;
-  border-radius: 0.25rem;
+  border-radius: 9999px;
   font-size: 0.875rem;
   font-weight: 500;
 }
