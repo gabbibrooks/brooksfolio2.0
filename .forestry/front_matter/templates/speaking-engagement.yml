@@ -2,39 +2,31 @@
 label: Speaking Engagement
 hide_body: false
 fields:
-  - name: title
-    type: text
-    config:
-      required: true
-    label: Title
-  - name: date
-    type: datetime
-    description: Date of the speaking engagement
-    config:
-      required: true
-      date_format:
-      time_format:
-      display_utc: false
-    label: Date
-  - name: event_name
-    type: text
-    config:
-      required: false
-    label: Event Name
-  - name: videoId
-    type: text
-    config:
-      required: true
-    label: Youtube Video Id
-  - name: start
-    type: number
-    config:
-      required: false
-    label: Video Start Point in seconds
-  - name: tags
-    type: tag_list
-    label: Tags
-    description: Tags for your talks to be grouped by
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+- name: date
+  type: datetime
+  description: Date of the speaking engagement
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: false
+  label: Date
+- name: event_name
+  type: text
+  config:
+    required: false
+  label: Event Name
+- name: link
+  type: text
+  config:
+    required: true
+  label: Link
+  description: Link to the talk or speaking engagement
 pages:
-  - content/speaking/front-range-front-end-june-2020.md
-  - content/speaking/jamstack-denver-december-2019.md
+- content/speaking/front-range-front-end-june-2020.md
+- content/speaking/jamstack-denver-december-2019.md
