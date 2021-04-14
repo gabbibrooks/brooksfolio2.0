@@ -18,19 +18,15 @@ sections:
 - type: document
   path: content/workpage.md
   label: Work
-  match: "**/*"
 - type: document
   path: content/resourcepage.md
   label: Resources
-  match: "**/*"
 - type: document
   path: content/talkspage.md
   label: Talks
-  match: "**/*"
 - type: document
   path: content/uses.md
   label: Uses
-  match: "**/*"
 - type: heading
   label: Work
 - type: directory
