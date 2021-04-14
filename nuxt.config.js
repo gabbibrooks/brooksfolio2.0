@@ -44,7 +44,12 @@ export default {
     '@nuxtjs/cloudinary',
   ],
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxt/content', 'nuxt-webfontloader', '@nuxtjs/sitemap'],
+  modules: [
+    '@nuxt/content',
+    'vue-plausible',
+    'nuxt-webfontloader',
+    '@nuxtjs/sitemap',
+  ],
 
   hooks: {
     'content:file:beforeInsert': (document) => {
@@ -148,6 +153,9 @@ export default {
         theme: './assets/css/prism-cobalt2.css',
       },
     },
+  },
+  plausible: {
+    domain: 'zacharybrooks.dev',
   },
   sitemap: {
     hostname: 'https://zacharybrooks.dev',
