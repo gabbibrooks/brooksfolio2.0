@@ -1,12 +1,12 @@
 <template>
   <header class="[ content-header ] [ bg-primary ]">
     <div class="[ content-header-items ] [ wrapper ]">
-      <div v-if="showSitePath" class="content-hero-site-path">
-        <nuxt-link to="/" class="[ site-path-link ] [ text-secondary ]"
+      <div v-if="showSitePath" class="breadcrumbs">
+        <nuxt-link to="/" class="[ breadcrumb ] [ text-secondary ]"
           >Home</nuxt-link
         >
         <chevron class="[ chevron ] [ text-secondary ]" />
-        <nuxt-link to="/blog/" class="[ site-path-link ] [ text-secondary ]"
+        <nuxt-link to="/blog" class="[ breadcrumb ] [ text-secondary ]"
           >Blog</nuxt-link
         >
         <chevron class="[ chevron ] [ text-secondary ]" />
@@ -55,12 +55,12 @@ export default {
   text-align: left;
 }
 
-.content-hero-site-path {
+.breadcrumbs {
   display: flex;
   align-items: center;
 }
 
-.site-path-link,
+.breadcrumb,
 .title {
   border: none;
   border-radius: 0.375rem;
@@ -69,19 +69,19 @@ export default {
   line-height: 1.25rem;
 }
 
-.site-path-link:nth-of-type(2),
-.site-path-link:nth-of-type(3) {
+.breadcrumb:nth-of-type(2),
+.breadcrumb:nth-of-type(3) {
   margin-left: 0.5rem;
 }
 
-.content-hero-site-path .chevron {
+.breadcrumbs .chevron {
   width: 1.25rem;
   height: 1.25rem;
   margin: 0 0.5rem;
 }
 
-.site-path-link:focus,
-.site-path-link:hover {
+.breadcrumb:focus,
+.breadcrumb:hover {
   background: transparent;
   color: var(--color-text-primary);
   outline: none;
@@ -127,13 +127,13 @@ export default {
     line-height: 1.75rem;
   }
 
-  .content-hero-site-path .chevron {
+  .breadcrumbs .chevron {
     width: 1.5rem;
     height: 1.5rem;
     margin: 0 0.5rem;
   }
 
-  .site-path-link {
+  .breadcrumb {
     font-size: 1.125rem;
   }
 }

@@ -38,7 +38,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.talkspage.description,
+          content: this.talksPage.description,
         },
       ],
     }
