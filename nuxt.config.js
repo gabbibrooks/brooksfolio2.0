@@ -6,10 +6,10 @@ const meta = getMetadata()
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
-  // server: {
-  //   host: '0.0.0.0', //set to active to test mobile
-  //   port: 8000
-  // },
+  server: {
+    host: '0.0.0.0', //set to active to test mobile
+    port: 8000
+  },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'Zachary Brooks',
