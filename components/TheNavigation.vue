@@ -51,7 +51,7 @@
       >
         Menu
       </button>
-      <div v-if="menuOpen" class="nav-menu">
+      <div class="nav-menu" :data-state="menuOpen ? 'open' : 'closed'">
         <button
           @click="clickMenu"
           class="[ nav-menu-btn close ] [ text-primary ]"
@@ -225,11 +225,26 @@ export default {
 .site-nav .nav-menu {
   position: fixed;
   z-index: 50;
-  top: 0;
+  top: -200%;
   right: 0;
   bottom: 0;
   left: 0;
   overflow: hidden;
+  opacity: 0;
+  -webkit-overflow-scrolling: touch;
+  transform: translate3d(0, -100%, 0);
+  transition: transform 0.25s, top 0s ease 0.25s, bottom 0s ease 0.25s,
+    left 0s ease 0.25s, opacity 0.3s;
+}
+
+.site-nav .nav-menu[data-state='open'] {
+  z-index: 50;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+  transform: translateZ(0);
+  transition: transform 0.25s, top 0s, bottom 0s, left 0s, opacity 0s;
 }
 
 .nav-menu-overlay {
