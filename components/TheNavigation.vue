@@ -253,7 +253,7 @@ export default {
   right: 0;
   bottom: 0;
   left: 0;
-  width: 100vh;
+  width: 100vw;
   height: 100vh;
   opacity: 0.9;
 }
@@ -268,6 +268,7 @@ export default {
   height: 75%;
   flex-direction: column;
   justify-content: space-between;
+  padding-top: 1rem;
 }
 
 .nav-menu-links {
