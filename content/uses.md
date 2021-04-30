@@ -14,12 +14,15 @@ tags:
 ## Editor + Terminal
 
 * I use [iTerm2]() as my current terminal styled with [Starship](), you can check out the settings I have for it [here](https://github.com/brooksztb/dotfiles "here")
+* [VS Code](https://code.visualstudio.com/ "VS Code") for coding and development
 
 ## Desktop Apps
 
-* [Better Touch Tool]()
-* [Figma]()
-* [Alfred]()
+* [Better Touch Tool]() is a great tool to customize the touch bar on MacBooks, I have a bunch of quick actions like volume control, play/pause, and check the weather
+* [Figma]() for working with designs and design files
+* I use [Alfred]() over apple spotlight as I find it much more accurate for opening the files and apps I need
+* I learned about this macro tool to enhance my note-taking experience with Obsidian called [Espanso](https://espanso.org/ "Espanso"), you can check my dotfiles repo for the configurations I am using currently for it
+* I started using [Obsidian](https://obsidian.md "Obsidian") recently for note-taking, organizing my thoughts, and as a daily planner. I have been really enjoying it over Notion, which is what I was using previously.
 
 ## Desk Setup
 
