@@ -37,6 +37,7 @@ body {
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 h1,
@@ -76,4 +77,10 @@ a {
 ::selection {
   background-color: var(--color);
   text-shadow: none;
+}
+
+@media (min-height: 4rem) {
+  [id] {
+    scroll-margin-top: 4rem;
+  }
 }

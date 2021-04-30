@@ -144,7 +144,7 @@ export default {
 
 <style scoped>
 .site-nav-layout {
-  position: fixed;
+  position: sticky;
   z-index: 10;
   top: 0;
   left: 0;
