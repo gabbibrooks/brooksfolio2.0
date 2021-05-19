@@ -8,7 +8,7 @@ export default {
   target: 'static',
   server: {
     host: '0.0.0.0', //set to active to test mobile
-    port: 8000
+    port: 8000,
   },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -44,12 +44,7 @@ export default {
     '@nuxtjs/cloudinary',
   ],
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: [
-    '@nuxt/content',
-    'vue-plausible',
-    'nuxt-webfontloader',
-    '@nuxtjs/sitemap',
-  ],
+  modules: ['@nuxt/content', 'vue-plausible', 'nuxt-webfontloader'],
 
   hooks: {
     'content:file:beforeInsert': (document) => {

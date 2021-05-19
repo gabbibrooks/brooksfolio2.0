@@ -1,0 +1,14 @@
+# use the @netlify/plugin-sitemap to build a sitemap only for the production deploys
+[[context.production.plugins]]
+package = "@netlify/plugin-sitemap"
+    [context.production.plugins.inputs]
+    buildDir = "dist"
+
+# use the netlify-plugin-submit-sitemap to submit the build sitemap to serach engines
+[[context.production.plugins]]
+package = "netlify-plugin-submit-sitemap"
+    [context.production.plugins.inputs]
+    providers = [
+		"google",
+		"bing",
+	]

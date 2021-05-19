@@ -15,6 +15,14 @@ export const getMetadata = (meta) => {
       content: (meta && meta.description) || description,
     },
     {
+      name: 'robots',
+      content: 'index, follow',
+    },
+    {
+      name: 'language',
+      content: 'English',
+    },
+    {
       hid: 'og:type',
       property: 'og:type',
       content: (meta && meta.type) || type,
