@@ -2,4 +2,4 @@ User-agent: *
 Disallow:
 Disallow: /*.md
 
-Sitemap: https://zacharybrooks.dev/sitemap.xml
+Sitemap: https://gabriellebrooks.dev/sitemap.xml

@@ -19,6 +19,10 @@
 </template>
 
 <script>
+import LastUpdated from '@/components/LastUpdated.vue'
+import PrevNext from '@/components/PrevNext.vue'
+import TableOfContents from '@/components/TableOfContents.vue'
+
 export default {
   props: {
     content: Object,
@@ -64,6 +68,11 @@ export default {
   beforeDestroy() {
     this.observer.disconnect()
   },
+  components: {
+    LastUpdated,
+    PrevNext,
+    TableOfContents,
+  }
 }
 </script>
 

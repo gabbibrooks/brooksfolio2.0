@@ -12,7 +12,7 @@ export default {
   },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'Zachary Brooks',
+    title: 'Gabrielle Brooks',
     meta: [
       ...meta,
       { name: 'HandheldFriendly', content: 'True' },
@@ -44,7 +44,7 @@ export default {
     '@nuxtjs/cloudinary',
   ],
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxt/content', 'vue-plausible', 'nuxt-webfontloader'],
+  modules: ['@nuxt/content', 'nuxt-webfontloader'],
 
   hooks: {
     'content:file:beforeInsert': (document) => {
@@ -84,7 +84,6 @@ export default {
       remarkAutolinkHeadings: {
         behavior: 'append',
         linkProperties: {
-          ariaHidden: 'true',
           tabIndex: '-1',
           title: 'Link to Section',
           className: ['[ heading-permalink ] [ not-external-link ]'],
@@ -149,11 +148,8 @@ export default {
       },
     },
   },
-  plausible: {
-    domain: 'zacharybrooks.dev',
-  },
   sitemap: {
-    hostname: 'https://zacharybrooks.dev',
+    hostname: 'https://gabriellebrooks.dev',
     gzip: true,
   },
   webfontloader: {

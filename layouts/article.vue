@@ -7,6 +7,14 @@
 </template>
 
 <script>
-export default {}
+import TheNavigation from '@/components/TheNavigation.vue'
+import TheFooter from '@/components/TheFooter.vue'
+
+export default {
+  components: {
+    TheNavigation,
+    TheFooter,
+  }
+}
 </script>
 <style></style>

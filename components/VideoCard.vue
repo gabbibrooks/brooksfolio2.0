@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import LiteYouTubeEmbed from 'lite-youtube-embed'
 import { formatDate } from '~/utils/date'
 
 export default {
@@ -50,6 +51,9 @@ export default {
     date() {
       return formatDate(this.speakingEngagement.date)
     },
+  },
+  components: {
+    LiteYouTube: LiteYouTubeEmbed,
   },
 }
 </script>

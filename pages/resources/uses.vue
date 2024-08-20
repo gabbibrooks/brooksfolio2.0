@@ -8,6 +8,9 @@
 </template>
 
 <script>
+import Hero from '@/components/Hero.vue'
+import BlockContent from '@/components/BlockContent.vue'
+
 export default {
   layout: 'article',
   async asyncData({ $content }) {
@@ -17,7 +20,7 @@ export default {
   },
   head() {
     return {
-      title: 'Uses - Zachary Brooks',
+      title: 'Uses - Gabrielle Brooks',
       meta: [
         {
           hid: 'description',
@@ -28,6 +31,10 @@ export default {
     }
   },
   scrollToTop: true,
+  components: {
+    Hero,
+    BlockContent,
+  }
 }
 </script>
 

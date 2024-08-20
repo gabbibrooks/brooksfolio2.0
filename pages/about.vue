@@ -11,7 +11,7 @@
               fetchFormat="auto"
               quality="80"
               loading="lazy"
-              alt="Image of Zachary Brooks"
+              alt="Image of Gabrielle Brooks"
             >
               <cld-placeholder type="blur" />
             </cld-image>
@@ -80,6 +80,7 @@
 
 <script>
 import { getCloudinaryId } from '~/utils/image'
+import Hero from '@/components/Hero.vue'
 
 export default {
   layout: 'content',
@@ -92,7 +93,7 @@ export default {
   },
   head() {
     return {
-      title: 'About - Zachary Brooks',
+      title: 'About - Gabrielle Brooks',
       meta: [
         {
           hid: 'description',
@@ -106,6 +107,9 @@ export default {
     src() {
       return getCloudinaryId(this.aboutpage.main_image)
     },
+  },
+  components: {
+    Hero,
   },
 }
 </script>
@@ -130,8 +134,11 @@ export default {
   overflow: hidden;
   width: 100%;
   height: 100%;
-  border-radius: 0.25rem;
   object-fit: cover;
+}
+
+.image-container .image .cld-image img {
+  border-radius: 0.25rem;
 }
 
 .content-layout .body-content {

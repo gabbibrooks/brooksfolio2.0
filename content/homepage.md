@@ -6,7 +6,7 @@ description:
 speaking: content/speaking/front-range-front-end-june-2020.md
 selected_work:
   projects: content/projects/spirited-hooves-llc.md
-header: Zachary Brooks
+header: Gabrielle Brooks
 introduction:
   Frontend Engineer at Storyboard and co-organizer of Jamstack Denver,
   who is interested in building awesome tools and products with web-based technologies

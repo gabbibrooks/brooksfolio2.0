@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import VideoCard from '@/components/VideoCard.vue'
+
 export default {
   layout: 'category',
   async asyncData({ $content }) {
@@ -33,7 +35,7 @@ export default {
   },
   head() {
     return {
-      title: 'Conference and Meetup Talks - Zachary Brooks',
+      title: 'Conference and Meetup Talks - Gabrielle Brooks',
       meta: [
         {
           hid: 'description',
@@ -48,6 +50,9 @@ export default {
       const engagementCount = this.speakingEngagements.length
       return engagementCount > 1 ? `${engagementCount} Talks` : '1 Talk'
     },
+  },
+  components: {
+    VideoCard,
   },
 }
 </script>

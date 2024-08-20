@@ -14,6 +14,9 @@
 </template>
 
 <script>
+import Hero from '@/components/Hero.vue'
+import BlogPostCard from '@/components/BlogPostCard.vue'
+
 export default {
   async asyncData({ $content }) {
     const homepage = await $content('homepage').fetch()
@@ -29,8 +32,12 @@ export default {
   },
   head() {
     return {
-      title: 'Home - Zachary Brooks',
+      title: 'Home - Gabrielle Brooks',
     }
+  },
+  components: {
+    Hero,
+    BlogPostCard,
   },
 }
 </script>

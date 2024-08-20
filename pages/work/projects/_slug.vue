@@ -10,7 +10,11 @@
 </template>
 
 <script>
+import ContentHero from '@/components/ContentHero.vue'
+import BlockContent from '@/components/BlockContent.vue'
+
 export default {
+
   async asyncData({ $content, params }) {
     const project = await $content('work/projects', params.slug).fetch()
     const surround = await $content('work/projects')
@@ -58,6 +62,10 @@ export default {
   },
   layout: 'article',
   scrollToTop: true,
+  components: {
+    ContentHero,
+    BlockContent,
+  },
 }
 </script>
 

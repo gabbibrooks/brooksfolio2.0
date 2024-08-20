@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import BlogPostCard from '@/components/BlogPostCard.vue'
+
 export default {
   props: {
     categorytitle: String,
@@ -25,6 +27,9 @@ export default {
       const articleCount = this.articles.length
       return articleCount > 1 ? `${articleCount} Articles` : '1 Article'
     },
+  },
+  components: {
+    BlogPostCard,
   },
 }
 </script>

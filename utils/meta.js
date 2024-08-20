@@ -1,8 +1,8 @@
 const type = 'website'
-const url = 'https://zacharybrooks.dev'
-const title = 'Zachary Brooks'
+const url = 'https://gabriellebrooks.dev'
+const title = 'Gabrielle Brooks'
 const description =
-  'Zachary Brooks is a Software Developer from Denver, Colorado. This site is a portfolio and blog dedicated primary to frontend focused topics such as Jamstack, along with some other interests!'
+  'Gabrielle Brooks is a Software Developer from Denver, Colorado. This site is a portfolio and blog dedicated primary to frontend focused topics such as Jamstack, along with some other interests!'
 const mainImage =
   'https://res.cloudinary.com/zacharybrooks-dev/image/upload/v1605463566/zach_on_mountain.jpg'
 const twitterSite = '@zacann0n'

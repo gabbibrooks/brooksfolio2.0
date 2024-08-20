@@ -1,7 +1,7 @@
 <template>
   <nuxt-link to="/" class="logo-link">
-    <component :is="logo" />
-    <span class="[ text ] [ text-primary ]">Zachary Brooks</span>
+    <!-- <component :is="logo" /> -->
+    <span class="[ text ] [ text-primary ]">Gabrielle Brooks</span>
   </nuxt-link>
 </template>
 

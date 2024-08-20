@@ -108,6 +108,9 @@
 </template>
 
 <script>
+import Logo from '@/components/Logo.vue'
+import ColorModePicker from '@/components/ColorModePicker.vue'
+
 export default {
   name: 'TheNavigation',
   data() {
@@ -138,6 +141,10 @@ export default {
   },
   beforeDestroyed() {
     window.removeEventListener('resize', this.updateWindowSize)
+  },
+  components: {
+    Logo,
+    ColorModePicker,
   },
 }
 </script>

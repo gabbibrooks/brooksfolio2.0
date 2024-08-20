@@ -4,7 +4,7 @@
     <main id="content" class="[ main-content ] [ wrapper ]">
       <section v-if="projects.length > 0">
         <ol class="projects-list">
-          <li clss="project" v-for="project in projects" :key="project.slug">
+          <li class="project" v-for="project in projects" :key="project.slug">
             <project-card :project="project" />
           </li>
         </ol>
@@ -14,6 +14,9 @@
 </template>
 
 <script>
+import Hero from '@/components/Hero.vue'
+import ProjectCard from '@/components/ProjectCard.vue'
+
 export default {
   async asyncData({ $content }) {
     const projects = await $content('work/projects').fetch()
@@ -23,7 +26,7 @@ export default {
   },
   head() {
     return {
-      title: 'Work - Zachary Brooks',
+      title: 'Work - Gabrielle Brooks',
       meta: [
         {
           hid: 'description',
@@ -32,6 +35,10 @@ export default {
         },
       ],
     }
+  },
+  components: {
+    Hero,
+    ProjectCard,
   },
 }
 </script>

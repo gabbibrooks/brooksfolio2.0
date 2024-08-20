@@ -10,6 +10,9 @@
 </template>
 
 <script>
+import ContentHero from '@/components/ContentHero.vue'
+import BlockContent from '@/components/BlockContent.vue'
+
 export default {
   layout: 'article',
   async asyncData({ $content, params }) {
@@ -59,6 +62,10 @@ export default {
     }
   },
   scrollToTop: true,
+  components: {
+    ContentHero,
+    BlockContent,
+  },
 }
 </script>
 

@@ -27,6 +27,8 @@
 </template>
 
 <script>
+import Hero from '@/components/Hero.vue'
+
 export default {
   async asyncData({ $content }) {
     const resources = await $content('resources').fetch()
@@ -36,7 +38,7 @@ export default {
   },
   head() {
     return {
-      title: 'Resources - Zachary Brooks',
+      title: 'Resources - Gabrielle Brooks',
       meta: [
         {
           hid: 'description',
@@ -45,6 +47,9 @@ export default {
         },
       ],
     }
+  },
+  components: {
+    Hero,
   },
 }
 </script>

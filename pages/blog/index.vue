@@ -28,6 +28,8 @@
 
 <script>
 import { topEntries } from '~/utils/array'
+import Hero from '@/components/Hero.vue'
+import BlogPostCard from '@/components/BlogPostCard.vue'
 
 export default {
   async asyncData({ $content }) {
@@ -56,7 +58,7 @@ export default {
   },
   head() {
     return {
-      title: 'Blog - Zachary Brooks',
+      title: 'Blog - Gabrielle Brooks',
       meta: [
         {
           hid: 'description',
@@ -80,6 +82,10 @@ export default {
       this.selectedTag = tag
       this.categoryTitle = tag
     },
+  },
+  components: {
+    Hero,
+    BlogPostCard,
   },
 }
 </script>
