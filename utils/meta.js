@@ -4,7 +4,7 @@ const title = 'Gabrielle Brooks'
 const description =
   'Gabrielle Brooks is a Software Developer from Denver, Colorado. This site is a portfolio and blog dedicated primary to frontend focused topics such as Jamstack, along with some other interests!'
 const mainImage =
-  'https://res.cloudinary.com/zacharybrooks-dev/image/upload/v1605463566/zach_on_mountain.jpg'
+  'https://res.cloudinary.com/zacharybrooks-dev/image/upload/v1724177154/gabbi_mirror_selfie.jpg'
 const twitterSite = '@zacann0n'
 const twitterCard = 'summary_large_image'
 export const getMetadata = (meta) => {
