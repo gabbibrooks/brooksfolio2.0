@@ -12,8 +12,8 @@
           <span class="visually-hidden">GitHub</span>
           <github class="icn" />
         </a>
-        <!-- <a
-          href="https://www.linkedin.com/in/zachary-brooks-3b8b5b84/"
+        <a
+          href="https://www.linkedin.com/in/gabrielle-brooks-3b8b5b84/"
           rel="noopener noreferrer"
           target="_blank"
           title="Linkedin"
@@ -21,7 +21,7 @@
         >
           <span class="visually-hidden">LinkedIn</span>
           <linked-in class="icn" />
-        </a> -->
+        </a>
       </div>
       <div class="[ footer-copyright ] [ text-primary ]">
         <p>© {{ new Date().getFullYear() }} Gabrielle Brooks</p>
